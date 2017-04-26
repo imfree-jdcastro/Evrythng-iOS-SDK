@@ -24,6 +24,7 @@
 		0895C0561EAF4841002E44A0 /* EvrythngiOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 0895C0481EAF4840002E44A0 /* EvrythngiOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0895C0631EAF496C002E44A0 /* Evrythng.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0895C0621EAF496C002E44A0 /* Evrythng.swift */; };
 		0895C0651EAF4B69002E44A0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0895C0641EAF4B69002E44A0 /* Constants.swift */; };
+		089F36B31EB0AF5A003B3301 /* EvrythngNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089F36B21EB0AF5A003B3301 /* EvrythngNetworkService.swift */; };
 		EF30C651DC2F4532917D2989 /* Pods_EvrythngiOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D07B8A0A030B33A249F44FBD /* Pods_EvrythngiOSTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +58,7 @@
 		0895C0551EAF4841002E44A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0895C0621EAF496C002E44A0 /* Evrythng.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Evrythng.swift; sourceTree = "<group>"; };
 		0895C0641EAF4B69002E44A0 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		089F36B21EB0AF5A003B3301 /* EvrythngNetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EvrythngNetworkService.swift; sourceTree = "<group>"; };
 		253E9E2CED257C373EEE2FF5 /* Pods-EvrythngiOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EvrythngiOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EvrythngiOSTests/Pods-EvrythngiOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		700EB6D07E3132439C617E8D /* Pods-EvrythngiOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EvrythngiOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-EvrythngiOSTests/Pods-EvrythngiOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		725AF26611D74735275F09BB /* Pods-EvrythngiOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EvrythngiOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-EvrythngiOS/Pods-EvrythngiOS.release.xcconfig"; sourceTree = "<group>"; };
@@ -171,6 +173,9 @@
 		0895C05F1EAF4876002E44A0 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				089F36AD1EB09C5D003B3301 /* Responses */,
+				089F36AC1EB09C57003B3301 /* Requests */,
+				089F36B21EB0AF5A003B3301 /* EvrythngNetworkService.swift */,
 			);
 			name = Network;
 			sourceTree = "<group>";
@@ -184,6 +189,20 @@
 				080A16A71EB071CA00601D6F /* AbstractUser.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		089F36AC1EB09C57003B3301 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Requests;
+			sourceTree = "<group>";
+		};
+		089F36AD1EB09C5D003B3301 /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Responses;
 			sourceTree = "<group>";
 		};
 		B67B149C5F00E6AD8F69FD2B /* Pods */ = {
@@ -411,6 +430,7 @@
 				080A17031EB07E1400601D6F /* EvrythngScannerError.swift in Sources */,
 				080A169C1EB0500C00601D6F /* Thng.swift in Sources */,
 				080A171D1EB082C000601D6F /* StringUtils.swift in Sources */,
+				089F36B31EB0AF5A003B3301 /* EvrythngNetworkService.swift in Sources */,
 				080A169A1EB04FFA00601D6F /* Product.swift in Sources */,
 				080A16A61EB06B7900601D6F /* UserDelegate.swift in Sources */,
 			);

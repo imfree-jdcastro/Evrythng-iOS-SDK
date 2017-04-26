@@ -6,8 +6,10 @@ target 'EvrythngiOS' do
   use_frameworks!
 
   # Pods for EvrythngiOS
-  pod 'Alamofire', '~> 4.4'	
-  pod 'AlamofireObjectMapper', '~> 4.1'
+  #pod 'Alamofire', '~> 4.4'
+  #pod 'AlamofireObjectMapper', '~> 4.1'
+  pod 'Moya'
+  pod 'MoyaSugar', '~> 0.4'
   pod 'SwiftyJSON', '~> 3.1'
   pod 'SwiftEventBus', '~> 2.1'
   pod 'QRCodeReader.swift', '~> 7.4.1'
