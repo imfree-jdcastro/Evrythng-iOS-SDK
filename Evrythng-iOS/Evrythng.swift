@@ -35,7 +35,7 @@ public class Evrythng {
         
         self.delegate = delegate
         
-        print("\(TAG) App Token: \(appToken)")
+        print("\(TAG) App Token: \(self.appToken)")
         
         if(StringUtils.isStringEmpty(string: self.appToken)) {
             self.delegate?.evrythngInitializationDidFail()
