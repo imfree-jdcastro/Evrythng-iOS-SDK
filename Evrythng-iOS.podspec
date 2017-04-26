@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
 
   s.name         = "Evrythng-iOS"
   s.version      = "0.0.1"
-  s.summary      = "A short description of Evrythng-iOS-SDK."
+  s.summary      = "iOS variant of the Evrythng Platform SDK"
   s.description  = 'Evrythng-iOS-SDK is an SDK to be used when developing iOS enabled Applications.'
   s.homepage     = 'https://github.com/imfree-jdcastro/Evrythng-iOS-SDK'
   s.license      = { :type => 'MIT', :file => 'license.md'}
@@ -26,7 +26,7 @@ Pod::Spec.new do |s|
   s.source       = { :git => 'https://github.com/imfree-jdcastro/Evrythng-iOS-SDK.git', :tag => '0.0.1' }
   s.source_files = 'Evrythng-iOS', 'Evrythng-iOS/**/*.{h,m,swift}'
   s.exclude_files = 'Classes/Exclude'
-  s.resources    = 'Evrythng-iOS/*.mp3'
+  #s.resources    = 'Evrythng-iOS/*.mp3'
   s.pod_target_xcconfig = { 'SWIFT_VERSION' => '3' }
 
 end
