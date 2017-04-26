@@ -24,7 +24,7 @@ Pod::Spec.new do |s|
   s.authors      = { 'JD Castro' => 'jd@imfreemobile.com' }
   s.platform     = :ios, '10.0'
   s.source       = { :git => 'https://github.com/imfree-jdcastro/Evrythng-iOS-SDK.git', :tag => '0.0.16' }
-  s.source_files = 'EvrythngiOS', 'EvrythngiOS/**/*.{h,m,swift}'
+  s.source_files = 'Evrythng-iOS', 'Evrythng-iOS/**/*.{h,m,swift}'
   s.exclude_files = 'Classes/Exclude'
   #s.resources    = 'Evrythng-iOS/*.mp3'
   s.pod_target_xcconfig = { 'SWIFT_VERSION' => '3' }
