@@ -11,7 +11,7 @@ import Foundation
 import Moya
 import MoyaSugar
 
-enum EvrythngNetworkService {
+public enum EvrythngNetworkService {
     case url(String)
     case userRepos(owner: String)
     case createIssue(owner: String, repo: String, title: String, body: String?)
@@ -23,7 +23,7 @@ extension EvrythngNetworkService : SugarTargetType {
     public var baseURL: URL { return URL(string: "https://jsonblob.com/api")! }
     
     /// method + path
-    var route: Route {
+    public var route: Route {
         switch self {
         case .url(let urlString):
             return .get(urlString)
@@ -40,7 +40,7 @@ extension EvrythngNetworkService : SugarTargetType {
     }
     
     // override default url building behavior
-    var url: URL {
+    public var url: URL {
         switch self {
         case .url(let urlString):
             return URL(string: urlString)!
@@ -50,7 +50,7 @@ extension EvrythngNetworkService : SugarTargetType {
     }
     
     /// encoding + parameters
-    var params: Parameters? {
+    public var params: Parameters? {
         switch self {
         case .url:
             return nil
@@ -73,13 +73,13 @@ extension EvrythngNetworkService : SugarTargetType {
         }
     }
     
-    var sampleData: Data {
+    public var sampleData: Data {
         switch self {
         case .url:
             return "abcd".utf8Encoded
-        case .createIssue(let owner, let repo, let title, _):
+        case .createIssue(let owner, _, let title, _):
             return "{\"id\": 100, \"owner\": \"\(owner)}".utf8Encoded
-        case .editIssue(_, let owner, let repo, let title, _):
+        case .editIssue(_, let owner, _, let title, _):
             return "{\"id\": 100, \"owner\": \"\(owner)}".utf8Encoded
         case .userRepos(let ownerId):
             return "{\"ownerId\": \"\(ownerId)}".utf8Encoded
@@ -94,14 +94,14 @@ extension EvrythngNetworkService : SugarTargetType {
         }
     }
     
-    var httpHeaderFields: [String: String]? {
+    public var httpHeaderFields: [String: String]? {
         return [
             "Accept": "application/json",
             "Content-Type": "application/json"
         ]
     }
     
-    var task: Task {
+    public var task: Task {
         switch self {
         case .userRepos, .createIssue, .editIssue, .url:
             fallthrough
