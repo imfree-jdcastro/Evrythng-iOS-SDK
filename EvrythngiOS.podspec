@@ -16,14 +16,14 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "EvrythngiOS"
-  s.version      = "0.0.194"
+  s.version      = "0.0.198"
   s.summary      = "iOS variant of the Evrythng Platform SDK"
   s.description  = 'Evrythng-iOS-SDK is an SDK to be used when developing iOS enabled Applications.'
   s.homepage     = 'https://github.com/imfree-jdcastro/Evrythng-iOS-SDK'
   s.license      = { :type => 'MIT', :file => 'license.md'}
   s.authors      = { 'JD Castro' => 'jd@imfreemobile.com' }
   s.platform     = :ios, '10.0'
-  s.source       = { :git => 'https://github.com/imfree-jdcastro/Evrythng-iOS-SDK.git', :tag => '0.0.194' }
+  s.source       = { :git => 'https://github.com/imfree-jdcastro/Evrythng-iOS-SDK.git', :tag => '0.0.198' }
   s.source_files = 'Evrythng-iOS', 'Evrythng-iOS/**/*.{h,m,swift}'
   s.exclude_files = 'Classes/Exclude'
   #s.resources    = 'Evrythng-iOS/*.mp3'
