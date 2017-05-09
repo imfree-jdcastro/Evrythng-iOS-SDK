@@ -72,7 +72,7 @@ extension EvrythngScanner: EvrythngScannerDelegate {
                 print("Barcode Value is NULL")
                 return
             }
-            print("Scan Result: \(self.queryScanResult(barcode: val))")
+            print("Default Scan Result: \(self.queryScanResult(barcode: val))")
             return
         }
         print(err.localizedDescription)

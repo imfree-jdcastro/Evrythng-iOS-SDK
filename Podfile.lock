@@ -15,7 +15,7 @@ PODS:
   - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
-  - Moya
+  - Moya (~> 8.0.3)
   - MoyaSugar (~> 0.4)
   - QRCodeReader.swift (~> 7.4.1)
   - SwiftEventBus (~> 2.1)
@@ -30,6 +30,6 @@ SPEC CHECKSUMS:
   SwiftEventBus: 9e8f6d8cff2826d66536ec367d17a47299478aa0
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 48e3fe65b350f1dd2cfd2102c8f9739820f392e6
+PODFILE CHECKSUM: 64f98480935064259c2c3c5c5b2e884ba4324976
 
 COCOAPODS: 1.2.1
