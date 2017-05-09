@@ -21,6 +21,10 @@ public class AbstractUser: UserDelegate, ALSwiftyJSONAble {
         self.numberOfFriends = jsonData["numberOfFriends"].intValue
     }
     
+    public class func toString() -> String {
+        return ""
+    }
+    
     public var gender: Gender? {
         get {
             return .Female

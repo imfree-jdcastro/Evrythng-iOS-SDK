@@ -12,7 +12,7 @@ import MoyaSugar
 
 public class EvrythngNetworkDispatcher {
     
-    public class func getUser() {
+    public class func getUser(completionHandler: @escaping (AbstractUser?, Swift.Error?) -> Void)  {
         
         let userRepo = EvrythngNetworkService.userRepos(owner: "3c4b81f4-34ac-11e7-ae4c-b923aa7f9a8c")
         let provider = MoyaProvider<EvrythngNetworkService>()
@@ -29,11 +29,11 @@ public class EvrythngNetworkDispatcher {
                 do {
                     let abstractUser = try moyaResponse.map(to: AbstractUser.self)
                     print("SwiftyJSON: \(abstractUser)")
+                    completionHandler(abstractUser, nil)
                 } catch {
                     print(error)
+                    completionHandler(nil, error)      
                 }
-                
-                
             // do something with the response data or statusCode
             case let .failure(error):
                 print("Error: \(error)")
@@ -41,6 +41,7 @@ public class EvrythngNetworkDispatcher {
                 // wasn't sent (connectivity), or no response was received (server
                 // timed out).  If the server responds with a 4xx or 5xx error, that
                 // will be sent as a ".success"-ful response.
+                completionHandler(nil, error)
                 break
             }
         }
