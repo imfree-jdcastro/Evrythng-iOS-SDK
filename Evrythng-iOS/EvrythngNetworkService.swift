@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 import Moya
 import MoyaSugar
 
@@ -19,7 +18,7 @@ public enum EvrythngNetworkService {
     case editIssue(owner: String, repo: String, number: Int, title: String?, body: String?)
 }
 
-extension EvrythngNetworkService : SugarTargetType {
+extension EvrythngNetworkService: SugarTargetType {
     
     public var baseURL: URL { return URL(string: "https://jsonblob.com/api")! }
     
