@@ -21,8 +21,23 @@ public class AbstractUser: UserDelegate, ALSwiftyJSONAble {
         self.numberOfFriends = jsonData["numberOfFriends"].intValue
     }
     
-    public class func toString() -> String {
-        return ""
+    public class func toString() -> NSString? {
+        let data = try! JSONSerialization.data(withJSONObject: self, options: .prettyPrinted)
+        let string = NSString(data: data, encoding: String.Encoding.utf8.rawValue)
+        return string
+    }
+    
+    var json: JSON {
+        get {
+            var dict = [String: AnyObject]()
+            let mirror = Mirror(reflecting: self)
+            for (_, attr) in mirror.children.enumerated() {
+                if let property_name = attr.label as String! {
+                    dict[property_name] = attr.value as? AnyObject
+                }
+            }
+            return JSON(dict)
+        }
     }
     
     public var gender: Gender? {
