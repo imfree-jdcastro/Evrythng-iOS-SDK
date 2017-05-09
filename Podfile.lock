@@ -8,21 +8,13 @@ PODS:
   - Moya/Core (8.0.3):
     - Alamofire (~> 4.1)
     - Result (~> 3.0)
-  - Moya/RxSwift (8.0.3):
-    - Moya/Core
-    - RxSwift (~> 3.0)
   - MoyaSugar (0.4.0):
     - MoyaSugar/Core (= 0.4.0)
   - MoyaSugar/Core (0.4.0):
     - Moya (>= 8.0.0)
-  - MoyaSugar/RxSwift (0.4.0):
-    - Moya/RxSwift (>= 8.0.0)
-    - MoyaSugar/Core
-    - RxSwift (>= 3.0.0)
   - ObjectMapper (2.2.6)
   - QRCodeReader.swift (7.4.1)
   - Result (3.2.1)
-  - RxSwift (3.4.0)
   - SwiftEventBus (2.1.2)
   - SwiftyJSON (3.1.4)
 
@@ -31,7 +23,6 @@ DEPENDENCIES:
   - AlamofireObjectMapper (~> 4.1)
   - Moya (~> 8.0.3)
   - MoyaSugar (~> 0.4)
-  - MoyaSugar/RxSwift
   - QRCodeReader.swift (~> 7.4.1)
   - SwiftEventBus (~> 2.1)
   - SwiftyJSON (~> 3.1)
@@ -44,10 +35,9 @@ SPEC CHECKSUMS:
   ObjectMapper: 042708195cc46c20871cbcbec0453826398273fd
   QRCodeReader.swift: 39b149584852b7b721012126d38a14024b851366
   Result: 2453a22e5c5b11c0c3a478736e82cd02f763b781
-  RxSwift: 3789a1af753002a14edecdb698a2424624296a9c
   SwiftEventBus: 9e8f6d8cff2826d66536ec367d17a47299478aa0
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 06d06b34b0bd00971fd62555c67e21a4f7b3d913
+PODFILE CHECKSUM: 0aa18be80120382f08d9aed931030dc17ab0ef89
 
 COCOAPODS: 1.2.1

@@ -8,8 +8,8 @@
 
 import Foundation
 
-import Moya
 import MoyaSugar
+import Moya
 
 public enum EvrythngNetworkService {
     case url(String)
