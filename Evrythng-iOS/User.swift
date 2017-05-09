@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 public class User: AbstractUser {
-    override init() {
-        
+    required public init?(jsonData: JSON) {
+        fatalError("init(jsonData:) has not been implemented")
     }
 }
