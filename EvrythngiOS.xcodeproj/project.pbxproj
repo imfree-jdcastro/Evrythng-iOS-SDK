@@ -27,6 +27,8 @@
 		084D50B81EC1D5C600E5F396 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 084D50B31EC1D5C600E5F396 /* SwiftyJSON.framework */; };
 		084D50B91EC1D7A200E5F396 /* Moya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 084D50AC1EC1D5BD00E5F396 /* Moya.framework */; };
 		084D50C01EC1D8B300E5F396 /* MoyaSugar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 084D50A91EC1D53700E5F396 /* MoyaSugar.framework */; };
+		084D50C91EC1E78300E5F396 /* EvrythngNetworkDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084D50C81EC1E78300E5F396 /* EvrythngNetworkDispatcher.swift */; };
+		084D50CB1EC1EBA900E5F396 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084D50CA1EC1EBA900E5F396 /* JSON.swift */; };
 		0895C04F1EAF4841002E44A0 /* EvrythngiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0895C0451EAF4840002E44A0 /* EvrythngiOS.framework */; };
 		0895C0541EAF4841002E44A0 /* Evrythng_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0895C0531EAF4841002E44A0 /* Evrythng_iOSTests.swift */; };
 		0895C0561EAF4841002E44A0 /* EvrythngiOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 0895C0481EAF4840002E44A0 /* EvrythngiOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -69,6 +71,8 @@
 		084D50B11EC1D5C600E5F396 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = "../../../../Library/Developer/Xcode/DerivedData/EvrythngiOS-eemufhqffojfgcfmpnrphhrhrrhn/Build/Products/Debug-iphonesimulator/RxSwift/RxSwift.framework"; sourceTree = "<group>"; };
 		084D50B21EC1D5C600E5F396 /* SwiftEventBus.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftEventBus.framework; path = "../../../../Library/Developer/Xcode/DerivedData/EvrythngiOS-eemufhqffojfgcfmpnrphhrhrrhn/Build/Products/Debug-iphonesimulator/SwiftEventBus/SwiftEventBus.framework"; sourceTree = "<group>"; };
 		084D50B31EC1D5C600E5F396 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "../../../../Library/Developer/Xcode/DerivedData/EvrythngiOS-eemufhqffojfgcfmpnrphhrhrrhn/Build/Products/Debug-iphonesimulator/SwiftyJSON/SwiftyJSON.framework"; sourceTree = "<group>"; };
+		084D50C81EC1E78300E5F396 /* EvrythngNetworkDispatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EvrythngNetworkDispatcher.swift; sourceTree = "<group>"; };
+		084D50CA1EC1EBA900E5F396 /* JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
 		0895C0451EAF4840002E44A0 /* EvrythngiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EvrythngiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0895C0481EAF4840002E44A0 /* EvrythngiOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EvrythngiOS.h; sourceTree = "<group>"; };
 		0895C0491EAF4840002E44A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -146,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				080A171C1EB082C000601D6F /* StringUtils.swift */,
+				084D50CA1EC1EBA900E5F396 /* JSON.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -212,6 +217,7 @@
 				089F36AD1EB09C5D003B3301 /* Responses */,
 				089F36AC1EB09C57003B3301 /* Requests */,
 				089F36B21EB0AF5A003B3301 /* EvrythngNetworkService.swift */,
+				084D50C81EC1E78300E5F396 /* EvrythngNetworkDispatcher.swift */,
 			);
 			name = Network;
 			sourceTree = "<group>";
@@ -465,6 +471,8 @@
 			files = (
 				080A16A81EB071CA00601D6F /* AbstractUser.swift in Sources */,
 				084D50A71EC19BE200E5F396 /* EvrythngScannerResultDelegate.swift in Sources */,
+				084D50C91EC1E78300E5F396 /* EvrythngNetworkDispatcher.swift in Sources */,
+				084D50CB1EC1EBA900E5F396 /* JSON.swift in Sources */,
 				0895C0631EAF496C002E44A0 /* Evrythng.swift in Sources */,
 				080A17211EB084FB00601D6F /* EvrythngDelegate.swift in Sources */,
 				0895C0651EAF4B69002E44A0 /* Constants.swift in Sources */,

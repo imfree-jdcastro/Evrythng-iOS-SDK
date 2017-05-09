@@ -17,7 +17,7 @@ public protocol UserDelegate {
     var numberOfFriends: Int { get set }
 }
 
-public enum Gender {
-    case Female
-    case Male
+public enum Gender: String {
+    case Female = "Female"
+    case Male = "Male"
 }

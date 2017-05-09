@@ -7,8 +7,20 @@
 //
 
 import UIKit
+import Moya_SwiftyJSONMapper
+import SwiftyJSON
 
-public class AbstractUser: UserDelegate {
+public class AbstractUser: UserDelegate, ALSwiftyJSONAble {
+
+    required public init?(jsonData:JSON){
+        self.gender = Gender(rawValue: jsonData["gender"].stringValue)
+        self.birthday = jsonData["origin"].date
+        self.canLogin = jsonData["canLogin"].boolValue
+        self.project = jsonData["project"].stringValue
+        self.app = jsonData["app"].stringValue
+        self.numberOfFriends = jsonData["numberOfFriends"].intValue
+    }
+    
     public var gender: Gender? {
         get {
             return .Female
