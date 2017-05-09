@@ -28,7 +28,7 @@ public class EvrythngNetworkDispatcher {
                 
                 do {
                     let abstractUser = try moyaResponse.map(to: AbstractUser.self)
-                    print("SwiftyJSON: \(abstractUser.json)")
+                    print("SwiftyJSON: \(abstractUser)")
                     completionHandler(abstractUser, nil)
                 } catch {
                     print(error)

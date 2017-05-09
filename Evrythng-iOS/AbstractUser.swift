@@ -27,7 +27,7 @@ public class AbstractUser: UserDelegate, ALSwiftyJSONAble {
         return string
     }
     
-    var json: JSON {
+    public class var json: JSON {
         get {
             var dict = [String: AnyObject]()
             let mirror = Mirror(reflecting: self)
@@ -40,46 +40,10 @@ public class AbstractUser: UserDelegate, ALSwiftyJSONAble {
         }
     }
     
-    public var gender: Gender? {
-        get {
-            return .Female
-        } set {
-            
-        }
-    }
-    public var birthday: Date? {
-        get {
-            return Date()
-        } set {
-            
-        }
-    }
-    public var canLogin: Bool? {
-        get {
-            return false
-        } set {
-            
-        }
-    }
-    public var project: String? {
-        get {
-            return nil
-        } set {
-            
-        }
-    }
-    public var app: String? {
-        get {
-            return nil
-        } set {
-            
-        }
-    }
-    public var numberOfFriends: Int {
-        get {
-            return 0
-        } set {
-            
-        }
-    }
+    public var gender: Gender? = .Female
+    public var birthday: Date? = nil
+    public var canLogin: Bool? = false
+    public var project: String? = ""
+    public var app: String? = ""
+    public var numberOfFriends = 0
 }
