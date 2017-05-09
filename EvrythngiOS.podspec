@@ -28,5 +28,11 @@ Pod::Spec.new do |s|
   s.exclude_files = 'Classes/Exclude'
   #s.resources    = 'Evrythng-iOS/*.mp3'
   s.pod_target_xcconfig = { 'SWIFT_VERSION' => '3' }
+  s.dependency 'Alamofire', '~> 4.4'
+  s.dependency 'AlamofireObjectMapper', '~> 4.1'
+  s.dependency 'SwiftyJSON', '~> 3.1'
+  s.dependency 'Moya', '~> 8.0.3'
+  s.dependency 'MoyaSugar', '~> 0.4'
+  s.dependency 'SwiftEventBus', '~> 2.1'
 
 end
