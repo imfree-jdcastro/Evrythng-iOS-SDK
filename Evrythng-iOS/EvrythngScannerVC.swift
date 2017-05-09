@@ -18,7 +18,14 @@ class EvrythngScannerVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) { 
+            self.startScan()
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,7 +34,7 @@ class EvrythngScannerVC: UIViewController {
     
     // MARK: - Public Methods
     
-    public func scan(barcode: String) {
+    public func startScan() {
         self.dismiss(animated: true) { 
             self.evrythngScannerDelegate?.didFinishScan(value: "DEFAULT_SCANNER_VALUE_ABCDE98765123", error: nil)
         }
