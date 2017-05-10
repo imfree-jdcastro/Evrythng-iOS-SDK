@@ -20,7 +20,6 @@
 		080A17211EB084FB00601D6F /* EvrythngDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080A17201EB084FB00601D6F /* EvrythngDelegate.swift */; };
 		084D50A51EC19B3E00E5F396 /* EvrythngScannerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084D50A41EC19B3E00E5F396 /* EvrythngScannerVC.swift */; };
 		084D50A71EC19BE200E5F396 /* EvrythngScannerResultDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084D50A61EC19BE200E5F396 /* EvrythngScannerResultDelegate.swift */; };
-		084D50AD1EC1D5BD00E5F396 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 084D50AB1EC1D5BD00E5F396 /* Alamofire.framework */; };
 		084D50B41EC1D5C600E5F396 /* QRCodeReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 084D50AF1EC1D5C600E5F396 /* QRCodeReader.framework */; };
 		084D50B51EC1D5C600E5F396 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 084D50B01EC1D5C600E5F396 /* Result.framework */; };
 		084D50B71EC1D5C600E5F396 /* SwiftEventBus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 084D50B21EC1D5C600E5F396 /* SwiftEventBus.framework */; };
@@ -100,7 +99,6 @@
 				084D50B71EC1D5C600E5F396 /* SwiftEventBus.framework in Frameworks */,
 				084D50B81EC1D5C600E5F396 /* SwiftyJSON.framework in Frameworks */,
 				084D50B91EC1D7A200E5F396 /* Moya.framework in Frameworks */,
-				084D50AD1EC1D5BD00E5F396 /* Alamofire.framework in Frameworks */,
 				084D50C01EC1D8B300E5F396 /* MoyaSugar.framework in Frameworks */,
 				B9908A8881F0C7D1B38516A9 /* Pods_EvrythngiOS.framework in Frameworks */,
 			);
