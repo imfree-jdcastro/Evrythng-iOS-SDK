@@ -10,11 +10,11 @@ import UIKit
 import Moya_SwiftyJSONMapper
 import SwiftyJSON
 
-public class AbstractUser: UserDelegate, ALSwiftyJSONAble {
+public class AbstractUser: UserDelegate {
 
     required public init?(jsonData:JSON){
         self.gender = Gender(rawValue: jsonData["gender"].stringValue)
-        self.birthday = jsonData["origin"].date
+        self.birthday = jsonData["birthday"].date(format: "yyyy-MM-dd HH:mm:ss")
         self.canLogin = jsonData["canLogin"].boolValue
         self.project = jsonData["project"].stringValue
         self.app = jsonData["app"].stringValue

@@ -8,7 +8,7 @@
 
 import UIKit
 
-public protocol UserDelegate {
+public protocol UserDelegate, ALSwiftyJSONAble {
     var gender: Gender? { get set }
     var birthday: Date? { get set }
     var canLogin: Bool? { get set }

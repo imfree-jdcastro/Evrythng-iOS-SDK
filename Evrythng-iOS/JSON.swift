@@ -18,6 +18,16 @@ extension JSON {
         }
     }
     
+    public func date(format: String) -> Date? {
+        if let str = self.string {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = format
+            dateFormatter.timeZone = TimeZone.autoupdatingCurrent
+            return dateFormatter.date(from: str)
+        }
+        return nil
+    }
+    
     private static let jsonDateFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
         //dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZZ"
