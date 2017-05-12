@@ -11,8 +11,14 @@ import Moya_SwiftyJSONMapper
 import SwiftyJSON
 
 public class AbstractUser: UserDelegate {
-
+    
+    public init() {
+        
+    }
+    
     required public init?(jsonData:JSON){
+        self.jsonData = jsonData
+        self.id = jsonData["evrythngUser"].stringValue
         self.gender = Gender(rawValue: jsonData["gender"].stringValue)
         self.birthday = jsonData["birthday"].date(format: "yyyy-MM-dd HH:mm:ss")
         self.canLogin = jsonData["canLogin"].boolValue
@@ -40,10 +46,13 @@ public class AbstractUser: UserDelegate {
         }
     }
     
-    public var gender: Gender? = .Female
+    public var id: String? = nil
+    public var gender: Gender? = nil
     public var birthday: Date? = nil
     public var canLogin: Bool? = false
-    public var project: String? = ""
-    public var app: String? = ""
+    public var project: String? = nil
+    public var app: String? = nil
     public var numberOfFriends = 0
+    
+    public var jsonData: JSON? = nil
 }

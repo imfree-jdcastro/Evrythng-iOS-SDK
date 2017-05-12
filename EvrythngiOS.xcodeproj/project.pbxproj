@@ -18,6 +18,9 @@
 		080A171D1EB082C000601D6F /* StringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080A171C1EB082C000601D6F /* StringUtils.swift */; };
 		080A171F1EB0838700601D6F /* EvrythngError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080A171E1EB0838700601D6F /* EvrythngError.swift */; };
 		080A17211EB084FB00601D6F /* EvrythngDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080A17201EB084FB00601D6F /* EvrythngDelegate.swift */; };
+		0817DF201EC59A33000A78A7 /* EvrythngUserCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0817DF1F1EC59A33000A78A7 /* EvrythngUserCreator.swift */; };
+		0817DF221EC59A47000A78A7 /* EvrythngNetworkExecutableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0817DF211EC59A47000A78A7 /* EvrythngNetworkExecutableProtocol.swift */; };
+		0817DF241EC5A7F3000A78A7 /* EvrythngOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0817DF231EC5A7F3000A78A7 /* EvrythngOperator.swift */; };
 		084D50A51EC19B3E00E5F396 /* EvrythngScannerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084D50A41EC19B3E00E5F396 /* EvrythngScannerVC.swift */; };
 		084D50A71EC19BE200E5F396 /* EvrythngScannerResultDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084D50A61EC19BE200E5F396 /* EvrythngScannerResultDelegate.swift */; };
 		084D50B41EC1D5C600E5F396 /* QRCodeReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 084D50AF1EC1D5C600E5F396 /* QRCodeReader.framework */; };
@@ -34,8 +37,11 @@
 		0895C0631EAF496C002E44A0 /* Evrythng.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0895C0621EAF496C002E44A0 /* Evrythng.swift */; };
 		0895C0651EAF4B69002E44A0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0895C0641EAF4B69002E44A0 /* Constants.swift */; };
 		089F36B31EB0AF5A003B3301 /* EvrythngNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089F36B21EB0AF5A003B3301 /* EvrythngNetworkService.swift */; };
-		425A4E7F1C5BCBB43855C051 /* Pods_EvrythngiOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53CA5FF653433C9CEEF4EA88 /* Pods_EvrythngiOSTests.framework */; };
-		B9908A8881F0C7D1B38516A9 /* Pods_EvrythngiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8B78FB45A4164A5A971559E /* Pods_EvrythngiOS.framework */; };
+		08A29B8F1EC2F4000042DB8D /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A29B8E1EC2F4000042DB8D /* DateUtils.swift */; };
+		08A29B911EC2FC1B0042DB8D /* EvrythngNetworkServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A29B901EC2FC1B0042DB8D /* EvrythngNetworkServiceError.swift */; };
+		08A29B931EC321460042DB8D /* EvrythngApiConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A29B921EC321460042DB8D /* EvrythngApiConfiguration.swift */; };
+		08A29B951EC327980042DB8D /* UserDefaultsUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A29B941EC327980042DB8D /* UserDefaultsUtils.swift */; };
+		2218639602EC2EE40181EDE1 /* Pods_EvrythngiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8B78FB45A4164A5A971559E /* Pods_EvrythngiOS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +66,9 @@
 		080A171C1EB082C000601D6F /* StringUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringUtils.swift; sourceTree = "<group>"; };
 		080A171E1EB0838700601D6F /* EvrythngError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EvrythngError.swift; sourceTree = "<group>"; };
 		080A17201EB084FB00601D6F /* EvrythngDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EvrythngDelegate.swift; sourceTree = "<group>"; };
+		0817DF1F1EC59A33000A78A7 /* EvrythngUserCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EvrythngUserCreator.swift; sourceTree = "<group>"; };
+		0817DF211EC59A47000A78A7 /* EvrythngNetworkExecutableProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EvrythngNetworkExecutableProtocol.swift; sourceTree = "<group>"; };
+		0817DF231EC5A7F3000A78A7 /* EvrythngOperator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EvrythngOperator.swift; sourceTree = "<group>"; };
 		084D50A41EC19B3E00E5F396 /* EvrythngScannerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EvrythngScannerVC.swift; sourceTree = "<group>"; };
 		084D50A61EC19BE200E5F396 /* EvrythngScannerResultDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EvrythngScannerResultDelegate.swift; sourceTree = "<group>"; };
 		084D50A91EC1D53700E5F396 /* MoyaSugar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MoyaSugar.framework; path = "../../../../Library/Developer/Xcode/DerivedData/EvrythngiOS-eemufhqffojfgcfmpnrphhrhrrhn/Build/Products/Debug-iphonesimulator/MoyaSugar/MoyaSugar.framework"; sourceTree = "<group>"; };
@@ -67,7 +76,6 @@
 		084D50AC1EC1D5BD00E5F396 /* Moya.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Moya.framework; path = "../../../../Library/Developer/Xcode/DerivedData/EvrythngiOS-eemufhqffojfgcfmpnrphhrhrrhn/Build/Products/Debug-iphonesimulator/Moya/Moya.framework"; sourceTree = "<group>"; };
 		084D50AF1EC1D5C600E5F396 /* QRCodeReader.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QRCodeReader.framework; path = "../../../../Library/Developer/Xcode/DerivedData/EvrythngiOS-eemufhqffojfgcfmpnrphhrhrrhn/Build/Products/Debug-iphonesimulator/QRCodeReader.swift/QRCodeReader.framework"; sourceTree = "<group>"; };
 		084D50B01EC1D5C600E5F396 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = "../../../../Library/Developer/Xcode/DerivedData/EvrythngiOS-eemufhqffojfgcfmpnrphhrhrrhn/Build/Products/Debug-iphonesimulator/Result/Result.framework"; sourceTree = "<group>"; };
-		084D50B11EC1D5C600E5F396 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = "../../../../Library/Developer/Xcode/DerivedData/EvrythngiOS-eemufhqffojfgcfmpnrphhrhrrhn/Build/Products/Debug-iphonesimulator/RxSwift/RxSwift.framework"; sourceTree = "<group>"; };
 		084D50B21EC1D5C600E5F396 /* SwiftEventBus.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftEventBus.framework; path = "../../../../Library/Developer/Xcode/DerivedData/EvrythngiOS-eemufhqffojfgcfmpnrphhrhrrhn/Build/Products/Debug-iphonesimulator/SwiftEventBus/SwiftEventBus.framework"; sourceTree = "<group>"; };
 		084D50B31EC1D5C600E5F396 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "../../../../Library/Developer/Xcode/DerivedData/EvrythngiOS-eemufhqffojfgcfmpnrphhrhrrhn/Build/Products/Debug-iphonesimulator/SwiftyJSON/SwiftyJSON.framework"; sourceTree = "<group>"; };
 		084D50C81EC1E78300E5F396 /* EvrythngNetworkDispatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EvrythngNetworkDispatcher.swift; sourceTree = "<group>"; };
@@ -81,10 +89,12 @@
 		0895C0621EAF496C002E44A0 /* Evrythng.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Evrythng.swift; sourceTree = "<group>"; };
 		0895C0641EAF4B69002E44A0 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		089F36B21EB0AF5A003B3301 /* EvrythngNetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EvrythngNetworkService.swift; sourceTree = "<group>"; };
+		08A29B8E1EC2F4000042DB8D /* DateUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
+		08A29B901EC2FC1B0042DB8D /* EvrythngNetworkServiceError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EvrythngNetworkServiceError.swift; sourceTree = "<group>"; };
+		08A29B921EC321460042DB8D /* EvrythngApiConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EvrythngApiConfiguration.swift; sourceTree = "<group>"; };
+		08A29B941EC327980042DB8D /* UserDefaultsUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsUtils.swift; sourceTree = "<group>"; };
 		4F3CBD28626747CA2E332EB4 /* Pods-EvrythngiOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EvrythngiOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EvrythngiOS/Pods-EvrythngiOS.debug.xcconfig"; sourceTree = "<group>"; };
-		51F3D4BF4A9742E207139701 /* Pods-EvrythngiOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EvrythngiOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EvrythngiOSTests/Pods-EvrythngiOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		53CA5FF653433C9CEEF4EA88 /* Pods_EvrythngiOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EvrythngiOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A5FDA884616633C0D237B265 /* Pods-EvrythngiOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EvrythngiOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-EvrythngiOSTests/Pods-EvrythngiOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		D8B78FB45A4164A5A971559E /* Pods_EvrythngiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EvrythngiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F31D6E249DA12BADBFA378C3 /* Pods-EvrythngiOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EvrythngiOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-EvrythngiOS/Pods-EvrythngiOS.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -100,7 +110,7 @@
 				084D50B81EC1D5C600E5F396 /* SwiftyJSON.framework in Frameworks */,
 				084D50B91EC1D7A200E5F396 /* Moya.framework in Frameworks */,
 				084D50C01EC1D8B300E5F396 /* MoyaSugar.framework in Frameworks */,
-				B9908A8881F0C7D1B38516A9 /* Pods_EvrythngiOS.framework in Frameworks */,
+				2218639602EC2EE40181EDE1 /* Pods_EvrythngiOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,7 +119,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0895C04F1EAF4841002E44A0 /* EvrythngiOS.framework in Frameworks */,
-				425A4E7F1C5BCBB43855C051 /* Pods_EvrythngiOSTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,8 +158,27 @@
 			children = (
 				080A171C1EB082C000601D6F /* StringUtils.swift */,
 				084D50CA1EC1EBA900E5F396 /* JSON.swift */,
+				08A29B8E1EC2F4000042DB8D /* DateUtils.swift */,
+				08A29B941EC327980042DB8D /* UserDefaultsUtils.swift */,
 			);
 			name = Utils;
+			sourceTree = "<group>";
+		};
+		0817DF1D1EC59A0C000A78A7 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				0817DF211EC59A47000A78A7 /* EvrythngNetworkExecutableProtocol.swift */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
+		0817DF1E1EC59A11000A78A7 /* Contracts */ = {
+			isa = PBXGroup;
+			children = (
+				0817DF1F1EC59A33000A78A7 /* EvrythngUserCreator.swift */,
+				0817DF231EC5A7F3000A78A7 /* EvrythngOperator.swift */,
+			);
+			name = Contracts;
 			sourceTree = "<group>";
 		};
 		084D50A81EC19BE900E5F396 /* Protocols */ = {
@@ -212,10 +240,14 @@
 		0895C05F1EAF4876002E44A0 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				0817DF1E1EC59A11000A78A7 /* Contracts */,
+				0817DF1D1EC59A0C000A78A7 /* Protocols */,
 				089F36AD1EB09C5D003B3301 /* Responses */,
 				089F36AC1EB09C57003B3301 /* Requests */,
 				089F36B21EB0AF5A003B3301 /* EvrythngNetworkService.swift */,
 				084D50C81EC1E78300E5F396 /* EvrythngNetworkDispatcher.swift */,
+				08A29B901EC2FC1B0042DB8D /* EvrythngNetworkServiceError.swift */,
+				08A29B921EC321460042DB8D /* EvrythngApiConfiguration.swift */,
 			);
 			name = Network;
 			sourceTree = "<group>";
@@ -250,8 +282,6 @@
 			children = (
 				4F3CBD28626747CA2E332EB4 /* Pods-EvrythngiOS.debug.xcconfig */,
 				F31D6E249DA12BADBFA378C3 /* Pods-EvrythngiOS.release.xcconfig */,
-				51F3D4BF4A9742E207139701 /* Pods-EvrythngiOSTests.debug.xcconfig */,
-				A5FDA884616633C0D237B265 /* Pods-EvrythngiOSTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -261,7 +291,6 @@
 			children = (
 				084D50AF1EC1D5C600E5F396 /* QRCodeReader.framework */,
 				084D50B01EC1D5C600E5F396 /* Result.framework */,
-				084D50B11EC1D5C600E5F396 /* RxSwift.framework */,
 				084D50B21EC1D5C600E5F396 /* SwiftEventBus.framework */,
 				084D50B31EC1D5C600E5F396 /* SwiftyJSON.framework */,
 				084D50AB1EC1D5BD00E5F396 /* Alamofire.framework */,
@@ -311,12 +340,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0895C05C1EAF4841002E44A0 /* Build configuration list for PBXNativeTarget "EvrythngiOSTests" */;
 			buildPhases = (
-				30C5E158EC1F2E906DD17A4D /* [CP] Check Pods Manifest.lock */,
 				0895C04A1EAF4841002E44A0 /* Sources */,
 				0895C04B1EAF4841002E44A0 /* Frameworks */,
 				0895C04C1EAF4841002E44A0 /* Resources */,
-				550A08C4745B4808438DADDE /* [CP] Embed Pods Frameworks */,
-				BDB09DB89A9DFB6EBB2E506F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -400,51 +426,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		30C5E158EC1F2E906DD17A4D /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		550A08C4745B4808438DADDE /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EvrythngiOSTests/Pods-EvrythngiOSTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		BDB09DB89A9DFB6EBB2E506F /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EvrythngiOSTests/Pods-EvrythngiOSTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		FA57917B022D87F3FE23D8AF /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -457,7 +438,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EvrythngiOS/Pods-EvrythngiOS-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-EvrythngiOS/Pods-EvrythngiOS-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -469,22 +450,29 @@
 			files = (
 				080A16A81EB071CA00601D6F /* AbstractUser.swift in Sources */,
 				084D50A71EC19BE200E5F396 /* EvrythngScannerResultDelegate.swift in Sources */,
+				08A29B8F1EC2F4000042DB8D /* DateUtils.swift in Sources */,
 				084D50C91EC1E78300E5F396 /* EvrythngNetworkDispatcher.swift in Sources */,
 				084D50CB1EC1EBA900E5F396 /* JSON.swift in Sources */,
 				0895C0631EAF496C002E44A0 /* Evrythng.swift in Sources */,
 				080A17211EB084FB00601D6F /* EvrythngDelegate.swift in Sources */,
 				0895C0651EAF4B69002E44A0 /* Constants.swift in Sources */,
+				08A29B911EC2FC1B0042DB8D /* EvrythngNetworkServiceError.swift in Sources */,
 				080A171F1EB0838700601D6F /* EvrythngError.swift in Sources */,
+				0817DF201EC59A33000A78A7 /* EvrythngUserCreator.swift in Sources */,
 				080A16AA1EB074C800601D6F /* EvrythngScanner.swift in Sources */,
 				080A16A31EB06B1100601D6F /* EvrythngScannerDelegate.swift in Sources */,
 				080A16A01EB0521D00601D6F /* User.swift in Sources */,
 				080A17031EB07E1400601D6F /* EvrythngScannerError.swift in Sources */,
 				080A169C1EB0500C00601D6F /* Thng.swift in Sources */,
 				080A171D1EB082C000601D6F /* StringUtils.swift in Sources */,
+				08A29B931EC321460042DB8D /* EvrythngApiConfiguration.swift in Sources */,
 				084D50A51EC19B3E00E5F396 /* EvrythngScannerVC.swift in Sources */,
 				089F36B31EB0AF5A003B3301 /* EvrythngNetworkService.swift in Sources */,
+				0817DF241EC5A7F3000A78A7 /* EvrythngOperator.swift in Sources */,
 				080A169A1EB04FFA00601D6F /* Product.swift in Sources */,
+				08A29B951EC327980042DB8D /* UserDefaultsUtils.swift in Sources */,
 				080A16A61EB06B7900601D6F /* UserDelegate.swift in Sources */,
+				0817DF221EC59A47000A78A7 /* EvrythngNetworkExecutableProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -618,6 +606,7 @@
 			baseConfigurationReference = 4F3CBD28626747CA2E332EB4 /* Pods-EvrythngiOS.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
@@ -641,6 +630,7 @@
 			baseConfigurationReference = F31D6E249DA12BADBFA378C3 /* Pods-EvrythngiOS.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
@@ -660,7 +650,6 @@
 		};
 		0895C05D1EAF4841002E44A0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 51F3D4BF4A9742E207139701 /* Pods-EvrythngiOSTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = "Evrythng-iOSTests/Info.plist";
@@ -673,7 +662,6 @@
 		};
 		0895C05E1EAF4841002E44A0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A5FDA884616633C0D237B265 /* Pods-EvrythngiOSTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = "Evrythng-iOSTests/Info.plist";

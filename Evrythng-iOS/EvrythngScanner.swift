@@ -29,7 +29,7 @@ public class EvrythngScanner {
         self.delegate = delegate
     }
     
-    public final func queryScanResult(barcode: String) -> (result: String, error: Error?) {
+    public final func identify(barcode: String) -> (result: String, error: Error?) {
         return ("QUERY_SCAN_RESULT_SUCCESS: \(barcode)", nil)
     }
     
@@ -72,7 +72,7 @@ extension EvrythngScanner: EvrythngScannerDelegate {
                 print("Barcode Value is NULL")
                 return
             }
-            print("Default Scan Result: \(self.queryScanResult(barcode: val))")
+            print("Default Scan Result: \(self.identify(barcode: val))")
             return
         }
         print(err.localizedDescription)

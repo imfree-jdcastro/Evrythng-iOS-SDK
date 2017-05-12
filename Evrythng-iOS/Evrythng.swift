@@ -11,6 +11,7 @@ import UIKit
 public class Evrythng {
     
     private static let TAG = "Evrythng"
+
     
     // MARK: Private class vars
     
@@ -41,7 +42,14 @@ public class Evrythng {
             self.delegate?.evrythngInitializationDidFail()
         } else {
             // TODO: Authenticate in Evrythng API
+            UserDefaultsUtils.save(key: "pref_key_authorization", value: self.appToken! as AnyObject)
             self.delegate?.evrythngInitializationDidSucceed()
         }
+    }
+}
+
+public class AuthService {
+    public class func createUser(user: User) {
+        
     }
 }

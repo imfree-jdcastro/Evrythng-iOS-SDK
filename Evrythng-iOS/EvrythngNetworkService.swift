@@ -14,13 +14,17 @@ import MoyaSugar
 public enum EvrythngNetworkService {
     case url(String)
     case userRepos(owner: String)
+    
+    case createUser(user: User?)
+    case deleteUser(userId: String)
+    
     case createIssue(owner: String, repo: String, title: String, body: String?)
     case editIssue(owner: String, repo: String, number: Int, title: String?, body: String?)
 }
 
 extension EvrythngNetworkService: SugarTargetType {
     
-    public var baseURL: URL { return URL(string: "https://jsonblob.com/api")! }
+    public var baseURL: URL { return URL(string: "https://api.evrythng.com")! }
     
     /// method + path
     public var route: Route {
@@ -33,6 +37,16 @@ extension EvrythngNetworkService: SugarTargetType {
             
         case .createIssue(let owner, let repo, _, _):
             return .post("/repos/\(owner)/\(repo)/issues")
+            
+        case .createUser(let user):
+            var folder = "/auth/evrythng/users"
+            if(user == nil) {
+                folder = self.setQueryParams(pathSrc: folder, dict: ["anonymous":"true"])
+            }
+            return .post(folder)
+            
+        case .deleteUser(let userId):
+            return .delete("/users/\(userId)")
             
         case .editIssue(let owner, let repo, let number, _, _):
             return .patch("/repos/\(owner)/\(repo)/issues/\(number)")
@@ -64,6 +78,16 @@ extension EvrythngNetworkService: SugarTargetType {
                 "body": body,
             ]
             
+        case .createUser(let user):
+            return JSONEncoding() => user!.jsonData!.dictionaryObject!
+            /*
+            [
+                "firstName": "Test First1", "lastName": "Test Last1", "email": "validemail1@email.com", "password": "testPassword1"
+            ]
+            */
+        case .deleteUser(_):
+            return nil
+            
         case .editIssue(_, _, _, let title, let body):
             // Use `URLEncoding()` as default when not specified
             return [
@@ -81,33 +105,83 @@ extension EvrythngNetworkService: SugarTargetType {
             return "{\"id\": 100, \"owner\": \"\(owner)}".utf8Encoded
         case .editIssue(_, let owner, _, let title, _):
             return "{\"id\": 100, \"owner\": \"\(owner)}".utf8Encoded
+        case .createUser(_):
+            return "{}".utf8Encoded
+        case .deleteUser(_):
+            return "{}".utf8Encoded
         case .userRepos(let ownerId):
             return "{\"ownerId\": \"\(ownerId)}".utf8Encoded
             // Provided you have a file named accounts.json in your bundle.
             /*
-            guard let path = Bundle.main.path(forResource: "accounts", ofType: "json"),
-                let data = Data(base64Encoded: path) else {
-                    return Data()
-            }
-            return data
+             guard let path = Bundle.main.path(forResource: "accounts", ofType: "json"),
+             let data = Data(base64Encoded: path) else {
+             return Data()
+             }
+             return data
              */
         }
     }
     
     public var httpHeaderFields: [String: String]? {
-        return [
-            "Accept": "application/json",
-            "Content-Type": "application/json"
-        ]
+        var headers: [String:String] = [:]
+        
+        headers["Accept"] = "application/json"
+        headers["Content-Type"] = "application/json"
+        
+        var authorization: String?
+        switch(self) {
+        case .deleteUser:
+            // Operator API Key
+            authorization = "hohzaKH7VbVp659Pnr5m3xg2DpKBivg9rFh6PttT5AnBtEn3s17B8OPAOpBjNTWdoRlosLTxJmUrpjTi"
+        default:
+            authorization = UserDefaultsUtils.get(key: "pref_key_authorization") as? String
+            if let authorization = UserDefaultsUtils.get(key: "pref_key_authorization") as? String{
+                headers["Authorization"] = authorization
+            }
+        }
+        
+        if let auth = authorization {
+            if(!auth.isEmpty) {
+                headers["Authorization"] = auth
+            }
+        }
+        
+        print("Headers: \(headers)")
+        return headers
     }
     
     public var task: Task {
         switch self {
-        case .userRepos, .createIssue, .editIssue, .url:
+        case .userRepos, .createIssue, .editIssue, .createUser, .url:
             fallthrough
         default:
             return .request
         }
+    }
+}
+
+extension EvrythngNetworkService {
+    
+    func setQueryParams(pathSrc: String, dict: Dictionary<String, String>) -> String {
+        
+        var pathWithQueryParams = pathSrc
+        
+        var i=0
+        for item in dict {
+            let key = item.key, val = item.value
+            
+            if(i>0) {
+                pathWithQueryParams += "&"
+            } else {
+                pathWithQueryParams += "?"
+            }
+            
+            pathWithQueryParams += "\(key)=\(val)"
+            
+            i+=1
+        }
+        
+        return pathWithQueryParams
     }
 }
 
@@ -121,4 +195,4 @@ private extension String {
         return self.data(using: .utf8)!
     }
 }
- 
+

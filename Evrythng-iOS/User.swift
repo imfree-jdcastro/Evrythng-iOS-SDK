@@ -8,9 +8,29 @@
 
 import UIKit
 import SwiftyJSON
+import ObjectMapper
 
-public class User: AbstractUser {
+public final class User: AbstractUser {
+    
+    public var email: String?
+    public var password: String?
+    public var firstName: String?
+    public var lastName: String?
+    public private(set) var activationCode: String?
+    public private(set) var status: String?
+    
+    override public init() {
+        super.init()
+    }
+    
     required public init?(jsonData: JSON) {
-        fatalError("init(jsonData:) has not been implemented")
+        super.init(jsonData: jsonData)
+        
+        self.email = jsonData["email"].stringValue
+        self.password = jsonData["password"].stringValue
+        self.firstName = jsonData["firstName"].stringValue
+        self.lastName = jsonData["lastName"].stringValue
+        self.activationCode = jsonData["activationCode"].stringValue
+        self.status = jsonData["status"].stringValue
     }
 }

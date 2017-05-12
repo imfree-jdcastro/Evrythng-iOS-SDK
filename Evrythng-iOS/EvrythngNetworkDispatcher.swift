@@ -9,31 +9,38 @@
 import UIKit
 import Moya
 import MoyaSugar
+import SwiftyJSON
 
 public class EvrythngNetworkDispatcher {
     
+    /*
     public class func getUser(completionHandler: @escaping (AbstractUser?, Swift.Error?) -> Void)  {
         
         let userRepo = EvrythngNetworkService.userRepos(owner: "3c4b81f4-34ac-11e7-ae4c-b923aa7f9a8c")
-        let provider = MoyaProvider<EvrythngNetworkService>()
+        let provider = MoyaSugarProvider<EvrythngNetworkService>()
         
         provider.request(userRepo) { result in
             switch result {
             case let .success(moyaResponse):
                 let data = moyaResponse.data
-                let statusCode = moyaResponse.statusCode
                 
-                let datastring = NSString(data: data, encoding: String.Encoding.utf8.rawValue)
-                print("Data: \(datastring) Status Code: \(statusCode)")
-                
-                do {
-                    let abstractUser = try moyaResponse.map(to: AbstractUser.self)
-                    print("SwiftyJSON: \(abstractUser)")
-                    completionHandler(abstractUser, nil)
-                } catch {
-                    print(error)
-                    completionHandler(nil, error)      
+                if let datastring = String(data: data, encoding: .utf8) {
+                    print("\(#function) Raw Response: \n\(datastring)")
+                    
+                    if let abstractUser = AbstractUser(JSONString: datastring), let jsonStr = abstractUser.toJSONString() {
+                        
+                        print("Serialized:\(jsonStr)")
+                        completionHandler(abstractUser, nil)
+                        
+                    } else {
+                        print("Unable to parse AbstractUser string: \(datastring)")
+                        completionHandler(nil, EvrythngNetworkServiceError.dataParseException(source: datastring))
+                    }
+                } else {
+                    print("Unable to parse response: \(#function)")
+                    completionHandler(nil, EvrythngNetworkServiceError.responseParseException)
                 }
+                //let abstractUser = try moyaResponse.map(to: AbstractUser.self)
             // do something with the response data or statusCode
             case let .failure(error):
                 print("Error: \(error)")
@@ -46,5 +53,6 @@ public class EvrythngNetworkDispatcher {
             }
         }
     }
+ */
 
 }
