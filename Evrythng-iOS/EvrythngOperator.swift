@@ -11,7 +11,7 @@ import Moya
 import MoyaSugar
 import Moya_SwiftyJSONMapper
 
-public class EvrythngOperator {
+public class EvrythngOperator: EvrythngNetworkExecutableProtocol {
     
     private var userId: String?
     private var operatorApiKey: String
@@ -25,12 +25,16 @@ public class EvrythngOperator {
         return self
     }
     
-    public func execute(completionHandler: @escaping (Swift.Error?) -> Void) {
+    public func getDefaultProvider() -> EvrythngMoyaProvider<EvrythngNetworkService> {
+        return EvrythngMoyaProvider<EvrythngNetworkService>()
+    }
+    
+    public func execute(completionHandler: @escaping (User? , Swift.Error?) -> Void) {
         if let userId = self.userId {
             let userRepo = EvrythngNetworkService.deleteUser(userId: userId)
-            let provider = MoyaSugarProvider<EvrythngNetworkService>()
+            //let provider = MoyaSugarProvider<EvrythngNetworkService>()
             
-            provider.request(userRepo) { result in
+            self.getDefaultProvider().request(userRepo) { result in
                 switch result {
                 case let .success(moyaResponse):
                     let data = moyaResponse.data
@@ -40,9 +44,9 @@ public class EvrythngOperator {
                     print("Data: \(datastring) Status Code: \(statusCode)")
                     
                     if(moyaResponse.statusCode == 200) {
-                        completionHandler(nil)
+                        completionHandler(nil, nil)
                     } else {
-                        completionHandler(EvrythngNetworkServiceError.userDeletionFailedException)
+                        completionHandler(nil, EvrythngNetworkServiceError.userDeletionFailedException)
                     }
                     
                 case let .failure(error):
@@ -51,7 +55,7 @@ public class EvrythngOperator {
                     // wasn't sent (connectivity), or no response was received (server
                     // timed out).  If the server responds with a 4xx or 5xx error, that
                     // will be sent as a ".success"-ful response.
-                    completionHandler(error)
+                    completionHandler(nil, error)
                     break
                 }
             }

@@ -12,6 +12,7 @@ public class Evrythng {
     
     private static let TAG = "Evrythng"
 
+    static var apiManager: EvrythngApiManager?
     
     // MARK: Private class vars
     
@@ -33,7 +34,6 @@ public class Evrythng {
     static var delegate: EvrythngDelegate?
     
     public class func initialize(delegate: EvrythngDelegate?) {
-        
         self.delegate = delegate
         
         print("\(TAG) App Token: \(self.appToken)")
@@ -41,15 +41,17 @@ public class Evrythng {
         if(StringUtils.isStringEmpty(string: self.appToken)) {
             self.delegate?.evrythngInitializationDidFail()
         } else {
+            
+            self.apiManager = EvrythngApiManager(apiKey: self.appToken!)
+            
             // TODO: Authenticate in Evrythng API
             UserDefaultsUtils.save(key: "pref_key_authorization", value: self.appToken! as AnyObject)
             self.delegate?.evrythngInitializationDidSucceed()
         }
     }
-}
-
-public class AuthService {
-    public class func createUser(user: User) {
-        
+    
+    private init() {
+    
     }
+    
 }

@@ -17,20 +17,21 @@ public class EvrythngScanner {
     var barcodeScannerVC: EvrythngScannerVC
     var presentingVC: UIViewController?
     
-    required public init(presentingVC: UIViewController?) {
+    required public init(presentedBy presentingVC: UIViewController?) {
         self.presentingVC = presentingVC
         self.barcodeScannerVC = EvrythngScannerVC()
         self.barcodeScannerVC.evrythngScannerDelegate = self
     }
     
-    convenience init(presentingVC: UIViewController?, delegate: EvrythngScannerResultDelegate?) {
-        self.init(presentingVC: presentingVC)
+    convenience public init(presentedBy presentingVC: UIViewController?, withResultDelegate delegate: EvrythngScannerResultDelegate?) {
+        self.init(presentedBy: presentingVC)
         self.presentingVC = presentingVC
         self.delegate = delegate
     }
     
-    public final func identify(barcode: String) -> (result: String, error: Error?) {
-        return ("QUERY_SCAN_RESULT_SUCCESS: \(barcode)", nil)
+    public final func identify(barcode: String, completionHandler: @escaping (_ result: String, _ error: Error?) -> Void) {
+        completionHandler("QUERY_SCAN_RESULT_SUCCESS: \(barcode)", nil)
+        //return ("QUERY_SCAN_RESULT_SUCCESS: \(barcode)", nil)
     }
     
     public final func scanBarcode() {
@@ -72,15 +73,12 @@ extension EvrythngScanner: EvrythngScannerDelegate {
                 print("Barcode Value is NULL")
                 return
             }
-            print("Default Scan Result: \(self.identify(barcode: val))")
+            self.identify(barcode: val, completionHandler: { (result, err) in
+                self.delegate?.didFinishScanResult(result: result, error: err)
+            })
+            //print("Default Scan Result: \(self.identify(barcode: val))")
             return
         }
         print(err.localizedDescription)
-    }
-}
-
-extension EvrythngScanner: EvrythngScannerResultDelegate {
-    public func didFinishScanResult(result: String, error: Error?) {
-        
     }
 }

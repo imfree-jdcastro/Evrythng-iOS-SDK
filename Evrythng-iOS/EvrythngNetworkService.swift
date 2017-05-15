@@ -195,4 +195,3 @@ private extension String {
         return self.data(using: .utf8)!
     }
 }
-

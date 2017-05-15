@@ -12,20 +12,24 @@ import Moya
 import MoyaSugar
 import Moya_SwiftyJSONMapper
 
-public class EvrythngUserCreator {
+public class EvrythngUserCreator: EvrythngNetworkExecutableProtocol {
     
-    var user: User?
+    private var user: User?
     
     public init(user: User?) {
         self.user = user
     }
     
+    public func getDefaultProvider() -> EvrythngMoyaProvider<EvrythngNetworkService> {
+        return EvrythngMoyaProvider<EvrythngNetworkService>()
+    }
+    
     public func execute(completionHandler: @escaping (User?, Swift.Error?) -> Void) {
         
         let userRepo = EvrythngNetworkService.createUser(user: self.user)
-        let provider = MoyaSugarProvider<EvrythngNetworkService>()
+        //let provider = MoyaSugarProvider<EvrythngNetworkService>()
         
-        provider.request(userRepo) { result in
+        self.getDefaultProvider().request(userRepo) { result in
             switch result {
             case let .success(moyaResponse):
                 let data = moyaResponse.data
