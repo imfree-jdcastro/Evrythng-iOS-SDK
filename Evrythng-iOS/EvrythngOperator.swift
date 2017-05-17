@@ -14,9 +14,13 @@ import Moya_SwiftyJSONMapper
 public class EvrythngOperator: EvrythngNetworkExecutableProtocol {
     
     private var userId: String?
-    private var operatorApiKey: String
+    private var operatorApiKey: String!
     
-    public required init(operatorApiKey: String) {
+    private init() {
+        
+    }
+    
+    internal init(operatorApiKey: String) {
         self.operatorApiKey = operatorApiKey
     }
     
@@ -31,7 +35,7 @@ public class EvrythngOperator: EvrythngNetworkExecutableProtocol {
     
     public func execute(completionHandler: @escaping (User? , Swift.Error?) -> Void) {
         if let userId = self.userId {
-            let userRepo = EvrythngNetworkService.deleteUser(userId: userId)
+            let userRepo = EvrythngNetworkService.deleteUser(operatorApiKey: self.operatorApiKey, userId: userId)
             //let provider = MoyaSugarProvider<EvrythngNetworkService>()
             
             self.getDefaultProvider().request(userRepo) { result in

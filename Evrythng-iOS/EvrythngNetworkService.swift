@@ -16,7 +16,7 @@ public enum EvrythngNetworkService {
     case userRepos(owner: String)
     
     case createUser(user: User?)
-    case deleteUser(userId: String)
+    case deleteUser(operatorApiKey: String, userId: String)
     
     case createIssue(owner: String, repo: String, title: String, body: String?)
     case editIssue(owner: String, repo: String, number: Int, title: String?, body: String?)
@@ -45,7 +45,7 @@ extension EvrythngNetworkService: SugarTargetType {
             }
             return .post(folder)
             
-        case .deleteUser(let userId):
+        case .deleteUser(_, let userId):
             return .delete("/users/\(userId)")
             
         case .editIssue(let owner, let repo, let number, _, _):
@@ -85,7 +85,7 @@ extension EvrythngNetworkService: SugarTargetType {
                 "firstName": "Test First1", "lastName": "Test Last1", "email": "validemail1@email.com", "password": "testPassword1"
             ]
             */
-        case .deleteUser(_):
+        case .deleteUser:
             return nil
             
         case .editIssue(_, _, _, let title, let body):
@@ -107,7 +107,7 @@ extension EvrythngNetworkService: SugarTargetType {
             return "{\"id\": 100, \"owner\": \"\(owner)}".utf8Encoded
         case .createUser(_):
             return "{}".utf8Encoded
-        case .deleteUser(_):
+        case .deleteUser:
             return "{}".utf8Encoded
         case .userRepos(let ownerId):
             return "{\"ownerId\": \"\(ownerId)}".utf8Encoded
@@ -130,9 +130,10 @@ extension EvrythngNetworkService: SugarTargetType {
         
         var authorization: String?
         switch(self) {
-        case .deleteUser:
+        case .deleteUser(let operatorApiKey, _):
             // Operator API Key
-            authorization = "hohzaKH7VbVp659Pnr5m3xg2DpKBivg9rFh6PttT5AnBtEn3s17B8OPAOpBjNTWdoRlosLTxJmUrpjTi"
+            //authorization = "hohzaKH7VbVp659Pnr5m3xg2DpKBivg9rFh6PttT5AnBtEn3s17B8OPAOpBjNTWdoRlosLTxJmUrpjTi"
+            authorization = operatorApiKey
         default:
             authorization = UserDefaultsUtils.get(key: "pref_key_authorization") as? String
             if let authorization = UserDefaultsUtils.get(key: "pref_key_authorization") as? String{

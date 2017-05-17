@@ -14,9 +14,13 @@ import Moya_SwiftyJSONMapper
 
 public class EvrythngUserCreator: EvrythngNetworkExecutableProtocol {
     
-    private var user: User?
+    private var user: User!
     
-    public init(user: User?) {
+    private init() {
+    
+    }
+    
+    internal init(user: User) {
         self.user = user
     }
     

@@ -10,16 +10,29 @@
 
 import UIKit
 
+public enum EvrythngScannerModes: Int {
+    case BARCODE = 1
+    case QRCODE
+}
+
+public enum EvrythngScannerModeStrategy {
+    case HIERARCHICAL // Will use the strategy from 1 ..< EvrythngScannerModes.rawValue
+    case STATIC // Will only use the selected EvrythngScannerMode itself
+}
+
 public class EvrythngScanner {
 
-    var delegate: EvrythngScannerResultDelegate?
+    weak var delegate: EvrythngScannerResultDelegate?
     
     var barcodeScannerVC: EvrythngScannerVC
     var presentingVC: UIViewController?
     
+    var scannerMode: EvrythngScannerModes = .QRCODE
+    var scannerModeStrategy: EvrythngScannerModeStrategy = .HIERARCHICAL
+    
     required public init(presentedBy presentingVC: UIViewController?) {
         self.presentingVC = presentingVC
-        self.barcodeScannerVC = EvrythngScannerVC()
+        self.barcodeScannerVC = EvrythngScannerVC(nibName: "EvrythngScannerVC", bundle: Bundle(identifier: "com.imfreemobile.EvrythngiOS"))
         self.barcodeScannerVC.evrythngScannerDelegate = self
     }
     
@@ -31,11 +44,18 @@ public class EvrythngScanner {
     
     public final func identify(barcode: String, completionHandler: @escaping (_ result: String, _ error: Error?) -> Void) {
         completionHandler("QUERY_SCAN_RESULT_SUCCESS: \(barcode)", nil)
-        //return ("QUERY_SCAN_RESULT_SUCCESS: \(barcode)", nil)
+    }
+    
+    public final func identify(barcode: String) {
+        self.delegate?.didFinishScanResult(result: "QUERY_SCAN_RESULT_SUCCESS: \(barcode)", error: nil)
     }
     
     public final func scanBarcode() {
-        self.presentingVC?.present(self.barcodeScannerVC, animated: true, completion: nil)
+        if let navPresentingVC = self.presentingVC?.navigationController {
+            navPresentingVC.pushViewController(self.barcodeScannerVC, animated: true)
+        } else {
+             self.presentingVC?.present(self.barcodeScannerVC, animated: true, completion: nil)
+        }
     }
     
     /*

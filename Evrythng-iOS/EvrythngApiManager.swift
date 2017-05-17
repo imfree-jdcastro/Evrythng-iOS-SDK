@@ -12,9 +12,25 @@ public final class EvrythngApiManager {
     
     private var apiKey:String?
     
-    // ScanService
-    // ThngService
-    // ProductService
+    public var scanService: ScanService {
+        return ScanService()
+    }
+    
+    public var thngService: ThngService {
+        return ThngService()
+    }
+    
+    public var authService: AuthService {
+        return AuthService()
+    }
+    
+    public var actionService: ActionService {
+        return ActionService()
+    }
+    
+    public var productService: ProductService {
+        return ProductService()
+    }
     
     public init(apiKey: String) {
         self.apiKey = apiKey
