@@ -10,29 +10,36 @@ import UIKit
 import AVFoundation
 
 protocol EvrythngCameraFrameExtractorDelegate: class {
-    func captured(uiImage image: UIImage)
-    func captured(ciImage image: CIImage)
+    func willStartCapture()
+    func captured(uiImage image: UIImage, ciImage: CIImage)
+    func captured2(value: String)
 }
 
-internal class EvrythngCameraFrameExtractor: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate {
+internal class EvrythngCameraFrameExtractor: NSObject {
     
     private let position = AVCaptureDevicePosition.back
     private let quality = AVCaptureSessionPresetMedium
     
     private var permissionGranted = false
     private let sessionQueue = DispatchQueue(label: "session queue")
-    private let captureSession = AVCaptureSession()
     private let context = CIContext()
+    
+    let captureSession = AVCaptureSession()
     
     weak var delegate: EvrythngCameraFrameExtractorDelegate?
     
     override init() {
         super.init()
         checkPermission()
-        sessionQueue.async { [unowned self] in
-            self.configureSession()
+        self.configureSession()
+        self.sessionQueue.async { [unowned self] in
+            self.delegate?.willStartCapture()
             self.captureSession.startRunning()
         }
+    }
+    
+    deinit {
+        print("\(#function) EvrythngCameraFrameExtractor")
     }
     
     // MARK: AVSession configuration
@@ -57,10 +64,18 @@ internal class EvrythngCameraFrameExtractor: NSObject, AVCaptureVideoDataOutputS
         self.captureSession.stopRunning()
     }
     
+    public func resumeSessionQueue() {
+        self.sessionQueue.resume()
+    }
+    
+    public func pauseSessionQueue() {
+        self.sessionQueue.suspend()
+    }
+    
     // MARK: Private Class Functions
     
     private func requestPermission() {
-        sessionQueue.suspend()
+        self.sessionQueue.suspend()
         AVCaptureDevice.requestAccess(forMediaType: AVMediaTypeVideo) { [unowned self] granted in
             if(granted) {
                 print("Camera Permission is now Granted!. Woohoo! :)")
@@ -73,31 +88,34 @@ internal class EvrythngCameraFrameExtractor: NSObject, AVCaptureVideoDataOutputS
     }
     
     private func configureSession() {
-        guard permissionGranted else { return }
-        captureSession.sessionPreset = quality
+        guard self.permissionGranted else { return }
+        self.captureSession.sessionPreset = quality
         guard let captureDevice = selectCaptureDevice() else { return }
         guard let captureDeviceInput = try? AVCaptureDeviceInput(device: captureDevice) else { return }
-        guard captureSession.canAddInput(captureDeviceInput) else { return }
-        captureSession.addInput(captureDeviceInput)
+        guard self.captureSession.canAddInput(captureDeviceInput) else { return }
+        self.captureSession.addInput(captureDeviceInput)
         let videoOutput = AVCaptureVideoDataOutput()
         videoOutput.setSampleBufferDelegate(self, queue: DispatchQueue(label: "sample buffer"))
-        guard captureSession.canAddOutput(videoOutput) else { return }
-        captureSession.addOutput(videoOutput)
+        guard self.captureSession.canAddOutput(videoOutput) else { return }
+        self.captureSession.addOutput(videoOutput)
         guard let connection = videoOutput.connection(withMediaType: AVFoundation.AVMediaTypeVideo) else { return }
         guard connection.isVideoOrientationSupported else { return }
         guard connection.isVideoMirroringSupported else { return }
         connection.videoOrientation = .portrait
         connection.isVideoMirrored = position == .front
+
+        // READ BARCODES
+        
+        let metaDataOutput = AVCaptureMetadataOutput()
+        metaDataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.global())
+        self.captureSession.addOutput(metaDataOutput)
+        metaDataOutput.metadataObjectTypes = metaDataOutput.availableMetadataObjectTypes
+        
         print("Configure Session Successful")
     }
     
     private func selectCaptureDevice() -> AVCaptureDevice? {
-        if #available(iOS 10.2, *) {
-            return AVCaptureDeviceDiscoverySession(deviceTypes: [.builtInDualCamera], mediaType: AVMediaTypeVideo, position: position).devices.first
-        } else {
-            // Fallback on earlier versions
-            return AVCaptureDeviceDiscoverySession(deviceTypes: [.builtInWideAngleCamera], mediaType: AVMediaTypeVideo, position: position).devices.first
-        }
+        return AVCaptureDeviceDiscoverySession(deviceTypes: [.builtInWideAngleCamera], mediaType: AVMediaTypeVideo, position: position).devices.first
         /*
         return AVCaptureDevice.devices().filter {
             ($0 as AnyObject).hasMediaType(AVMediaTypeVideo) &&
@@ -108,26 +126,31 @@ internal class EvrythngCameraFrameExtractor: NSObject, AVCaptureVideoDataOutputS
     
     // MARK: Sample buffer to UIImage conversion
     
-    private func ciImageFromSampleBuffer(sampleBuffer: CMSampleBuffer) -> CIImage? {
+    func ciImageFromSampleBuffer(sampleBuffer: CMSampleBuffer) -> CIImage? {
         guard let imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else {
             return nil
         }
         return CIImage(cvPixelBuffer: imageBuffer)
     }
     
-    private func imageFromSampleBuffer(sampleBuffer: CMSampleBuffer) -> UIImage? {
+    func imageFromSampleBuffer(sampleBuffer: CMSampleBuffer) -> UIImage? {
         guard let ciImage = self.ciImageFromSampleBuffer(sampleBuffer: sampleBuffer) else {
             return nil
         }
         return self.uiImageFrom(ciImage: ciImage)
     }
     
-    private func uiImageFrom(ciImage: CIImage) -> UIImage? {
+    func uiImageFrom(ciImage: CIImage) -> UIImage? {
         guard let cgImage = context.createCGImage(ciImage, from: ciImage.extent) else { return nil }
         return UIImage(cgImage: cgImage)
     }
     
-    // MARK: AVCaptureVideoDataOutputSampleBufferDelegate
+    
+}
+
+// MARK: AVCaptureVideoDataOutputSampleBufferDelegate
+
+extension EvrythngCameraFrameExtractor: AVCaptureVideoDataOutputSampleBufferDelegate {
     
     func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputSampleBuffer sampleBuffer: CMSampleBuffer!, from connection: AVCaptureConnection!) {
         
@@ -142,9 +165,47 @@ internal class EvrythngCameraFrameExtractor: NSObject, AVCaptureVideoDataOutputS
         DispatchQueue.main.async { [unowned self] in
             //print("Is Running: \(self.captureSession.isRunning)")
             if(self.captureSession.isRunning) {
-                self.delegate?.captured(uiImage: uiImage)
-                self.delegate?.captured(ciImage: ciImage)
+                self.delegate?.captured(uiImage: uiImage, ciImage: ciImage)
             }
         }
+    }
+}
+
+// MARK: AVCaptureMetadataOutputObjectsDelegate
+
+extension EvrythngCameraFrameExtractor: AVCaptureMetadataOutputObjectsDelegate {
+    
+    func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [Any]!, from connection: AVCaptureConnection!) {
+     
+        var detectionString : String!
+        let barCodeTypes = [AVMetadataObjectTypeUPCECode,
+                            AVMetadataObjectTypeCode39Code,
+                            AVMetadataObjectTypeCode39Mod43Code,
+                            AVMetadataObjectTypeEAN13Code,
+                            AVMetadataObjectTypeEAN8Code,
+                            AVMetadataObjectTypeCode93Code,
+                            AVMetadataObjectTypeCode128Code,
+                            AVMetadataObjectTypePDF417Code,
+                            AVMetadataObjectTypeAztecCode
+        ]
+        
+        
+        // The scanner is capable of capturing multiple 2-dimensional barcodes in one scan.
+        for metadata in metadataObjects {
+            
+            for barcodeType in barCodeTypes {
+                
+                if (metadata as AnyObject).type == barcodeType {
+                    detectionString = (metadata as! AVMetadataMachineReadableCodeObject).stringValue
+                    //self.captureSession.stopRunning()
+                    DispatchQueue.main.async { 
+                        self.delegate?.captured2(value: detectionString)
+                    }
+                    break
+                }
+                
+            }
+        }
+        print(detectionString)
     }
 }

@@ -33,7 +33,6 @@ public class EvrythngScanner {
     required public init(presentedBy presentingVC: UIViewController?) {
         self.presentingVC = presentingVC
         self.barcodeScannerVC = EvrythngScannerVC(nibName: "EvrythngScannerVC", bundle: Bundle(identifier: "com.imfreemobile.EvrythngiOS"))
-        self.barcodeScannerVC.evrythngScannerDelegate = self
     }
     
     convenience public init(presentedBy presentingVC: UIViewController?, withResultDelegate delegate: EvrythngScannerResultDelegate?) {
@@ -42,8 +41,13 @@ public class EvrythngScanner {
         self.delegate = delegate
     }
     
+    deinit {
+        print("\(#function) EvrythngScanner")
+    }
+    
     public final func identify(barcode: String, completionHandler: @escaping (_ result: String, _ error: Error?) -> Void) {
-        completionHandler("QUERY_SCAN_RESULT_SUCCESS: \(barcode)", nil)
+        //completionHandler("QUERY_SCAN_RESULT_SUCCESS: \(barcode)", nil)
+        completionHandler("\(barcode)", nil)
     }
     
     public final func identify(barcode: String) {
@@ -51,6 +55,7 @@ public class EvrythngScanner {
     }
     
     public final func scanBarcode() {
+        self.barcodeScannerVC.evrythngScannerDelegate = self
         if let navPresentingVC = self.presentingVC?.navigationController {
             navPresentingVC.pushViewController(self.barcodeScannerVC, animated: true)
         } else {
@@ -58,47 +63,42 @@ public class EvrythngScanner {
         }
     }
     
-    /*
-    public func startScan() throws {
-        
-        let startScanCompletion: () -> Void = {
-            self.delegate?.didStartScan()
-            // TODO: Signal Evrythng API that it will start scanning
-        }
-        
-        if let barcodeScannerVC = self.barcodeScannerVC {
-            if(barcodeScannerVC is EvrythngScannerDelegate) {
-                // NOTE: barcodeScannerVC should explicitly call didStartScan() to notify API
-                self.presentingVC?.present(barcodeScannerVC, animated: true, completion: nil)
-            } else {
-                throw EvrythngScannerError.NotConformingToEvrthngScannerProtocol
-            }
-        
+    func dismissVC(viewController: UIViewController) {
+        self.barcodeScannerVC.evrythngScannerDelegate = nil
+        if let navPresentingVC = viewController.navigationController {
+            navPresentingVC.popViewController(animated: true)
         } else {
-            let defaultScannerVC = UIViewController()
-            self.presentingVC?.present(defaultScannerVC, animated: true, completion: startScanCompletion)
+            viewController.dismiss(animated: true, completion: nil)
         }
     }
-     */
 }
 
 extension EvrythngScanner: EvrythngScannerDelegate {
-    public func didStartScan() {
-        
+    
+    public func didCancelScan(viewController: EvrythngScannerVC) {
+        print("Did Cancel Scan")
+        viewController.evrythngScannerDelegate = nil
     }
     
-    public func didFinishScan(value: String?, error: Error?) {
+    public func willStartScan(viewController: EvrythngScannerVC) {
+        print("Starting Capture")
+    }
+    
+    public func didFinishScan(viewController: EvrythngScannerVC, value: String?, error: Error?) {
+        print("Here na... \(#function)")
         guard let err = error else {
             guard let val = value else {
                 print("Barcode Value is NULL")
+                self.dismissVC(viewController: viewController)
                 return
             }
             self.identify(barcode: val, completionHandler: { (result, err) in
+                self.dismissVC(viewController: viewController)
                 self.delegate?.didFinishScanResult(result: result, error: err)
             })
             //print("Default Scan Result: \(self.identify(barcode: val))")
             return
         }
-        print(err.localizedDescription)
+        print("Err Localized Desc: \(err.localizedDescription)")
     }
 }
