@@ -33,19 +33,6 @@ public class AbstractUser: UserDelegate {
         return string
     }
     
-    public class var json: JSON {
-        get {
-            var dict = [String: AnyObject]()
-            let mirror = Mirror(reflecting: self)
-            for (_, attr) in mirror.children.enumerated() {
-                if let property_name = attr.label as String! {
-                    dict[property_name] = attr.value as? AnyObject
-                }
-            }
-            return JSON(dict)
-        }
-    }
-    
     public var id: String? = nil
     public var gender: Gender? = nil
     public var birthday: Date? = nil
