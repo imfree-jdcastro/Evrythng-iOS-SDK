@@ -12,13 +12,13 @@ import SwiftyJSON
 
 open class ResourceModel {
     
-    var id: String?
-    var createdAt: Int64?
-    var customFields: Dictionary<String, AnyObject>?
-    var tags: Array<String>?
-    var scopes: ScopeResource?
+    public var id: String?
+    public var createdAt: Int64?
+    public var customFields: Dictionary<String, AnyObject>?
+    public var tags: Array<String>?
+    public var scopes: ScopeResource?
     
-    var jsonData: JSON? = nil
+    public var jsonData: JSON? = nil
     
     public init() {
         

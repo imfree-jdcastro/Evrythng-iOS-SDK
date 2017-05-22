@@ -20,11 +20,14 @@ public enum EvrythngNetworkService {
     
     case createIssue(owner: String, repo: String, title: String, body: String?)
     case editIssue(owner: String, repo: String, number: Int, title: String?, body: String?)
+    
+    case readThng(thngId: String)
 }
 
 extension EvrythngNetworkService: SugarTargetType {
     
-    public var baseURL: URL { return URL(string: "https://api.evrythng.com")! }
+    //public var baseURL: URL { return URL(string: "https://api.evrythng.com")! }
+    public var baseURL: URL { return URL(string: "https://www.jsonblob.com/api")! }
     
     /// method + path
     public var route: Route {
@@ -50,6 +53,9 @@ extension EvrythngNetworkService: SugarTargetType {
             
         case .editIssue(let owner, let repo, let number, _, _):
             return .patch("/repos/\(owner)/\(repo)/issues/\(number)")
+            
+        case .readThng(let thngId):
+            return .get("/460c25d3-3eea-11e7-ae4c-cb0aebe192b5")
         }
     }
     
@@ -94,13 +100,16 @@ extension EvrythngNetworkService: SugarTargetType {
                 "title": title,
                 "body": body,
             ]
+            
+        case .readThng(thngId: _):
+            return nil
         }
     }
     
     public var sampleData: Data {
         switch self {
         case .url:
-            return "abcd".utf8Encoded
+            return "{}".utf8Encoded
         case .createIssue(let owner, _, let title, _):
             return "{\"id\": 100, \"owner\": \"\(owner)}".utf8Encoded
         case .editIssue(_, let owner, _, let title, _):
@@ -119,6 +128,8 @@ extension EvrythngNetworkService: SugarTargetType {
              }
              return data
              */
+        case .readThng(let thngId):
+            return "{}".utf8Encoded
         }
     }
     

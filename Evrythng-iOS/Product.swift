@@ -10,7 +10,7 @@ import UIKit
 import Moya_SwiftyJSONMapper
 import SwiftyJSON
 
-open class Product: DurableResourceModel {
+open class Product: DurableResourceModel, ALSwiftyJSONAble {
 
     var name: String?
     var brand: String?

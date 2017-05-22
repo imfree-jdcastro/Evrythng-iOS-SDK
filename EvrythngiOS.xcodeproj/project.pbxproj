@@ -35,6 +35,7 @@
 		08780D311ED293CC0058D685 /* ResourceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08780D301ED293CC0058D685 /* ResourceModel.swift */; };
 		08780D331ED294150058D685 /* ScopeResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08780D321ED294150058D685 /* ScopeResource.swift */; };
 		08780D351ED294EE0058D685 /* DurableResourceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08780D341ED294EE0058D685 /* DurableResourceModel.swift */; };
+		08780D371ED3120B0058D685 /* ThngReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08780D361ED3120B0058D685 /* ThngReader.swift */; };
 		0895C04F1EAF4841002E44A0 /* EvrythngiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0895C0451EAF4840002E44A0 /* EvrythngiOS.framework */; };
 		0895C0541EAF4841002E44A0 /* Evrythng_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0895C0531EAF4841002E44A0 /* Evrythng_iOSTests.swift */; };
 		0895C0561EAF4841002E44A0 /* EvrythngiOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 0895C0481EAF4840002E44A0 /* EvrythngiOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -98,6 +99,7 @@
 		08780D301ED293CC0058D685 /* ResourceModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourceModel.swift; sourceTree = "<group>"; };
 		08780D321ED294150058D685 /* ScopeResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScopeResource.swift; sourceTree = "<group>"; };
 		08780D341ED294EE0058D685 /* DurableResourceModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DurableResourceModel.swift; sourceTree = "<group>"; };
+		08780D361ED3120B0058D685 /* ThngReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThngReader.swift; sourceTree = "<group>"; };
 		0895C0451EAF4840002E44A0 /* EvrythngiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EvrythngiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0895C0481EAF4840002E44A0 /* EvrythngiOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EvrythngiOS.h; sourceTree = "<group>"; };
 		0895C0491EAF4840002E44A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 			children = (
 				0817DF1F1EC59A33000A78A7 /* EvrythngUserCreator.swift */,
 				0817DF231EC5A7F3000A78A7 /* EvrythngOperator.swift */,
+				08780D361ED3120B0058D685 /* ThngReader.swift */,
 			);
 			name = Contracts;
 			sourceTree = "<group>";
@@ -545,6 +548,7 @@
 				080A169A1EB04FFA00601D6F /* Product.swift in Sources */,
 				08780D311ED293CC0058D685 /* ResourceModel.swift in Sources */,
 				08E756E81ECC0C6400B9F6AD /* EvrythngScannerVC.swift in Sources */,
+				08780D371ED3120B0058D685 /* ThngReader.swift in Sources */,
 				08780D331ED294150058D685 /* ScopeResource.swift in Sources */,
 				08A29B951EC327980042DB8D /* UserDefaultsUtils.swift in Sources */,
 				080A16A61EB06B7900601D6F /* UserDelegate.swift in Sources */,

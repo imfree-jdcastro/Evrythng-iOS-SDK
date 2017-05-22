@@ -19,10 +19,6 @@ public final class User: AbstractUser {
     public private(set) var activationCode: String?
     public private(set) var status: String?
     
-    override public init() {
-        super.init()
-    }
-    
     required public init?(jsonData: JSON) {
         super.init(jsonData: jsonData)
         
