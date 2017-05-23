@@ -8,17 +8,21 @@
 
 import UIKit
 import AVFoundation
+import GoogleMobileVision
 
 protocol EvrythngCameraFrameExtractorDelegate: class {
     func willStartCapture()
-    func captured(uiImage image: UIImage, ciImage: CIImage)
-    func captured2(value: String)
+    func captured(image: UIImage, asCIImage ciImage: CIImage, ofValue value: String)
+    func capturedFromAVMetadataObject(value: String, ofType type: String)
 }
 
 internal class EvrythngCameraFrameExtractor: NSObject {
     
-    private let position = AVCaptureDevicePosition.back
-    private let quality = AVCaptureSessionPresetMedium
+    let position = AVCaptureDevicePosition.back
+    let quality = AVCaptureSessionPresetMedium
+    
+    var lastKnownDeviceOrientation: UIDeviceOrientation = .unknown
+    var barcodeDetector: GMVDetector!
     
     private var permissionGranted = false
     private let sessionQueue = DispatchQueue(label: "session queue")
@@ -72,6 +76,12 @@ internal class EvrythngCameraFrameExtractor: NSObject {
         self.sessionQueue.suspend()
     }
     
+    func setLastKnownDeviceOrientation(orientation: UIDeviceOrientation) {
+        if (orientation != .unknown && orientation != .faceUp && orientation != .faceDown) {
+            self.lastKnownDeviceOrientation = orientation
+        }
+    }
+    
     // MARK: Private Class Functions
     
     private func requestPermission() {
@@ -88,28 +98,64 @@ internal class EvrythngCameraFrameExtractor: NSObject {
     }
     
     private func configureSession() {
-        guard self.permissionGranted else { return }
+        
+        self.barcodeDetector = GMVDetector(ofType: GMVDetectorTypeBarcode, options: nil)
+        self.lastKnownDeviceOrientation = UIDevice.current.orientation
+        
+        guard self.permissionGranted else {
+            return
+        }
+        
         self.captureSession.sessionPreset = quality
-        guard let captureDevice = selectCaptureDevice() else { return }
-        guard let captureDeviceInput = try? AVCaptureDeviceInput(device: captureDevice) else { return }
-        guard self.captureSession.canAddInput(captureDeviceInput) else { return }
+        
+        guard let captureDevice = selectCaptureDevice() else {
+            return
+        }
+        
+        guard let captureDeviceInput = try? AVCaptureDeviceInput(device: captureDevice) else {
+            return
+        }
+        
+        guard self.captureSession.canAddInput(captureDeviceInput) else {
+            return
+        }
+        
         self.captureSession.addInput(captureDeviceInput)
+        
         let videoOutput = AVCaptureVideoDataOutput()
-        videoOutput.setSampleBufferDelegate(self, queue: DispatchQueue(label: "sample buffer"))
-        guard self.captureSession.canAddOutput(videoOutput) else { return }
+        videoOutput.setSampleBufferDelegate(self, queue: DispatchQueue(label: "Video Sample buffer"))
+        
+        guard self.captureSession.canAddOutput(videoOutput) else {
+            return
+        }
+        
+        let rgbOutputSettings = [kCVPixelBufferPixelFormatTypeKey as NSString: kCVPixelFormatType_32BGRA]
+        videoOutput.videoSettings = rgbOutputSettings
         self.captureSession.addOutput(videoOutput)
-        guard let connection = videoOutput.connection(withMediaType: AVFoundation.AVMediaTypeVideo) else { return }
-        guard connection.isVideoOrientationSupported else { return }
-        guard connection.isVideoMirroringSupported else { return }
+        
+        guard let connection = videoOutput.connection(withMediaType: AVFoundation.AVMediaTypeVideo) else {
+            return
+        }
+        
+        guard connection.isVideoOrientationSupported else {
+            return
+        }
+        
+        guard connection.isVideoMirroringSupported else {
+            return
+        }
+        
         connection.videoOrientation = .portrait
         connection.isVideoMirrored = position == .front
 
-        // READ BARCODES
         
+        // READ BARCODES
+        /*
         let metaDataOutput = AVCaptureMetadataOutput()
         metaDataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.global())
         self.captureSession.addOutput(metaDataOutput)
         metaDataOutput.metadataObjectTypes = metaDataOutput.availableMetadataObjectTypes
+        */
         
         print("Configure Session Successful")
     }
@@ -154,6 +200,9 @@ extension EvrythngCameraFrameExtractor: AVCaptureVideoDataOutputSampleBufferDele
     
     func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputSampleBuffer sampleBuffer: CMSampleBuffer!, from connection: AVCaptureConnection!) {
         
+        //let image = GMVUtility.sampleBufferTo32RGBA(sampleBuffer)
+        
+        
         //guard let uiImage = imageFromSampleBuffer(sampleBuffer: sampleBuffer) else { return }
         guard let ciImage = ciImageFromSampleBuffer(sampleBuffer: sampleBuffer) else {
             return
@@ -162,11 +211,25 @@ extension EvrythngCameraFrameExtractor: AVCaptureVideoDataOutputSampleBufferDele
             return
         }
         
-        DispatchQueue.main.async { [unowned self] in
-            //print("Is Running: \(self.captureSession.isRunning)")
-            if(self.captureSession.isRunning) {
-                self.delegate?.captured(uiImage: uiImage, ciImage: ciImage)
+        let deviceOrientation: UIDeviceOrientation = UIDevice.current.orientation
+        //let devicePosition = AVCaptureDevicePosition.back
+        //let orientation: GMVImageOrientation = GMVUtility.imageOrientation(from: deviceOrientation, with: devicePosition, defaultDeviceOrientation: self.lastKnownDeviceOrientation)
+        //let options = [GMVDetectorImageOrientation : orientation]
+        
+        if let barcodeFeatures:[GMVBarcodeFeature] = self.barcodeDetector.features(in: uiImage, options: nil) as? [GMVBarcodeFeature] {
+            
+            let barcodeRawValue = barcodeFeatures.last?.rawValue! ?? ""
+            
+            print("Detected \(barcodeFeatures.count) barcode(s) with Value: \(barcodeRawValue) Orientation: \(deviceOrientation.rawValue)")
+            
+            DispatchQueue.main.sync { [weak self] in
+                //print("Is Running: \(self.captureSession.isRunning)")
+                if let running = self?.captureSession.isRunning, running == true {
+                    self!.delegate?.captured(image: uiImage, asCIImage: ciImage, ofValue: barcodeRawValue)
+                }
             }
+        } else {
+            print("Unable to extract features from image")
         }
     }
 }
@@ -176,7 +239,7 @@ extension EvrythngCameraFrameExtractor: AVCaptureVideoDataOutputSampleBufferDele
 extension EvrythngCameraFrameExtractor: AVCaptureMetadataOutputObjectsDelegate {
     
     func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [Any]!, from connection: AVCaptureConnection!) {
-     
+        
         var detectionString : String!
         let barCodeTypes = [AVMetadataObjectTypeUPCECode,
                             AVMetadataObjectTypeCode39Code,
@@ -198,8 +261,8 @@ extension EvrythngCameraFrameExtractor: AVCaptureMetadataOutputObjectsDelegate {
                 if (metadata as AnyObject).type == barcodeType {
                     detectionString = (metadata as! AVMetadataMachineReadableCodeObject).stringValue
                     //self.captureSession.stopRunning()
-                    DispatchQueue.main.async { 
-                        self.delegate?.captured2(value: detectionString)
+                    DispatchQueue.main.sync {
+                        self.delegate?.capturedFromAVMetadataObject(value: detectionString, ofType: barcodeType)
                     }
                     break
                 }

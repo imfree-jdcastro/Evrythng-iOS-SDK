@@ -51,7 +51,7 @@ public class EvrythngScanner {
     }
     
     public final func identify(barcode: String) {
-        self.delegate?.didFinishScanResult(result: "QUERY_SCAN_RESULT_SUCCESS: \(barcode)", error: nil)
+        self.delegate?.didFinishScanResult(result: barcode, error: nil)
     }
     
     public final func scanBarcode() {
@@ -85,7 +85,7 @@ extension EvrythngScanner: EvrythngScannerDelegate {
     }
     
     public func didFinishScan(viewController: EvrythngScannerVC, value: String?, error: Error?) {
-        print("Here na... \(#function)")
+        print("\(#function)")
         guard let err = error else {
             guard let val = value else {
                 print("Barcode Value is NULL")
@@ -96,7 +96,6 @@ extension EvrythngScanner: EvrythngScannerDelegate {
                 self.dismissVC(viewController: viewController)
                 self.delegate?.didFinishScanResult(result: result, error: err)
             })
-            //print("Default Scan Result: \(self.identify(barcode: val))")
             return
         }
         print("Err Localized Desc: \(err.localizedDescription)")

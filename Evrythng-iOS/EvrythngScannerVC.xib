@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -21,7 +22,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="27r-Hg-Fff">
-                    <rect key="frame" x="0.0" y="74" width="375" height="593"/>
+                    <rect key="frame" x="0.0" y="146.5" width="375" height="375"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="27r-Hg-Fff" secondAttribute="height" multiplier="1:1" id="nYg-yv-n8N"/>
+                    </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nice" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IOK-yO-6kf">
                     <rect key="frame" x="16" y="45" width="343" height="21"/>
@@ -33,11 +37,13 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="27r-Hg-Fff" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="I5L-uF-xCq"/>
-                <constraint firstAttribute="bottom" secondItem="27r-Hg-Fff" secondAttribute="bottom" id="MLZ-NU-WhP"/>
                 <constraint firstAttribute="trailing" secondItem="IOK-yO-6kf" secondAttribute="trailing" constant="16" id="P13-FW-YiD"/>
+                <constraint firstItem="27r-Hg-Fff" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="ajJ-B3-y2I"/>
                 <constraint firstAttribute="trailing" secondItem="27r-Hg-Fff" secondAttribute="trailing" id="dTA-Vd-kLK"/>
-                <constraint firstItem="27r-Hg-Fff" firstAttribute="top" secondItem="IOK-yO-6kf" secondAttribute="bottom" constant="8" id="e9E-Z9-ZhH"/>
+                <constraint firstItem="27r-Hg-Fff" firstAttribute="top" relation="greaterThanOrEqual" secondItem="IOK-yO-6kf" secondAttribute="bottom" id="e9E-Z9-ZhH"/>
                 <constraint firstItem="IOK-yO-6kf" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="fVk-fa-H2B"/>
+                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="27r-Hg-Fff" secondAttribute="bottom" id="jeu-jT-Chz"/>
+                <constraint firstItem="27r-Hg-Fff" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="os6-HD-EVE"/>
                 <constraint firstItem="IOK-yO-6kf" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="45" id="wRT-tF-UoK"/>
             </constraints>
             <point key="canvasLocation" x="48.5" y="75.5"/>

@@ -131,16 +131,23 @@ public class EvrythngScannerVC: UIViewController {
 
 extension EvrythngScannerVC: EvrythngCameraFrameExtractorDelegate {
     
-    func captured2(value: String) {
-        print("Captured Value: \(value) Delegate: \(self.evrythngScannerDelegate != nil)")
+    func capturedFromAVMetadataObject(value: String, ofType: String) {
+        print("Captured Value: \(value) ofType: \(ofType) Delegate: \(self.evrythngScannerDelegate != nil)")
         self.detected = true
         self.evrythngScannerDelegate?.didFinishScan(viewController: self, value: value, error: nil)
     }
     
-    func captured(uiImage: UIImage, ciImage: CIImage) {
-        print("Captured Image: \(uiImage) Delegate: \(self.evrythngScannerDelegate != nil)")
-        self.imageView.image = uiImage
-        self.scanImage(ciImage: ciImage)
+    func captured(image: UIImage, asCIImage ciImage: CIImage, ofValue: String) {
+        //print("Captured Image: \(uiImage) Delegate: \(self.evrythngScannerDelegate != nil)")
+        self.imageView.image = image
+        
+        //self.scanImage(ciImage: ciImage)
+        if(!StringUtils.isStringEmpty(string: ofValue)) {
+            if(!self.detected) {
+                self.detected = true
+                self.evrythngScannerDelegate?.didFinishScan(viewController: self, value: ofValue, error: nil)   
+            }
+        }
     }
     
     func willStartCapture() {
