@@ -13,14 +13,16 @@ import Moya_SwiftyJSONMapper
 
 public class ThngReader: EvrythngNetworkExecutableProtocol {
     
-    private var thngId:String?
+    private var thngId: String?
+    private var userId: String?
     
     private init() {
         
     }
     
-    public required init(thngId: String) {
+    public required init(thngId: String, userId: String) {
         self.thngId = thngId
+        self.userId = userId
     }
     
     public func getDefaultProvider() -> EvrythngMoyaProvider<EvrythngNetworkService> {
@@ -29,25 +31,35 @@ public class ThngReader: EvrythngNetworkExecutableProtocol {
     
     public func execute(completionHandler: @escaping (Thng? , Swift.Error?) -> Void) {
         
-        if let thngId = self.thngId {
+        if let thngId = self.thngId, let userId = self.userId {
             
-            let readThngRequest = EvrythngNetworkService.readThng(thngId: thngId)
+            let readThngRequest = EvrythngNetworkService.readThng(thngId: thngId, userId: userId)
             self.getDefaultProvider().request(readThngRequest) { result in
                 switch result {
                 case let .success(moyaResponse):
                     let data = moyaResponse.data
                     let statusCode = moyaResponse.statusCode
-                    
                     let datastring = NSString(data: data, encoding: String.Encoding.utf8.rawValue)
                     print("Data: \(datastring) Status Code: \(statusCode)")
                     
-                    do {
-                        let thng = try moyaResponse.map(to: Thng.self)
-                        print("SwiftyJSON: \(thng)")
-                        completionHandler(thng, nil)
-                    } catch {
-                        print(error)
-                        completionHandler(nil, error)
+                    if(200..<300 ~= statusCode) {
+                        do {
+                            let thng = try moyaResponse.map(to: Thng.self)
+                            print("SwiftyJSON: \(thng)")
+                            completionHandler(thng, nil)
+                        } catch {
+                            print(error)
+                            completionHandler(nil, error)
+                        }
+                    } else {
+                        do {
+                            let err = try moyaResponse.map(to: EvrythngNetworkErrorResponse.self)
+                            print("EvrythngNetworkErrorResponse: \(err.jsonData?.rawString())")
+                            completionHandler(nil, EvrythngNetworkError.ResponseError(response: err))
+                        } catch {
+                            print(error)
+                            completionHandler(nil, error)
+                        }
                     }
                     
                 case let .failure(error):

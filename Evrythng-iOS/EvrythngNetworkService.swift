@@ -21,13 +21,13 @@ public enum EvrythngNetworkService {
     case createIssue(owner: String, repo: String, title: String, body: String?)
     case editIssue(owner: String, repo: String, number: Int, title: String?, body: String?)
     
-    case readThng(thngId: String)
+    case readThng(thngId: String, userId: String)
 }
 
 extension EvrythngNetworkService: SugarTargetType {
     
-    //public var baseURL: URL { return URL(string: "https://api.evrythng.com")! }
-    public var baseURL: URL { return URL(string: "https://www.jsonblob.com/api")! }
+    public var baseURL: URL { return URL(string: "https://api.evrythng.com")! }
+    //public var baseURL: URL { return URL(string: "https://www.jsonblob.com/api")! }
     
     /// method + path
     public var route: Route {
@@ -54,8 +54,9 @@ extension EvrythngNetworkService: SugarTargetType {
         case .editIssue(let owner, let repo, let number, _, _):
             return .patch("/repos/\(owner)/\(repo)/issues/\(number)")
             
-        case .readThng(let thngId):
-            return .get("/460c25d3-3eea-11e7-ae4c-cb0aebe192b5")
+        case .readThng(let thngId, let userId):
+            //return .get("/thngs/\(thngId)?project=UGbCDnpTBDPw9KawwYfthAaa&userScope=\(userId)")
+            return .get("/thngs/\(thngId)")
         }
     }
     
@@ -101,7 +102,7 @@ extension EvrythngNetworkService: SugarTargetType {
                 "body": body,
             ]
             
-        case .readThng(thngId: _):
+        case .readThng:
             return nil
         }
     }
@@ -128,7 +129,7 @@ extension EvrythngNetworkService: SugarTargetType {
              }
              return data
              */
-        case .readThng(let thngId):
+        case .readThng:
             return "{}".utf8Encoded
         }
     }

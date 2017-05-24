@@ -23,11 +23,11 @@ open class Thng: DurableResourceModel, ALSwiftyJSONAble {
     
     required public init?(jsonData:JSON){
         super.init(jsonData: jsonData)
-        self.name = jsonData["name"].stringValue
-        self.description = jsonData["description"].stringValue
-        self.batch = jsonData["batch"].stringValue
-        self.product = jsonData["product"].stringValue
-        self.createdByTask = jsonData["createdByTask"].stringValue
+        self.name = jsonData["name"].string
+        self.description = jsonData["description"].string
+        self.batch = jsonData["batch"].string
+        self.product = jsonData["product"].string
+        self.createdByTask = jsonData["createdByTask"].string
         
         self.identifiers = jsonData["identifiers"].dictionaryObject as? Dictionary<String, String>
         self.collections = jsonData["collections"].arrayObject as? [String]

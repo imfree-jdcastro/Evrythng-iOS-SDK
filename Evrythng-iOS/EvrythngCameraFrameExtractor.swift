@@ -35,8 +35,8 @@ internal class EvrythngCameraFrameExtractor: NSObject {
     override init() {
         super.init()
         checkPermission()
-        self.configureSession()
         self.sessionQueue.async { [unowned self] in
+            self.configureSession()
             self.delegate?.willStartCapture()
             self.captureSession.startRunning()
         }

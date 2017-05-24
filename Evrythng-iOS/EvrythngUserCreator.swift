@@ -38,18 +38,28 @@ public class EvrythngUserCreator: EvrythngNetworkExecutableProtocol {
             case let .success(moyaResponse):
                 let data = moyaResponse.data
                 let statusCode = moyaResponse.statusCode
-                
                 let datastring = NSString(data: data, encoding: String.Encoding.utf8.rawValue)
                 print("Data: \(datastring) Status Code: \(statusCode)")
                 
-                do {
-                    let user = try moyaResponse.map(to: User.self)
-                    print("SwiftyJSON: \(user)")
-                    completionHandler(user, nil)
-                } catch {
-                    print(error)
-                    completionHandler(nil, error)
+                if(200..<300 ~= statusCode) {
+                    do {
+                        let user = try moyaResponse.map(to: User.self)
+                        completionHandler(user, nil)
+                    } catch {
+                        print(error)
+                        completionHandler(nil, error)
+                    }
+                } else {
+                    do {
+                        let err = try moyaResponse.map(to: EvrythngNetworkErrorResponse.self)
+                        print("EvrythngNetworkErrorResponse: \(err.jsonData?.rawString())")
+                        completionHandler(nil, EvrythngNetworkError.ResponseError(response: err))
+                    } catch {
+                        print(error)
+                        completionHandler(nil, error)
+                    }
                 }
+                
             case let .failure(error):
                 print("Error: \(error)")
                 // this means there was a network failure - either the request
