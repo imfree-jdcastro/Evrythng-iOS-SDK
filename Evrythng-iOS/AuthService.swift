@@ -9,7 +9,7 @@
 import UIKit
 
 public class AuthService {
-    public func evrythngUserCreator(user: User) -> EvrythngUserCreator {
+    public func evrythngUserCreator(user: User?) -> EvrythngUserCreator {
         return EvrythngUserCreator(user: user)
     }
     

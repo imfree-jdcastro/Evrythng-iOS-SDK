@@ -53,6 +53,10 @@
 		08A300BF1ECAC5D5006F8047 /* ProductService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A300BE1ECAC5D5006F8047 /* ProductService.swift */; };
 		08C42B7F1ED5375A00367BAE /* EvrythngNetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C42B7E1ED5375A00367BAE /* EvrythngNetworkError.swift */; };
 		08C42B811ED53B4400367BAE /* EvrythngNetworkErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C42B801ED53B4400367BAE /* EvrythngNetworkErrorResponse.swift */; };
+		08C81DE61ED8209C00D23DA2 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C81DE51ED8209C00D23DA2 /* Credentials.swift */; };
+		08C81DE81ED84B5E00D23DA2 /* CompositeEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C81DE71ED84B5E00D23DA2 /* CompositeEncoding.swift */; };
+		08C81DEB1ED896D100D23DA2 /* URLHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C81DEA1ED896D100D23DA2 /* URLHelper.swift */; };
+		08C81DED1ED91B2F00D23DA2 /* EvrythngNetworkTargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C81DEC1ED91B2F00D23DA2 /* EvrythngNetworkTargetType.swift */; };
 		08E756DD1ECC035F00B9F6AD /* EvrythngCameraFrameExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E756DC1ECC035F00B9F6AD /* EvrythngCameraFrameExtractor.swift */; };
 		08E756E81ECC0C6400B9F6AD /* EvrythngScannerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E756E61ECC0C6400B9F6AD /* EvrythngScannerVC.swift */; };
 		08E756E91ECC0C6400B9F6AD /* EvrythngScannerVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 08E756E71ECC0C6400B9F6AD /* EvrythngScannerVC.xib */; };
@@ -122,6 +126,10 @@
 		08A300BE1ECAC5D5006F8047 /* ProductService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductService.swift; sourceTree = "<group>"; };
 		08C42B7E1ED5375A00367BAE /* EvrythngNetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EvrythngNetworkError.swift; sourceTree = "<group>"; };
 		08C42B801ED53B4400367BAE /* EvrythngNetworkErrorResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EvrythngNetworkErrorResponse.swift; sourceTree = "<group>"; };
+		08C81DE51ED8209C00D23DA2 /* Credentials.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
+		08C81DE71ED84B5E00D23DA2 /* CompositeEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompositeEncoding.swift; sourceTree = "<group>"; };
+		08C81DEA1ED896D100D23DA2 /* URLHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLHelper.swift; sourceTree = "<group>"; };
+		08C81DEC1ED91B2F00D23DA2 /* EvrythngNetworkTargetType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EvrythngNetworkTargetType.swift; sourceTree = "<group>"; };
 		08E756DC1ECC035F00B9F6AD /* EvrythngCameraFrameExtractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EvrythngCameraFrameExtractor.swift; sourceTree = "<group>"; };
 		08E756E61ECC0C6400B9F6AD /* EvrythngScannerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EvrythngScannerVC.swift; sourceTree = "<group>"; };
 		08E756E71ECC0C6400B9F6AD /* EvrythngScannerVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EvrythngScannerVC.xib; sourceTree = "<group>"; };
@@ -202,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				0817DF211EC59A47000A78A7 /* EvrythngNetworkExecutableProtocol.swift */,
+				08C81DEC1ED91B2F00D23DA2 /* EvrythngNetworkTargetType.swift */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -230,6 +239,8 @@
 			children = (
 				08A300C01ECB0123006F8047 /* Enums */,
 				08666DA51EC945D9004B30BF /* DefaultAlamofireManager.swift */,
+				08C81DE71ED84B5E00D23DA2 /* CompositeEncoding.swift */,
+				08C81DEA1ED896D100D23DA2 /* URLHelper.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -284,6 +295,7 @@
 		0895C05F1EAF4876002E44A0 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				08C81DE91ED883B400D23DA2 /* Providers */,
 				08A300B51ECAB2DC006F8047 /* Services */,
 				08666DA21EC93B33004B30BF /* Utils */,
 				0817DF1E1EC59A11000A78A7 /* Contracts */,
@@ -309,6 +321,7 @@
 				08780D301ED293CC0058D685 /* ResourceModel.swift */,
 				08780D321ED294150058D685 /* ScopeResource.swift */,
 				08780D341ED294EE0058D685 /* DurableResourceModel.swift */,
+				08C81DE51ED8209C00D23DA2 /* Credentials.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -347,6 +360,13 @@
 				08A29B901EC2FC1B0042DB8D /* EvrythngNetworkServiceError.swift */,
 			);
 			name = Enums;
+			sourceTree = "<group>";
+		};
+		08C81DE91ED883B400D23DA2 /* Providers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Providers;
 			sourceTree = "<group>";
 		};
 		764FF630C58B425A9E7FF176 /* Pods */ = {
@@ -521,10 +541,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08C81DED1ED91B2F00D23DA2 /* EvrythngNetworkTargetType.swift in Sources */,
 				08E756EB1ECC1E4000B9F6AD /* AbstractUser.swift in Sources */,
 				08A300B91ECAB2F4006F8047 /* AuthService.swift in Sources */,
 				084D50A71EC19BE200E5F396 /* EvrythngScannerResultDelegate.swift in Sources */,
 				08A29B8F1EC2F4000042DB8D /* DateUtils.swift in Sources */,
+				08C81DE61ED8209C00D23DA2 /* Credentials.swift in Sources */,
 				084D50CB1EC1EBA900E5F396 /* JSON.swift in Sources */,
 				08A300BD1ECAB329006F8047 /* ActionService.swift in Sources */,
 				0817DF261EC600D2000A78A7 /* EvrythngApiManager.swift in Sources */,
@@ -554,10 +576,12 @@
 				080A169A1EB04FFA00601D6F /* Product.swift in Sources */,
 				08780D311ED293CC0058D685 /* ResourceModel.swift in Sources */,
 				08C42B7F1ED5375A00367BAE /* EvrythngNetworkError.swift in Sources */,
+				08C81DE81ED84B5E00D23DA2 /* CompositeEncoding.swift in Sources */,
 				08E756E81ECC0C6400B9F6AD /* EvrythngScannerVC.swift in Sources */,
 				08780D371ED3120B0058D685 /* ThngReader.swift in Sources */,
 				08C42B811ED53B4400367BAE /* EvrythngNetworkErrorResponse.swift in Sources */,
 				08780D331ED294150058D685 /* ScopeResource.swift in Sources */,
+				08C81DEB1ED896D100D23DA2 /* URLHelper.swift in Sources */,
 				08A29B951EC327980042DB8D /* UserDefaultsUtils.swift in Sources */,
 				080A16A61EB06B7900601D6F /* UserDelegate.swift in Sources */,
 				0817DF221EC59A47000A78A7 /* EvrythngNetworkExecutableProtocol.swift in Sources */,

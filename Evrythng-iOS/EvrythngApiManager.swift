@@ -39,7 +39,7 @@ public final class EvrythngApiManager {
     public init() {
         if let path = Bundle.main.path(forResource: "Info", ofType: "plist") {
             if let dimension1 = NSDictionary(contentsOfFile: path) {
-                if let token = dimension1["evrythng_app_token"] as? String{
+                if let token = dimension1[Constants.AppToken] as? String{
                     self.apiKey = token
                 }
             }

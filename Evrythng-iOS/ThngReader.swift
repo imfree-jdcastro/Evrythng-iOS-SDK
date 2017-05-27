@@ -14,15 +14,13 @@ import Moya_SwiftyJSONMapper
 public class ThngReader: EvrythngNetworkExecutableProtocol {
     
     private var thngId: String?
-    private var userId: String?
     
     private init() {
         
     }
     
-    public required init(thngId: String, userId: String) {
+    public required init(thngId: String) {
         self.thngId = thngId
-        self.userId = userId
     }
     
     public func getDefaultProvider() -> EvrythngMoyaProvider<EvrythngNetworkService> {
@@ -31,9 +29,9 @@ public class ThngReader: EvrythngNetworkExecutableProtocol {
     
     public func execute(completionHandler: @escaping (Thng? , Swift.Error?) -> Void) {
         
-        if let thngId = self.thngId, let userId = self.userId {
+        if let thngId = self.thngId {
             
-            let readThngRequest = EvrythngNetworkService.readThng(thngId: thngId, userId: userId)
+            let readThngRequest = EvrythngNetworkService.readThng(thngId: thngId)
             self.getDefaultProvider().request(readThngRequest) { result in
                 switch result {
                 case let .success(moyaResponse):

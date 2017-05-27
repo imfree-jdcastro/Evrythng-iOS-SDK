@@ -11,7 +11,7 @@ import UIKit
 public class ThngService {
 
     public func thngReader(thngId: String) -> ThngReader {
-        return ThngReader(thngId: thngId, userId: "UmcVQGkQBg8RQ5wRwDTaNdSe")
+        return ThngReader(thngId: thngId)
     }
     
 }

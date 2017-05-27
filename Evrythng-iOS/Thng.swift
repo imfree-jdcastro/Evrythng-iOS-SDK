@@ -12,14 +12,14 @@ import SwiftyJSON
 
 open class Thng: DurableResourceModel, ALSwiftyJSONAble {
     
-    var name: String?
-    var description: String?
-    var batch: String?
-    var product: String? //Reference to Product.id
-    var createdByTask: String?
-    var identifiers: Dictionary<String, String>?
-    var collections: Array<String>?
-    var properties: Dictionary<String, AnyObject>?
+    public var name: String?
+    public var description: String?
+    public var batch: String?
+    public var product: String? //Reference to Product.id
+    public var createdByTask: String?
+    public var identifiers: Dictionary<String, String>?
+    public var collections: Array<String>?
+    public var properties: Dictionary<String, AnyObject>?
     
     required public init?(jsonData:JSON){
         super.init(jsonData: jsonData)

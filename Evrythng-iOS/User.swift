@@ -12,6 +12,8 @@ import ObjectMapper
 
 public final class User: AbstractUser {
     
+    public typealias UserBuilder = (User) -> Void
+    
     public var email: String?
     public var password: String?
     public var firstName: String?
@@ -28,5 +30,10 @@ public final class User: AbstractUser {
         self.lastName = jsonData["lastName"].stringValue
         self.activationCode = jsonData["activationCode"].stringValue
         self.status = jsonData["status"].stringValue
+    }
+    
+    public init(userBuilder: UserBuilder) {
+        super.init()
+        userBuilder(self)
     }
 }

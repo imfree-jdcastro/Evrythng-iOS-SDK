@@ -9,5 +9,7 @@
 import UIKit
 
 public class EvrythngApiConfiguration {
-
+    // Application API Key
+    // User API Key
+    // Operator API Key
 }

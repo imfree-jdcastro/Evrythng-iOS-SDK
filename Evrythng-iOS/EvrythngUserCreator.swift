@@ -11,26 +11,53 @@ import UIKit
 import Moya
 import MoyaSugar
 import Moya_SwiftyJSONMapper
+import Alamofire
 
 public class EvrythngUserCreator: EvrythngNetworkExecutableProtocol {
     
-    private var user: User!
+    private var user: User?
+    private var credentials: Credentials!
     
     private init() {
     
     }
     
-    internal init(user: User) {
+    internal init(user: User?) {
         self.user = user
     }
     
-    public func getDefaultProvider() -> EvrythngMoyaProvider<EvrythngNetworkService> {
-        return EvrythngMoyaProvider<EvrythngNetworkService>()
+    internal init(credentials: Credentials) {
+        self.credentials = credentials
     }
     
-    public func execute(completionHandler: @escaping (User?, Swift.Error?) -> Void) {
+    public func getDefaultProvider() -> EvrythngMoyaProvider<EvrythngNetworkService> {
         
-        let userRepo = EvrythngNetworkService.createUser(user: self.user)
+        let epClosure = { (target: EvrythngNetworkService) -> Endpoint<EvrythngNetworkService> in
+            
+            
+            if case is CompositeEncoding = target.params?.encoding  {
+                if let params = target.params?.values["query"] {
+                    print("\(target.defaultURL.absoluteString)")
+                    let url = URLHelper.addOrUpdateQueryStringParameter(url: target.defaultURL.absoluteString, values: params as! [String : String])
+                    
+                    let test = Endpoint<EvrythngNetworkService>(url: url, sampleResponseClosure: {
+                        return EndpointSampleResponse.networkResponse(200, target.sampleData)
+                    }, method: .post, parameters: target.params?.values, parameterEncoding: (target.params?.encoding)!, httpHeaderFields: target.httpHeaderFields)
+                    
+                    print("Absolute Url: \(test.url)")
+                    return test
+                }
+            }
+            
+            return Endpoint<EvrythngNetworkService>(url: target.url.absoluteString, sampleResponseClosure: target.sampleResponseClosure, method: target.method, parameters: target.params?.values, parameterEncoding: target.params!.encoding, httpHeaderFields: target.httpHeaderFields)
+        }
+        
+        return EvrythngMoyaProvider<EvrythngNetworkService>(endpointClosure: epClosure)
+    }
+    
+    public func execute(completionHandler: @escaping (Credentials?, Swift.Error?) -> Void) {
+        
+        let userRepo = EvrythngNetworkService.createUser(user: self.user, isAnonymous: (self.user == nil))
         //let provider = MoyaSugarProvider<EvrythngNetworkService>()
         
         self.getDefaultProvider().request(userRepo) { result in
@@ -39,12 +66,12 @@ public class EvrythngUserCreator: EvrythngNetworkExecutableProtocol {
                 let data = moyaResponse.data
                 let statusCode = moyaResponse.statusCode
                 let datastring = NSString(data: data, encoding: String.Encoding.utf8.rawValue)
-                print("Data: \(datastring) Status Code: \(statusCode)")
+                print("Data: \(datastring!) Status Code: \(statusCode)")
                 
                 if(200..<300 ~= statusCode) {
                     do {
-                        let user = try moyaResponse.map(to: User.self)
-                        completionHandler(user, nil)
+                        let credentials = try moyaResponse.map(to: Credentials.self)
+                        completionHandler(credentials, nil)
                     } catch {
                         print(error)
                         completionHandler(nil, error)
