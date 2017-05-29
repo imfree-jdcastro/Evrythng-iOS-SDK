@@ -16,4 +16,16 @@ public class AuthService {
     public func evrythngOperator(operatorApiKey: String) -> EvrythngOperator {
         return EvrythngOperator(operatorApiKey: operatorApiKey)
     }
+    
+    public func evrythngUserValidator(userId: String, activationCode: String) -> EvrythngUserValidator {
+        return EvrythngUserValidator(userId: userId, activationCode: activationCode)
+    }
+    
+    public func evrythngUserLogouter(apiKey: String) -> EvrythngUserLogouter {
+        return EvrythngUserLogouter(apiKey: apiKey)
+    }
+    
+    public func evrythngUserAuthenticator(email: String, password: String) -> EvrythngUserAuthenticator {
+        return EvrythngUserAuthenticator(email: email, password: password)
+    }
 }

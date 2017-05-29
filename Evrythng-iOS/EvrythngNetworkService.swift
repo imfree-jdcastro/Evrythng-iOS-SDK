@@ -14,11 +14,16 @@ import MoyaSugar
 public enum EvrythngNetworkService {
     case url(String)
     
+    // User
     case createUser(user: User?, isAnonymous: Bool)
     case deleteUser(operatorApiKey: String, userId: String)
+    case authenticateUser(credentials: Credentials)
+    case validateUser(userId: String, activationCode: String)
+    case logout(apiKey: String)
     
     case editIssue(owner: String, repo: String, number: Int, title: String?, body: String?)
     
+    // Thng
     case readThng(thngId: String)
 }
 
@@ -38,12 +43,16 @@ extension EvrythngNetworkService: EvrythngNetworkTargetType {
         switch self {
         case .url(let urlString):
             return .get(urlString)
-        case .createUser(_, _):
+        case .createUser:
             return .post("/auth/evrythng/users")
-            
         case .deleteUser(_, let userId):
             return .delete("/users/\(userId)")
-            
+        case .authenticateUser:
+            return .post("/auth/evrythng")
+        case .validateUser(let userId, _):
+            return .post("/users/\(userId)/validate")
+        case .logout:
+            return .post("/auth/all/logout")
         case .editIssue(let owner, let repo, let number, _, _):
             return .patch("/repos/\(owner)/\(repo)/issues/\(number)")
             
@@ -65,9 +74,6 @@ extension EvrythngNetworkService: EvrythngNetworkTargetType {
     /// encoding + parameters
     public var params: Parameters? {
         switch self {
-        case .url:
-            return nil
-            
         case .createUser(let user, let anonymous):
             if(anonymous == true) {
                 var params:[String: Any] = [:]
@@ -82,8 +88,12 @@ extension EvrythngNetworkService: EvrythngNetworkTargetType {
                 "firstName": "Test First1", "lastName": "Test Last1", "email": "validemail1@email.com", "password": "testPassword1"
             ]
             */
-        case .deleteUser:
-            return nil
+        case .validateUser(_, let activationCode):
+            return JSONEncoding() => ["activationCode": activationCode]
+        case .authenticateUser(let credentials):
+            return JSONEncoding() => ["email": credentials.email!, "password": credentials.password!]
+        case .logout:
+            return JSONEncoding() => [:]
             
         case .editIssue(_, _, _, let title, let body):
             // Use `URLEncoding()` as default when not specified
@@ -92,26 +102,16 @@ extension EvrythngNetworkService: EvrythngNetworkTargetType {
                 "body": body,
             ]
             
-        case .readThng:
-            return nil
+        default:
+            return JSONEncoding() => [:]
         }
     }
     
     public var sampleData: Data {
         switch self {
-        case .url:
-            return "{}".utf8Encoded
-        case .editIssue(_, let owner, _, let title, _):
+        case .editIssue(_, let owner, _, _, _):
             return "{\"id\": 100, \"owner\": \"\(owner)}".utf8Encoded
-        case .createUser(_, let anonymous):
-            if(anonymous == true) {
-                return "{}".utf8Encoded
-            } else {
-                return "{}".utf8Encoded
-            }
-        case .deleteUser:
-            return "{}".utf8Encoded
-        case .readThng:
+        default:
             return "{}".utf8Encoded
         }
     }
@@ -128,6 +128,8 @@ extension EvrythngNetworkService: EvrythngNetworkTargetType {
             // Operator API Key
             //authorization = "hohzaKH7VbVp659Pnr5m3xg2DpKBivg9rFh6PttT5AnBtEn3s17B8OPAOpBjNTWdoRlosLTxJmUrpjTi"
             authorization = operatorApiKey
+        case .logout(let apiKey):
+            authorization = apiKey
         default:
             authorization = UserDefaultsUtils.get(key: "pref_key_authorization") as? String
             if let authorization = UserDefaultsUtils.get(key: "pref_key_authorization") as? String{

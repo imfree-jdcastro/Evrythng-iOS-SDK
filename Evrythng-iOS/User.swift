@@ -12,8 +12,6 @@ import ObjectMapper
 
 public final class User: AbstractUser {
     
-    public typealias UserBuilder = (User) -> Void
-    
     public var email: String?
     public var password: String?
     public var firstName: String?
@@ -32,8 +30,34 @@ public final class User: AbstractUser {
         self.status = jsonData["status"].stringValue
     }
     
-    public init(userBuilder: UserBuilder) {
-        super.init()
-        userBuilder(self)
+    private func toJSON() -> JSON {
+        
+        var jsonData: [String: Any] = [:]
+        
+        if let email = self.email {
+            jsonData["email"] = email
+        }
+        
+        if let password = self.password {
+            jsonData["password"] = password
+        }
+        
+        if let firstName = self.firstName {
+            jsonData["firstName"] = firstName
+        }
+        
+        if let lastName = self.lastName {
+            jsonData["lastName"] = lastName
+        }
+        
+        if let activationCode = self.activationCode {
+            jsonData["activationCode"] = activationCode
+        }
+        
+        if let status = self.status {
+            jsonData["status"] = status
+        }
+    
+        return JSON(jsonData: jsonData)
     }
 }
