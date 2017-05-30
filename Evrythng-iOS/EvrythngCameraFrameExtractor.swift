@@ -12,7 +12,7 @@ import GoogleMobileVision
 
 protocol EvrythngCameraFrameExtractorDelegate: class {
     func willStartCapture()
-    func captured(image: UIImage, asCIImage ciImage: CIImage, ofValue value: String)
+    func captured(image: UIImage, asCIImage ciImage: CIImage, of value: String, of feature: GMVFeature?)
     func capturedFromAVMetadataObject(value: String, ofType type: String)
 }
 
@@ -218,16 +218,25 @@ extension EvrythngCameraFrameExtractor: AVCaptureVideoDataOutputSampleBufferDele
         
         if let barcodeFeatures:[GMVBarcodeFeature] = self.barcodeDetector.features(in: uiImage, options: nil) as? [GMVBarcodeFeature] {
             
-            let barcodeRawValue = barcodeFeatures.last?.rawValue! ?? ""
+            let barcodeFeature = barcodeFeatures.last
+            var barcodeRawValue = ""
             
-            print("Detected \(barcodeFeatures.count) barcode(s) with Value: \(barcodeRawValue) Orientation: \(deviceOrientation.rawValue)")
+            if (barcodeFeature != nil) {
+                let barcodeFormat = barcodeFeature!.format as GMVDetectorBarcodeFormat
+                barcodeRawValue = (barcodeFeature!.rawValue ?? "")!
+                
+                print("Detected \(barcodeFeatures.count) barcode(s) with Value: \(barcodeRawValue) Orientation: \(deviceOrientation.rawValue) Format: \(barcodeFormat)")
+            } else {
+                print ("No Detected Barcodes")
+            }
             
             DispatchQueue.main.sync { [weak self] in
                 //print("Is Running: \(self.captureSession.isRunning)")
                 if let running = self?.captureSession.isRunning, running == true {
-                    self!.delegate?.captured(image: uiImage, asCIImage: ciImage, ofValue: barcodeRawValue)
+                    self!.delegate?.captured(image: uiImage, asCIImage: ciImage, of: barcodeRawValue, of: barcodeFeature)
                 }
             }
+
         } else {
             print("Unable to extract features from image")
         }
@@ -235,7 +244,7 @@ extension EvrythngCameraFrameExtractor: AVCaptureVideoDataOutputSampleBufferDele
 }
 
 // MARK: AVCaptureMetadataOutputObjectsDelegate
-
+/*
 extension EvrythngCameraFrameExtractor: AVCaptureMetadataOutputObjectsDelegate {
     
     func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [Any]!, from connection: AVCaptureConnection!) {
@@ -272,3 +281,4 @@ extension EvrythngCameraFrameExtractor: AVCaptureMetadataOutputObjectsDelegate {
         print(detectionString)
     }
 }
+*/

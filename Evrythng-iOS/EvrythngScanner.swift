@@ -9,6 +9,8 @@
 //
 
 import UIKit
+import GoogleMobileVision
+import KRProgressHUD
 
 public enum EvrythngScannerModes: Int {
     case BARCODE = 1
@@ -46,11 +48,18 @@ public class EvrythngScanner {
     }
     
     //public final func identify(barcode: String, completionHandler: @escaping (_ result: String, _ error: Error?) -> Void) {
-    public final func identify(barcode: String, completionHandler: @escaping (_ scanIdentificationsResponse: EvrythngScanIdentificationsResponse?, _ error: Error?) -> Void) {
+    public final func identify(barcode: String, format: GMVDetectorBarcodeFormat?, completionHandler: @escaping (_ scanIdentificationsResponse: EvrythngScanIdentificationsResponse?, _ error: Error?) -> Void) {
         
-        let apiManager = EvrythngApiManager()
-        apiManager.scanService.evrythngScanOperator(scanType: .QR_CODE, scanMethod: .TWO_DIMENSIONAL, value: barcode).execute { (scanIdentifactionsResponse, err) in
-            completionHandler(scanIdentifactionsResponse, err)
+        if let scanType = EvrythngScanHelper.getScanTypeFrom(format: format!) {
+            
+            let method = scanType.getScanMethod()
+            
+            let apiManager = EvrythngApiManager()
+            apiManager.scanService.evrythngScanOperator(scanType: scanType, scanMethod: method, value: barcode).execute { (scanIdentifactionsResponse, err) in
+                completionHandler(scanIdentifactionsResponse, err)
+            }
+        } else {
+            print("Unable to determine Scan Type")
         }
     }
     
@@ -89,7 +98,7 @@ extension EvrythngScanner: EvrythngScannerDelegate {
         print("Starting Capture")
     }
     
-    public func didFinishScan(viewController: EvrythngScannerVC, value: String?, error: Error?) {
+    public func didFinishScan(viewController: EvrythngScannerVC, value: String?, format: GMVDetectorBarcodeFormat?, error: Error?) {
         print("\(#function)")
         guard let err = error else {
             guard let barcodeVal = value else {
@@ -97,8 +106,11 @@ extension EvrythngScanner: EvrythngScannerDelegate {
                 self.dismissVC(viewController: viewController)
                 return
             }
+            
+            KRProgressHUD.show()
             //self.identify(barcode: val, completionHandler: { (result, err) in
-            self.identify(barcode: barcodeVal, completionHandler: { (result, err) in
+            self.identify(barcode: barcodeVal, format: format, completionHandler: { (result, err) in
+                KRProgressHUD.dismiss()
                 self.dismissVC(viewController: viewController)
                 //self.delegate?.didFinishScan(result: result, error: err)
                 self.delegate?.evrythngScannerDidFinishScan(scanIdentificationsResponse: result, value: barcodeVal, error: err)

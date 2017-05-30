@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GoogleMobileVision
 
 public class EvrythngScannerVC: UIViewController {
 
@@ -73,7 +74,7 @@ public class EvrythngScannerVC: UIViewController {
                         if let qr = results.firstObject as? CIQRCodeFeature, let messageString = qr.messageString {
                             
                             self.detected = true
-                            self.evrythngScannerDelegate?.didFinishScan(viewController: self, value: messageString, error: nil)
+                            self.evrythngScannerDelegate?.didFinishScan(viewController: self, value: messageString, format: nil, error: nil)
                             //print("Hala: Finish Scan2 \(self.evrythngScannerDelegate != nil)")
                         }
                     }
@@ -134,23 +135,33 @@ extension EvrythngScannerVC: EvrythngCameraFrameExtractorDelegate {
     func capturedFromAVMetadataObject(value: String, ofType: String) {
         print("Captured Value: \(value) ofType: \(ofType) Delegate: \(self.evrythngScannerDelegate != nil)")
         self.detected = true
-        self.evrythngScannerDelegate?.didFinishScan(viewController: self, value: value, error: nil)
+        self.evrythngScannerDelegate?.didFinishScan(viewController: self, value: value, format: nil, error: nil)
     }
     
-    func captured(image: UIImage, asCIImage ciImage: CIImage, ofValue: String) {
+    func captured(image: UIImage, asCIImage ciImage: CIImage, of value: String, of feature: GMVFeature?) {
         //print("Captured Image: \(uiImage) Delegate: \(self.evrythngScannerDelegate != nil)")
         self.imageView.image = image
         
         //self.scanImage(ciImage: ciImage)
-        if(!StringUtils.isStringEmpty(string: ofValue)) {
+        if(!StringUtils.isStringEmpty(string: value)) {
             if(!self.detected) {
                 self.detected = true
-                self.evrythngScannerDelegate?.didFinishScan(viewController: self, value: ofValue, error: nil)   
+                self.evrythngScannerDelegate?.didFinishScan(viewController: self, value: value, format: self.getDetectionFormat(from: feature), error: nil)
             }
         }
     }
     
     func willStartCapture() {
         self.evrythngScannerDelegate?.willStartScan(viewController: self)
+    }
+}
+
+extension EvrythngScannerVC {
+    
+    internal func getDetectionFormat(from gmvFeature: GMVFeature?) -> GMVDetectorBarcodeFormat? {
+        if case let barcodeFeature as GMVBarcodeFeature = gmvFeature {
+            return barcodeFeature.format
+        }
+        return nil
     }
 }

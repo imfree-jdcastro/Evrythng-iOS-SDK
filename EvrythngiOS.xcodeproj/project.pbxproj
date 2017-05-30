@@ -61,6 +61,7 @@
 		08A300BB1ECAB314006F8047 /* ThngService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A300BA1ECAB314006F8047 /* ThngService.swift */; };
 		08A300BD1ECAB329006F8047 /* ActionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A300BC1ECAB329006F8047 /* ActionService.swift */; };
 		08A300BF1ECAC5D5006F8047 /* ProductService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A300BE1ECAC5D5006F8047 /* ProductService.swift */; };
+		08A8DDA61EDD4EF1002064CF /* EvrythngScanHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A8DDA51EDD4EF1002064CF /* EvrythngScanHelper.swift */; };
 		08C42B7F1ED5375A00367BAE /* EvrythngNetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C42B7E1ED5375A00367BAE /* EvrythngNetworkError.swift */; };
 		08C42B811ED53B4400367BAE /* EvrythngNetworkErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C42B801ED53B4400367BAE /* EvrythngNetworkErrorResponse.swift */; };
 		08C81DE61ED8209C00D23DA2 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C81DE51ED8209C00D23DA2 /* Credentials.swift */; };
@@ -144,6 +145,7 @@
 		08A300BA1ECAB314006F8047 /* ThngService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThngService.swift; sourceTree = "<group>"; };
 		08A300BC1ECAB329006F8047 /* ActionService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionService.swift; sourceTree = "<group>"; };
 		08A300BE1ECAC5D5006F8047 /* ProductService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductService.swift; sourceTree = "<group>"; };
+		08A8DDA51EDD4EF1002064CF /* EvrythngScanHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EvrythngScanHelper.swift; sourceTree = "<group>"; };
 		08C42B7E1ED5375A00367BAE /* EvrythngNetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EvrythngNetworkError.swift; sourceTree = "<group>"; };
 		08C42B801ED53B4400367BAE /* EvrythngNetworkErrorResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EvrythngNetworkErrorResponse.swift; sourceTree = "<group>"; };
 		08C81DE51ED8209C00D23DA2 /* Credentials.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 				08E756E71ECC0C6400B9F6AD /* EvrythngScannerVC.xib */,
 				089AD92E1EDC3066007F7DDD /* EvrythngScanTypes.swift */,
 				089AD9301EDC3091007F7DDD /* EvrythngScanMethods.swift */,
+				08A8DDA51EDD4EF1002064CF /* EvrythngScanHelper.swift */,
 			);
 			name = Scanner;
 			sourceTree = "<group>";
@@ -617,6 +620,7 @@
 				089AD9271EDC0E04007F7DDD /* EvrythngUserLogouter.swift in Sources */,
 				08E756E81ECC0C6400B9F6AD /* EvrythngScannerVC.swift in Sources */,
 				08780D371ED3120B0058D685 /* ThngReader.swift in Sources */,
+				08A8DDA61EDD4EF1002064CF /* EvrythngScanHelper.swift in Sources */,
 				08C42B811ED53B4400367BAE /* EvrythngNetworkErrorResponse.swift in Sources */,
 				08780D331ED294150058D685 /* ScopeResource.swift in Sources */,
 				08C81DEB1ED896D100D23DA2 /* URLHelper.swift in Sources */,

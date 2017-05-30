@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 public enum EvrythngScanTypes: String {
     
@@ -35,5 +36,28 @@ public enum EvrythngScanTypes: String {
     // 2D
     case QR_CODE = "qr_code"
     
-
+    
+    public func getScanMethod() -> EvrythngScanMethods {
+        
+        switch(self) {
+        // OCR
+        case .TEXT:
+            return EvrythngScanMethods.OCR
+        // IR
+        case .IMAGE:
+            return EvrythngScanMethods.IMAGE
+        // ONE - DIMENSIONAL
+        case .CODABAR, .CODE_11, .CODE_39, .CODE_93, .CODE_128:
+            fallthrough
+        case .EAN_8, .EAN_13, .CODE_25_INDUSTRIAL:
+            fallthrough
+        case .ITF_14, .GS_1_DATABAR, .DATA_BAR_RSS_EXPANDED, .DATA_BAR_LIMITED:
+            fallthrough
+        case .UPC_A, .UPC_E:
+            return EvrythngScanMethods.ONE_DIMENSIONAL
+        // TWO - DIMENSIONAL
+        case .QR_CODE:
+            return EvrythngScanMethods.TWO_DIMENSIONAL
+        }
+    }
 }
