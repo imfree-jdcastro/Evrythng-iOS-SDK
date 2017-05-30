@@ -10,4 +10,5 @@ import UIKit
 
 public enum EvrythngError: Error {
     case InvalidAppToken
+    case InvalidUsernamePassword
 }

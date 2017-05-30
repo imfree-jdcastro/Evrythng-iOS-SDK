@@ -9,7 +9,8 @@
 import UIKit
 
 public protocol EvrythngScannerResultDelegate: class {
-    func didFinishScanResult(result: String, error: Error?) -> Void
+    //func evrythngScannerdidFinishScan(result: String, error: Error?)
+    func evrythngScannerDidFinishScan(scanIdentificationsResponse: EvrythngScanIdentificationsResponse?, value: String, error: Error?)
 }
 
 extension EvrythngScannerResultDelegate {

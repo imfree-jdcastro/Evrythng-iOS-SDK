@@ -12,6 +12,16 @@ import SwiftyJSON
 
 public class AbstractUser: UserDelegate {
     
+    public var id: String? = nil
+    public var gender: Gender? = nil
+    public var birthday: Date? = nil
+    public var canLogin: Bool? = false
+    public var project: String? = nil
+    public var app: String? = nil
+    public var numberOfFriends = 0
+    
+    public var jsonData: JSON? = nil
+    
     public init() {
         
     }
@@ -32,14 +42,4 @@ public class AbstractUser: UserDelegate {
         let string = NSString(data: data, encoding: String.Encoding.utf8.rawValue)
         return string
     }
-    
-    public var id: String? = nil
-    public var gender: Gender? = nil
-    public var birthday: Date? = nil
-    public var canLogin: Bool? = false
-    public var project: String? = nil
-    public var app: String? = nil
-    public var numberOfFriends = 0
-    
-    public var jsonData: JSON? = nil
 }

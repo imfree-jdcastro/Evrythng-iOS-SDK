@@ -45,13 +45,18 @@ public class EvrythngScanner {
         print("\(#function) EvrythngScanner")
     }
     
-    public final func identify(barcode: String, completionHandler: @escaping (_ result: String, _ error: Error?) -> Void) {
-        //completionHandler("QUERY_SCAN_RESULT_SUCCESS: \(barcode)", nil)
-        completionHandler("\(barcode)", nil)
+    //public final func identify(barcode: String, completionHandler: @escaping (_ result: String, _ error: Error?) -> Void) {
+    public final func identify(barcode: String, completionHandler: @escaping (_ scanIdentificationsResponse: EvrythngScanIdentificationsResponse?, _ error: Error?) -> Void) {
+        
+        let apiManager = EvrythngApiManager()
+        apiManager.scanService.evrythngScanOperator(scanType: .QR_CODE, scanMethod: .TWO_DIMENSIONAL, value: barcode).execute { (scanIdentifactionsResponse, err) in
+            completionHandler(scanIdentifactionsResponse, err)
+        }
     }
     
     public final func identify(barcode: String) {
-        self.delegate?.didFinishScanResult(result: barcode, error: nil)
+        //self.delegate?.didFinishScanResult(result: barcode, error: nil)
+        self.delegate?.evrythngScannerDidFinishScan(scanIdentificationsResponse: nil, value: barcode, error: nil)
     }
     
     public final func scanBarcode() {
@@ -87,14 +92,16 @@ extension EvrythngScanner: EvrythngScannerDelegate {
     public func didFinishScan(viewController: EvrythngScannerVC, value: String?, error: Error?) {
         print("\(#function)")
         guard let err = error else {
-            guard let val = value else {
+            guard let barcodeVal = value else {
                 print("Barcode Value is NULL")
                 self.dismissVC(viewController: viewController)
                 return
             }
-            self.identify(barcode: val, completionHandler: { (result, err) in
+            //self.identify(barcode: val, completionHandler: { (result, err) in
+            self.identify(barcode: barcodeVal, completionHandler: { (result, err) in
                 self.dismissVC(viewController: viewController)
-                self.delegate?.didFinishScanResult(result: result, error: err)
+                //self.delegate?.didFinishScan(result: result, error: err)
+                self.delegate?.evrythngScannerDidFinishScan(scanIdentificationsResponse: result, value: barcodeVal, error: err)
             })
             return
         }

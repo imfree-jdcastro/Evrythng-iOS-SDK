@@ -25,6 +25,9 @@ public enum EvrythngNetworkService {
     
     // Thng
     case readThng(thngId: String)
+    
+    // Scan
+    case identify(scanType: EvrythngScanTypes, scanMethod: EvrythngScanMethods, value: String)
 }
 
 extension EvrythngNetworkService: EvrythngNetworkTargetType {
@@ -58,6 +61,8 @@ extension EvrythngNetworkService: EvrythngNetworkTargetType {
             
         case .readThng(let thngId):
             return .get("/thngs/\(thngId)")
+        case .identify:
+            return .get("/scan/identifications")
         }
     }
     
@@ -94,6 +99,12 @@ extension EvrythngNetworkService: EvrythngNetworkTargetType {
             return JSONEncoding() => ["email": credentials.email!, "password": credentials.password!]
         case .logout:
             return JSONEncoding() => [:]
+            
+        case .identify(let scanType, let scanMethod, let value):
+            let urlEncodedFilter = "type=\(scanType.rawValue)&value=\(value)"
+            let encoding = URLEncoding() => ["filter": urlEncodedFilter]
+            print("Encoding: \(encoding.values.description)")
+            return encoding
             
         case .editIssue(_, _, _, let title, let body):
             // Use `URLEncoding()` as default when not specified

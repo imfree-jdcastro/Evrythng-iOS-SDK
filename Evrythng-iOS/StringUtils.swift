@@ -8,16 +8,16 @@
 
 import UIKit
 
-public class StringUtils {
+public final class StringUtils {
     
-    static func isStringEmpty(string: String?) -> Bool {
+    public static func isStringEmpty(string: String?) -> Bool {
         if let string = string, !string.isEmpty {
             return false
         }
         return true
     }
     
-    static func convertToDictionary(text: String) -> [String: Any]? {
+    public static func convertToDictionary(text: String) -> [String: Any]? {
         if let data = text.data(using: .utf8) {
             do {
                 return try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]

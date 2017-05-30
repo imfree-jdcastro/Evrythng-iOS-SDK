@@ -12,7 +12,6 @@ public enum EvrythngNetworkError: Error {
 
     case ResponseError(response: EvrythngNetworkErrorResponse)
     
-    
     public var localizedDescription: String {
         switch(self) {
             case .ResponseError(let errorResponse):
