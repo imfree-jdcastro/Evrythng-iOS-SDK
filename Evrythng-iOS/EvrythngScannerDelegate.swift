@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import GoogleMobileVision
 
 public protocol EvrythngScannerDelegate: class {
-    func didFinishScan(value: String?, error: Error?) -> Void
-    func didStartScan() -> Void
+    func didCancelScan(viewController: EvrythngScannerVC)
+    func didFinishScan(viewController: EvrythngScannerVC, value: String?, format: GMVDetectorBarcodeFormat?, error: Error?) -> Void
+    func willStartScan(viewController: EvrythngScannerVC) -> Void
 }
 
 extension EvrythngScannerDelegate {

@@ -1,1 +1,1 @@
-# Evrythng-iOS-SDK
+# evrythng-ios-sdk

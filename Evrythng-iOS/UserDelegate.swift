@@ -7,14 +7,18 @@
 //
 
 import UIKit
+import Moya_SwiftyJSONMapper
+import SwiftyJSON
 
-public protocol UserDelegate, ALSwiftyJSONAble {
+public protocol UserDelegate: ALSwiftyJSONAble {
     var gender: Gender? { get set }
     var birthday: Date? { get set }
     var canLogin: Bool? { get set }
     var project: String? { get set }
     var app: String? { get set }
     var numberOfFriends: Int { get set }
+    
+    var jsonData: JSON? { get }
 }
 
 public enum Gender: String {

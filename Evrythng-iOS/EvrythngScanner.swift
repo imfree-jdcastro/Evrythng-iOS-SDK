@@ -9,78 +9,114 @@
 //
 
 import UIKit
+import GoogleMobileVision
+import KRProgressHUD
+
+public enum EvrythngScannerModes: Int {
+    case BARCODE = 1
+    case QRCODE
+}
+
+public enum EvrythngScannerModeStrategy {
+    case HIERARCHICAL // Will use the strategy from 1 ..< EvrythngScannerModes.rawValue
+    case STATIC // Will only use the selected EvrythngScannerMode itself
+}
 
 public class EvrythngScanner {
 
-    var delegate: EvrythngScannerResultDelegate?
+    weak var delegate: EvrythngScannerResultDelegate?
     
     var barcodeScannerVC: EvrythngScannerVC
     var presentingVC: UIViewController?
     
-    required public init(presentingVC: UIViewController?) {
+    var scannerMode: EvrythngScannerModes = .QRCODE
+    var scannerModeStrategy: EvrythngScannerModeStrategy = .HIERARCHICAL
+    
+    required public init(presentedBy presentingVC: UIViewController?) {
         self.presentingVC = presentingVC
-        self.barcodeScannerVC = EvrythngScannerVC()
-        self.barcodeScannerVC.evrythngScannerDelegate = self
+        self.barcodeScannerVC = EvrythngScannerVC(nibName: "EvrythngScannerVC", bundle: Bundle(identifier: "com.imfreemobile.EvrythngiOS"))
     }
     
-    convenience init(presentingVC: UIViewController?, delegate: EvrythngScannerResultDelegate?) {
-        self.init(presentingVC: presentingVC)
+    convenience public init(presentedBy presentingVC: UIViewController?, withResultDelegate delegate: EvrythngScannerResultDelegate?) {
+        self.init(presentedBy: presentingVC)
         self.presentingVC = presentingVC
         self.delegate = delegate
     }
     
-    public final func queryScanResult(barcode: String) -> (result: String, error: Error?) {
-        return ("QUERY_SCAN_RESULT_SUCCESS: \(barcode)", nil)
+    deinit {
+        print("\(#function) EvrythngScanner")
+    }
+    
+    //public final func identify(barcode: String, completionHandler: @escaping (_ result: String, _ error: Error?) -> Void) {
+    public final func identify(barcode: String, format: GMVDetectorBarcodeFormat?, completionHandler: @escaping (_ scanIdentificationsResponse: EvrythngScanIdentificationsResponse?, _ error: Error?) -> Void) {
+        
+        if let scanType = EvrythngScanHelper.getScanTypeFrom(format: format!) {
+            
+            let method = scanType.getScanMethod()
+            
+            let apiManager = EvrythngApiManager()
+            apiManager.scanService.evrythngScanOperator(scanType: scanType, scanMethod: method, value: barcode).execute { (scanIdentifactionsResponse, err) in
+                completionHandler(scanIdentifactionsResponse, err)
+            }
+        } else {
+            print("Unable to determine Scan Type")
+        }
+    }
+    
+    public final func identify(barcode: String) {
+        //self.delegate?.didFinishScanResult(result: barcode, error: nil)
+        self.delegate?.evrythngScannerDidFinishScan(scanIdentificationsResponse: nil, value: barcode, error: nil)
     }
     
     public final func scanBarcode() {
-        self.presentingVC?.present(self.barcodeScannerVC, animated: true, completion: nil)
+        self.barcodeScannerVC.evrythngScannerDelegate = self
+        if let navPresentingVC = self.presentingVC?.navigationController {
+            navPresentingVC.pushViewController(self.barcodeScannerVC, animated: true)
+        } else {
+             self.presentingVC?.present(self.barcodeScannerVC, animated: true, completion: nil)
+        }
     }
     
-    /*
-    public func startScan() throws {
-        
-        let startScanCompletion: () -> Void = {
-            self.delegate?.didStartScan()
-            // TODO: Signal Evrythng API that it will start scanning
-        }
-        
-        if let barcodeScannerVC = self.barcodeScannerVC {
-            if(barcodeScannerVC is EvrythngScannerDelegate) {
-                // NOTE: barcodeScannerVC should explicitly call didStartScan() to notify API
-                self.presentingVC?.present(barcodeScannerVC, animated: true, completion: nil)
-            } else {
-                throw EvrythngScannerError.NotConformingToEvrthngScannerProtocol
-            }
-        
+    func dismissVC(viewController: UIViewController) {
+        self.barcodeScannerVC.evrythngScannerDelegate = nil
+        if let navPresentingVC = viewController.navigationController {
+            navPresentingVC.popViewController(animated: true)
         } else {
-            let defaultScannerVC = UIViewController()
-            self.presentingVC?.present(defaultScannerVC, animated: true, completion: startScanCompletion)
+            viewController.dismiss(animated: true, completion: nil)
         }
     }
-     */
 }
 
 extension EvrythngScanner: EvrythngScannerDelegate {
-    public func didStartScan() {
-        
+    
+    public func didCancelScan(viewController: EvrythngScannerVC) {
+        print("Did Cancel Scan")
+        viewController.evrythngScannerDelegate = nil
     }
     
-    public func didFinishScan(value: String?, error: Error?) {
+    public func willStartScan(viewController: EvrythngScannerVC) {
+        print("Starting Capture")
+    }
+    
+    public func didFinishScan(viewController: EvrythngScannerVC, value: String?, format: GMVDetectorBarcodeFormat?, error: Error?) {
+        print("\(#function)")
         guard let err = error else {
-            guard let val = value else {
+            guard let barcodeVal = value else {
                 print("Barcode Value is NULL")
+                self.dismissVC(viewController: viewController)
                 return
             }
-            print("Default Scan Result: \(self.queryScanResult(barcode: val))")
+            
+            KRProgressHUD.show()
+            //self.identify(barcode: val, completionHandler: { (result, err) in
+            self.identify(barcode: barcodeVal, format: format, completionHandler: { (result, err) in
+                KRProgressHUD.dismiss()
+                self.dismissVC(viewController: viewController)
+                //self.delegate?.didFinishScan(result: result, error: err)
+                self.delegate?.evrythngScannerDidFinishScan(scanIdentificationsResponse: result, value: barcodeVal, error: err)
+            })
             return
         }
-        print(err.localizedDescription)
-    }
-}
-
-extension EvrythngScanner: EvrythngScannerResultDelegate {
-    public func didFinishScanResult(result: String, error: Error?) {
-        
+        print("Err Localized Desc: \(err.localizedDescription)")
     }
 }
