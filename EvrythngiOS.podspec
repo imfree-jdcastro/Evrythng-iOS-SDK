@@ -43,7 +43,7 @@ Pod::Spec.new do |s|
   s.subspec 'Scan' do |scan|
     scan.ios.vendored_frameworks = ['EvrythngiOSFrameworks/BarcodeDetector.framework', 'EvrythngiOSFrameworks/GoogleMobileVision.framework']
     scan.source_files = ['EvrythngiOSFrameworks/BarcodeDetector.framework/Headers/*.h', 'EvrythngiOSFrameworks/GoogleMobileVision.framework/Headers/*.h']
-    scan.public_header_files = ['EvrythngiOSFrameworks/BarcodeDetector.framework/Headers/*.h', 'EvrythngiOSFrameworks/GoogleMobileVision.framework/Headers/*.h']
+    #scan.public_header_files = ['EvrythngiOSFrameworks/BarcodeDetector.framework/Headers/*.h', 'EvrythngiOSFrameworks/GoogleMobileVision.framework/Headers/*.h']
     #scan.dependency 'GoogleMobileVision/BarcodeDetector', '~> 1.1.0'
   end
 
