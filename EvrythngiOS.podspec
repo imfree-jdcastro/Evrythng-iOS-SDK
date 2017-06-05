@@ -23,7 +23,7 @@ Pod::Spec.new do |s|
   s.license      = { :type => 'MIT', :file => 'license.md'}
   s.authors      = { 'JD Castro' => 'jd@imfreemobile.com' }
   s.platform     = :ios, '10.0'
-  s.source       = { :git => 'https://github.com/imfree-jdcastro/Evrythng-iOS-SDK.git', :tag => '0.0.107' }
+  s.source       = { :git => 'https://github.com/imfree-jdcastro/Evrythng-iOS-SDK.git', :tag => '0.0.108' }
   s.source_files = 'Evrythng-iOS/EvrythngiOS.h', 'Evrythng-iOS/**/*.{h,m,swift}'
   s.exclude_files = 'Classes/Exclude'
   #s.resources    = 'Evrythng-iOS/*.mp3'
@@ -31,10 +31,19 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '10.0'
   s.ios.framework = 'UIKit'
   s.requires_arc = true
+
+  s.pod_target_xcconfig = { 'SWIFT_VERSION' => '3' }
+  s.dependency 'Alamofire', '~> 4.4'
+  s.dependency 'AlamofireObjectMapper', '~> 4.1'
+  s.dependency 'SwiftyJSON', '~> 3.1'
+  s.dependency 'Moya', '~> 8.0.3'
+  s.dependency 'MoyaSugar', '~> 0.4'
+  s.dependency 'Moya-SwiftyJSONMapper', '~> 2.2'
+  s.dependency 'KRProgressHUD'
+
   s.default_subspecs = 'All'
 
   s.subspec 'All' do |all|
-    all.dependency 'EvrythngiOS'
     all.dependency 'EvrythngiOS/Scan'
   end
 
@@ -55,14 +64,4 @@ Pod::Spec.new do |s|
     scan.dependency 'GoogleMobileVision/BarcodeDetector'
 
   end
-
-  s.pod_target_xcconfig = { 'SWIFT_VERSION' => '3' }
-  s.dependency 'Alamofire', '~> 4.4'
-  s.dependency 'AlamofireObjectMapper', '~> 4.1'
-  s.dependency 'SwiftyJSON', '~> 3.1'
-  s.dependency 'Moya', '~> 8.0.3'
-  s.dependency 'MoyaSugar', '~> 0.4'
-  s.dependency 'Moya-SwiftyJSONMapper', '~> 2.2'
-  s.dependency 'KRProgressHUD'
-
 end
