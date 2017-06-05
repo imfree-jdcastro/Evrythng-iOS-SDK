@@ -15,6 +15,7 @@ target 'EvrythngiOS' do
   #pod 'SwiftEventBus', '~> 2.1'
   #pod 'QRCodeReader.swift', '~> 7.4.1'
   pod 'GoogleMobileVision/BarcodeDetector'
+  pod 'Moya-ObjectMapper'
   pod 'KRProgressHUD'
   target 'EvrythngiOSTests' do
     inherit! :search_paths
