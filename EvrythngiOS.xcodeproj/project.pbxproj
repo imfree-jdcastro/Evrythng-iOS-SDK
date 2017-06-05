@@ -21,6 +21,8 @@
 		0817DF221EC59A47000A78A7 /* EvrythngNetworkExecutableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0817DF211EC59A47000A78A7 /* EvrythngNetworkExecutableProtocol.swift */; };
 		0817DF241EC5A7F3000A78A7 /* EvrythngOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0817DF231EC5A7F3000A78A7 /* EvrythngOperator.swift */; };
 		0817DF261EC600D2000A78A7 /* EvrythngApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0817DF251EC600D2000A78A7 /* EvrythngApiManager.swift */; };
+		0844EBB81EE132C700BBDB6F /* BarcodeDetector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0844EBB71EE132C700BBDB6F /* BarcodeDetector.framework */; };
+		0844EBBC1EE132E300BBDB6F /* GoogleMobileVision.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0844EBBB1EE132E300BBDB6F /* GoogleMobileVision.framework */; };
 		084D50A71EC19BE200E5F396 /* EvrythngScannerResultDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084D50A61EC19BE200E5F396 /* EvrythngScannerResultDelegate.swift */; };
 		084D50B51EC1D5C600E5F396 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 084D50B01EC1D5C600E5F396 /* Result.framework */; };
 		084D50B81EC1D5C600E5F396 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 084D50B31EC1D5C600E5F396 /* SwiftyJSON.framework */; };
@@ -100,6 +102,9 @@
 		0817DF211EC59A47000A78A7 /* EvrythngNetworkExecutableProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EvrythngNetworkExecutableProtocol.swift; sourceTree = "<group>"; };
 		0817DF231EC5A7F3000A78A7 /* EvrythngOperator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EvrythngOperator.swift; sourceTree = "<group>"; };
 		0817DF251EC600D2000A78A7 /* EvrythngApiManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EvrythngApiManager.swift; sourceTree = "<group>"; };
+		0844EBB71EE132C700BBDB6F /* BarcodeDetector.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BarcodeDetector.framework; path = Pods/GoogleMobileVision/BarcodeDetector/Frameworks/frameworks/BarcodeDetector.framework; sourceTree = "<group>"; };
+		0844EBB91EE132D400BBDB6F /* Frameworks */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Frameworks; path = Pods/GoogleMobileVision/Detector/Frameworks; sourceTree = "<group>"; };
+		0844EBBB1EE132E300BBDB6F /* GoogleMobileVision.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMobileVision.framework; path = Pods/GoogleMobileVision/Detector/Frameworks/frameworks/GoogleMobileVision.framework; sourceTree = "<group>"; };
 		084D50A61EC19BE200E5F396 /* EvrythngScannerResultDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EvrythngScannerResultDelegate.swift; sourceTree = "<group>"; };
 		084D50A91EC1D53700E5F396 /* MoyaSugar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MoyaSugar.framework; path = "../../../../Library/Developer/Xcode/DerivedData/EvrythngiOS-eemufhqffojfgcfmpnrphhrhrrhn/Build/Products/Debug-iphonesimulator/MoyaSugar/MoyaSugar.framework"; sourceTree = "<group>"; };
 		084D50AB1EC1D5BD00E5F396 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../../../Library/Developer/Xcode/DerivedData/EvrythngiOS-eemufhqffojfgcfmpnrphhrhrrhn/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
@@ -167,6 +172,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0844EBBC1EE132E300BBDB6F /* GoogleMobileVision.framework in Frameworks */,
+				0844EBB81EE132C700BBDB6F /* BarcodeDetector.framework in Frameworks */,
 				084D50B51EC1D5C600E5F396 /* Result.framework in Frameworks */,
 				084D50B81EC1D5C600E5F396 /* SwiftyJSON.framework in Frameworks */,
 				084D50B91EC1D7A200E5F396 /* Moya.framework in Frameworks */,
@@ -416,6 +423,9 @@
 		DD61D093FAB5CEBC3A5E54FA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0844EBBB1EE132E300BBDB6F /* GoogleMobileVision.framework */,
+				0844EBB91EE132D400BBDB6F /* Frameworks */,
+				0844EBB71EE132C700BBDB6F /* BarcodeDetector.framework */,
 				084D50AF1EC1D5C600E5F396 /* QRCodeReader.framework */,
 				084D50B01EC1D5C600E5F396 /* Result.framework */,
 				084D50B21EC1D5C600E5F396 /* SwiftEventBus.framework */,
@@ -820,6 +830,11 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/GoogleMobileVision/BarcodeDetector/Frameworks/frameworks",
+					"$(PROJECT_DIR)/Pods/GoogleMobileVision/Detector/Frameworks/frameworks",
+				);
 				INFOPLIST_FILE = "Evrythng-iOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -849,6 +864,11 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/GoogleMobileVision/BarcodeDetector/Frameworks/frameworks",
+					"$(PROJECT_DIR)/Pods/GoogleMobileVision/Detector/Frameworks/frameworks",
+				);
 				INFOPLIST_FILE = "Evrythng-iOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
