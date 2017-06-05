@@ -16,9 +16,3 @@ FOUNDATION_EXPORT const unsigned char Evrythng_iOSVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <Evrythng_iOS/PublicHeader.h>
 
-
-#import <GoogleMobileVision/GMVDetector.h>
-#import <GoogleMobileVision/GMVDetectorConstants.h>
-#import <GoogleMobileVision/GMVFeature.h>
-#import <GoogleMobileVision/GMVUtility.h>
-#import <GoogleMobileVision/GoogleMobileVision.h>
