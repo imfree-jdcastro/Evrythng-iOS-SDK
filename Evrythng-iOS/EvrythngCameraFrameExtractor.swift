@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import GoogleMobileVision
 
 protocol EvrythngCameraFrameExtractorDelegate: class {
     func willStartCapture()

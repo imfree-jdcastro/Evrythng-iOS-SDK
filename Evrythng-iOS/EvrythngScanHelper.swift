@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GoogleMobileVision
 
 public final class EvrythngScanHelper {
     

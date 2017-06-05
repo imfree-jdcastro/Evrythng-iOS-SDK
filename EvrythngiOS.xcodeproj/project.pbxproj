@@ -178,11 +178,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08611C901EE59907007D44E7 /* GoogleMobileVision.framework in Frameworks */,
 				08611C981EE59962007D44E7 /* GoogleInterchangeUtilities.framework in Frameworks */,
 				08611C961EE59928007D44E7 /* GoogleUtilities.framework in Frameworks */,
 				08611C941EE5991E007D44E7 /* GoogleSymbolUtilities.framework in Frameworks */,
 				08611C921EE59913007D44E7 /* GoogleNetworkingUtilities.framework in Frameworks */,
-				08611C901EE59907007D44E7 /* GoogleMobileVision.framework in Frameworks */,
 				08611C8E1EE598DB007D44E7 /* BarcodeDetector.framework in Frameworks */,
 				08611C8C1EE5959D007D44E7 /* UIKit.framework in Frameworks */,
 			);
