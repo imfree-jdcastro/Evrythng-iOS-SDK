@@ -32,6 +32,7 @@
 		085842591EE16FC300C6C1E6 /* AlamofireObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 085842581EE16FC300C6C1E6 /* AlamofireObjectMapper.framework */; };
 		08611C151EE548CF007D44E7 /* BarcodeDetector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08611C131EE548CF007D44E7 /* BarcodeDetector.framework */; };
 		08611C161EE548CF007D44E7 /* GoogleMobileVision.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08611C141EE548CF007D44E7 /* GoogleMobileVision.framework */; };
+		08611C591EE565C8007D44E7 /* EvrythngiOSFrameworks in Resources */ = {isa = PBXBuildFile; fileRef = 08611C581EE565C8007D44E7 /* EvrythngiOSFrameworks */; };
 		08666DA41EC93B42004B30BF /* HttpStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08666DA31EC93B42004B30BF /* HttpStatus.swift */; };
 		08666DA61EC945D9004B30BF /* DefaultAlamofireManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08666DA51EC945D9004B30BF /* DefaultAlamofireManager.swift */; };
 		08666DAA1EC9E5E3004B30BF /* EvrythngMoyaProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08666DA91EC9E5E3004B30BF /* EvrythngMoyaProvider.swift */; };
@@ -118,6 +119,7 @@
 		085842581EE16FC300C6C1E6 /* AlamofireObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireObjectMapper.framework; path = "/Users/imfree.jdcastro/Desktop/Development/XcodeProjects/Evrythng-iOS-SampleApp/Pods/../build/Debug-iphoneos/AlamofireObjectMapper/AlamofireObjectMapper.framework"; sourceTree = "<absolute>"; };
 		08611C131EE548CF007D44E7 /* BarcodeDetector.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BarcodeDetector.framework; path = ../../../../BarcodeDetector.framework; sourceTree = "<group>"; };
 		08611C141EE548CF007D44E7 /* GoogleMobileVision.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMobileVision.framework; path = ../../../../GoogleMobileVision.framework; sourceTree = "<group>"; };
+		08611C581EE565C8007D44E7 /* EvrythngiOSFrameworks */ = {isa = PBXFileReference; lastKnownFileType = folder; path = EvrythngiOSFrameworks; sourceTree = SOURCE_ROOT; };
 		08666DA31EC93B42004B30BF /* HttpStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpStatus.swift; sourceTree = "<group>"; };
 		08666DA51EC945D9004B30BF /* DefaultAlamofireManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultAlamofireManager.swift; sourceTree = "<group>"; };
 		08666DA91EC9E5E3004B30BF /* EvrythngMoyaProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EvrythngMoyaProvider.swift; sourceTree = "<group>"; };
@@ -312,6 +314,7 @@
 		0895C0471EAF4840002E44A0 /* EvrythngiOS */ = {
 			isa = PBXGroup;
 			children = (
+				08611C581EE565C8007D44E7 /* EvrythngiOSFrameworks */,
 				080A171B1EB0828400601D6F /* Utils */,
 				080A17011EB07E0800601D6F /* Errors */,
 				080A16A41EB06B6800601D6F /* Protocols */,
@@ -548,6 +551,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08611C591EE565C8007D44E7 /* EvrythngiOSFrameworks in Resources */,
 				08E756E91ECC0C6400B9F6AD /* EvrythngScannerVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
