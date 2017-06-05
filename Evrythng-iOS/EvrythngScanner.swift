@@ -9,7 +9,6 @@
 //
 
 import UIKit
-import GoogleMobileVision
 import KRProgressHUD
 
 public enum EvrythngScannerModes: Int {
