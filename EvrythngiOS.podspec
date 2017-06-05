@@ -23,12 +23,10 @@ Pod::Spec.new do |s|
   s.license      = { :type => 'MIT', :file => 'license.md'}
   s.authors      = { 'JD Castro' => 'jd@imfreemobile.com' }
   s.platform     = :ios, '10.0'
-  s.source       = { :git => 'https://github.com/imfree-jdcastro/Evrythng-iOS-SDK.git', :tag => '0.0.12' }
+  s.source       = { :git => 'https://github.com/imfree-jdcastro/Evrythng-iOS-SDK.git', :tag => '0.0.13' }
   s.source_files = 'Evrythng-iOS', 'Evrythng-iOS/**/*.{h,m,swift}'
   s.exclude_files = 'Classes/Exclude'
   #s.resources    = 'Evrythng-iOS/*.mp3'
-  #s.pod_target_xcconfig = { 'SWIFT_VERSION' => '3' }
-#  s.vendored_framework  = "Pods/GoogleMobileVision/Detector/Frameworks/frameworks/GoogleMobileVision.framework"
 
   s.ios.deployment_target = '10.0'
   s.ios.framework = 'UIKit'
@@ -38,14 +36,23 @@ Pod::Spec.new do |s|
   #s.xcconfig = { 'FRAMEWORK_SEARCH_PATHS' => '/Applications/Xcode.app/Contents/Developer/Library/Frameworks' }
   s.vendored_frameworks = ['EvrythngiOSFrameworks/BarcodeDetector.framework', 'EvrythngiOSFrameworks/GoogleMobileVision.framework']
 
+  #s.subspec 'All' do |all|
+  #  all.dependency 'EvrythngiOS/Scan'
+  #end
+
+  #s.subspec 'Scan' do |scan|
+    #scan.ios.vendored_frameworks = ["EvrythngiOSFrameworks/*.framework"]
+    #scan.dependency 'GoogleMobileVision/BarcodeDetector', '~> 1.1.0'
+  #end
+
+  s.pod_target_xcconfig = { 'SWIFT_VERSION' => '3' }
   s.dependency 'Alamofire', '~> 4.4'
   s.dependency 'AlamofireObjectMapper', '~> 4.1'
   s.dependency 'SwiftyJSON', '~> 3.1'
   s.dependency 'Moya', '~> 8.0.3'
   s.dependency 'MoyaSugar', '~> 0.4'
   s.dependency 'Moya-SwiftyJSONMapper', '~> 2.2'
+  #s.dependency 'GoogleMobileVision/BarcodeDetector'
   s.dependency 'KRProgressHUD'
-  #s.dependency 'GoogleMobileVision/BarcodeDetector', '~> 1.1.0'
-
 
 end
