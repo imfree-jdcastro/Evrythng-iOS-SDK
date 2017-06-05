@@ -23,8 +23,8 @@ Pod::Spec.new do |s|
   s.license      = { :type => 'MIT', :file => 'license.md'}
   s.authors      = { 'JD Castro' => 'jd@imfreemobile.com' }
   s.platform     = :ios, '10.0'
-  s.source       = { :git => 'https://github.com/imfree-jdcastro/Evrythng-iOS-SDK.git', :tag => '0.0.113' }
-  #s.source_files = 'Evrythng-iOS/EvrythngiOS.h', 'Evrythng-iOS/**/*.{h,m,swift}'
+  s.source       = { :git => 'https://github.com/imfree-jdcastro/Evrythng-iOS-SDK.git', :tag => '0.0.114' }
+  s.source_files = 'Evrythng-iOS/EvrythngiOS.h', 'Evrythng-iOS/**/*.{h,m,swift}'
   s.exclude_files = 'Classes/Exclude'
   #s.resources    = 'Evrythng-iOS/*.mp3'
 
@@ -34,43 +34,18 @@ Pod::Spec.new do |s|
   s.ios.vendored_frameworks = 'EvrythngiOS.framework'
 
   s.pod_target_xcconfig = { 'SWIFT_VERSION' => '3' }
-  #s.dependency 'Alamofire', '~> 4.4'
-  #s.dependency 'AlamofireObjectMapper', '~> 4.1'
-  #s.dependency 'SwiftyJSON', '~> 3.1'
-  #s.dependency 'Moya', '~> 8.0.3'
-  #s.dependency 'MoyaSugar', '~> 0.4'
-  #s.dependency 'Moya-SwiftyJSONMapper', '~> 2.2'
-  #s.dependency 'KRProgressHUD'
+  s.dependency 'Alamofire', '~> 4.4'
+  s.dependency 'AlamofireObjectMapper', '~> 4.1'
+  s.dependency 'SwiftyJSON', '~> 3.1'
+  s.dependency 'Moya', '~> 8.0.3'
+  s.dependency 'MoyaSugar', '~> 0.4'
+  s.dependency 'Moya-SwiftyJSONMapper', '~> 2.2'
+  s.dependency 'KRProgressHUD'
 
   s.default_subspecs = 'All'
 
   s.subspec 'All' do |all|
-    all.dependency 'EvrythngiOS/Main'
     all.dependency 'EvrythngiOS/Scan'
-  end
-
-  s.subspec 'Main' do |main|
-    main.vendored_frameworks = ['Pods/GoogleInterchangeUtilities/Frameworks/frameworks/GoogleInterchangeUtilities.framework', 
-                                    'Pods/GoogleMobileVision/BarcodeDetector/Frameworks/frameworks/BarcodeDetector.framework', 
-                                    'Pods/GoogleMobileVision/Detector/Frameworks/frameworks/GoogleMobileVision.framework',
-                                    'Pods/GoogleNetworkingUtilities/Frameworks/frameworks/GoogleNetworkingUtilities.framework',
-                                    'Pods/GoogleSymbolUtilities/Frameworks/frameworks/GoogleSymbolUtilities.framework',
-                                    'Pods/GoogleUtilities/Frameworks/frameworks/GoogleUtilities.framework',
-                                  ]
-    #scan.source_files = ['Pods/GoogleMobileVision/Detector/Frameworks/frameworks/GoogleMobileVision.framework/Headers/*.h']
-    main.source_files = 'Evrythng-iOS/EvrythngiOS.h', 'Evrythng-iOS/**/*.{h,m,swift}'
-    #scan.public_header_files = ['EvrythngiOSFrameworks/GoogleMobileVision.framework/Headers/GMVDetector.h', 
-    #                            'EvrythngiOSFrameworks/GoogleMobileVision.framework/Headers/GMVDetectorConstants.h', 
-    #                            'EvrythngiOSFrameworks/GoogleMobileVision.framework/Headers/GMVFeature.h', 
-    #                            'EvrythngiOSFrameworks/GoogleMobileVision.framework/Headers/GMVUtility.h']
-    main.dependency 'Alamofire', '~> 4.4'
-    main.dependency 'AlamofireObjectMapper', '~> 4.1'
-    main.dependency 'SwiftyJSON', '~> 3.1'
-    main.dependency 'Moya', '~> 8.0.3'
-    main.dependency 'MoyaSugar', '~> 0.4'
-    main.dependency 'Moya-SwiftyJSONMapper', '~> 2.2'
-    main.dependency 'KRProgressHUD'
-
   end
 
   s.subspec 'Scan' do |scan|
