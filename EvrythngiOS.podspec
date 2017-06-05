@@ -23,7 +23,7 @@ Pod::Spec.new do |s|
   s.license      = { :type => 'MIT', :file => 'license.md'}
   s.authors      = { 'JD Castro' => 'jd@imfreemobile.com' }
   s.platform     = :ios, '10.0'
-  s.source       = { :git => 'https://github.com/imfree-jdcastro/Evrythng-iOS-SDK.git', :tag => '0.0.80' }
+  s.source       = { :git => 'https://github.com/imfree-jdcastro/Evrythng-iOS-SDK.git', :tag => '0.0.81' }
   s.source_files = 'Evrythng-iOS', 'Evrythng-iOS/**/*.{h,m,swift}'
   s.exclude_files = 'Classes/Exclude'
   #s.resources    = 'Evrythng-iOS/*.mp3'
@@ -43,7 +43,7 @@ Pod::Spec.new do |s|
   s.subspec 'Scan' do |scan|
     scan.ios.vendored_frameworks = ['EvrythngiOSFrameworks/BarcodeDetector.framework', 'EvrythngiOSFrameworks/GoogleMobileVision.framework']
     scan.source_files = ['EvrythngiOSFrameworks/GoogleMobileVision.framework/Headers/*.h']
-    #scan.public_header_files = ['EvrythngiOSFrameworks/BarcodeDetector.framework/Headers/*.h', 'EvrythngiOSFrameworks/GoogleMobileVision.framework/Headers/*.h']
+    scan.public_header_files = ['EvrythngiOSFrameworks/BarcodeDetector.framework/Headers/*.h', 'EvrythngiOSFrameworks/GoogleMobileVision.framework/Headers/*.h']
     #scan.dependency 'GoogleMobileVision/BarcodeDetector', '~> 1.1.0'
   end
 
