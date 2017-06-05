@@ -36,7 +36,6 @@
 		08611C941EE5991E007D44E7 /* GoogleSymbolUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08611C931EE5991E007D44E7 /* GoogleSymbolUtilities.framework */; };
 		08611C961EE59928007D44E7 /* GoogleUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08611C951EE59928007D44E7 /* GoogleUtilities.framework */; };
 		08611C981EE59962007D44E7 /* GoogleInterchangeUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08611C971EE59962007D44E7 /* GoogleInterchangeUtilities.framework */; };
-		08611CA31EE5B405007D44E7 /* EvrythngiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0895C0451EAF4840002E44A0 /* EvrythngiOS.framework */; };
 		08666DA41EC93B42004B30BF /* HttpStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08666DA31EC93B42004B30BF /* HttpStatus.swift */; };
 		08666DA61EC945D9004B30BF /* DefaultAlamofireManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08666DA51EC945D9004B30BF /* DefaultAlamofireManager.swift */; };
 		08666DAA1EC9E5E3004B30BF /* EvrythngMoyaProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08666DA91EC9E5E3004B30BF /* EvrythngMoyaProvider.swift */; };
@@ -186,7 +185,6 @@
 				08611C921EE59913007D44E7 /* GoogleNetworkingUtilities.framework in Frameworks */,
 				08611C8E1EE598DB007D44E7 /* BarcodeDetector.framework in Frameworks */,
 				08611C8C1EE5959D007D44E7 /* UIKit.framework in Frameworks */,
-				08611CA31EE5B405007D44E7 /* EvrythngiOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
