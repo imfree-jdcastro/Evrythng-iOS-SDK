@@ -23,7 +23,7 @@ Pod::Spec.new do |s|
   s.license      = { :type => 'MIT', :file => 'license.md'}
   s.authors      = { 'JD Castro' => 'jd@imfreemobile.com' }
   s.platform     = :ios, '10.0'
-  s.source       = { :git => 'https://github.com/imfree-jdcastro/Evrythng-iOS-SDK.git', :tag => '0.0.110' }
+  s.source       = { :git => 'https://github.com/imfree-jdcastro/Evrythng-iOS-SDK.git', :tag => '0.0.111' }
   s.source_files = 'Evrythng-iOS/EvrythngiOS.h', 'Evrythng-iOS/**/*.{h,m,swift}'
   s.exclude_files = 'Classes/Exclude'
   #s.resources    = 'Evrythng-iOS/*.mp3'
@@ -31,7 +31,7 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '10.0'
   s.ios.framework = 'UIKit'
   s.requires_arc = true
-  #s.ios.vendored_frameworks = 'FirebaseUIFrameworks/*/Frameworks/*.framework'
+  s.ios.vendored_frameworks = 'EvrythngiOS.framework'
 
   s.pod_target_xcconfig = { 'SWIFT_VERSION' => '3' }
   s.dependency 'Alamofire', '~> 4.4'
@@ -45,11 +45,11 @@ Pod::Spec.new do |s|
   s.default_subspecs = 'All'
 
   s.subspec 'All' do |all|
-    #all.dependency 'EvrythngiOS/Scan'
+    all.dependency 'EvrythngiOS/Scan'
   end
 
   s.subspec 'Scan' do |scan|
-    scan.ios.vendored_frameworks = ['Pods/GoogleInterchangeUtilities/Frameworks/frameworks/GoogleInterchangeUtilities.framework', 
+    scan.vendored_frameworks = ['Pods/GoogleInterchangeUtilities/Frameworks/frameworks/GoogleInterchangeUtilities.framework', 
                                     'Pods/GoogleMobileVision/BarcodeDetector/Frameworks/frameworks/BarcodeDetector.framework', 
                                     'Pods/GoogleMobileVision/Detector/Frameworks/frameworks/GoogleMobileVision.framework',
                                     'Pods/GoogleNetworkingUtilities/Frameworks/frameworks/GoogleNetworkingUtilities.framework',
