@@ -18,3 +18,7 @@ FOUNDATION_EXPORT const unsigned char Evrythng_iOSVersionString[];
 
 //#import <EvrythngiOS/GoogleMobileVision.h>
 #import "GoogleMobileVision/GoogleMobileVision.h"
+#import "GoogleMobileVision/GMVDetector.h"
+#import "GoogleMobileVision/GMVDetectorConstants.h"
+#import "GoogleMobileVision/GMVFeature.h"
+#import "GoogleMobileVision/GMVUtility.h"

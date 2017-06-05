@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import GoogleMobileVision
 
 public protocol EvrythngScannerDelegate: class {
     func didCancelScan(viewController: EvrythngScannerVC)
