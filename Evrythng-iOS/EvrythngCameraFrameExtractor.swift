@@ -37,9 +37,13 @@ internal class EvrythngCameraFrameExtractor: NSObject {
         super.init()
         checkPermission()
         self.sessionQueue.async { [unowned self] in
-            self.configureSession()
-            self.delegate?.willStartCapture()
-            self.captureSession.startRunning()
+            if(self.configureSession()) {
+                print("Configure Session Successful")
+                self.delegate?.willStartCapture()
+                self.captureSession.startRunning()
+            } else {
+                print("Configure Session FAILED")
+            }
         }
     }
     
@@ -98,26 +102,26 @@ internal class EvrythngCameraFrameExtractor: NSObject {
         }
     }
     
-    private func configureSession() {
+    private func configureSession() -> Bool {
         self.barcodeDetector = GMVDetector(ofType: GMVDetectorTypeBarcode, options: nil)
         self.lastKnownDeviceOrientation = UIDevice.current.orientation
         
         guard self.permissionGranted else {
-            return
+            return false
         }
         
         self.captureSession.sessionPreset = quality
         
         guard let captureDevice = selectCaptureDevice() else {
-            return
+            return false
         }
         
         guard let captureDeviceInput = try? AVCaptureDeviceInput(device: captureDevice) else {
-            return
+            return false
         }
         
         guard self.captureSession.canAddInput(captureDeviceInput) else {
-            return
+            return false
         }
         
         self.captureSession.addInput(captureDeviceInput)
@@ -126,7 +130,7 @@ internal class EvrythngCameraFrameExtractor: NSObject {
         videoOutput.setSampleBufferDelegate(self, queue: DispatchQueue(label: "Video Sample buffer"))
         
         guard self.captureSession.canAddOutput(videoOutput) else {
-            return
+            return false
         }
         
         let rgbOutputSettings = [kCVPixelBufferPixelFormatTypeKey as NSString: kCVPixelFormatType_32BGRA]
@@ -134,15 +138,15 @@ internal class EvrythngCameraFrameExtractor: NSObject {
         self.captureSession.addOutput(videoOutput)
         
         guard let connection = videoOutput.connection(withMediaType: AVFoundation.AVMediaTypeVideo) else {
-            return
+            return false
         }
         
         guard connection.isVideoOrientationSupported else {
-            return
+            return false
         }
         
         guard connection.isVideoMirroringSupported else {
-            return
+            return false
         }
         
         connection.videoOrientation = .portrait
@@ -157,7 +161,7 @@ internal class EvrythngCameraFrameExtractor: NSObject {
         metaDataOutput.metadataObjectTypes = metaDataOutput.availableMetadataObjectTypes
         */
         
-        print("Configure Session Successful")
+        return true;
     }
     
     private func selectCaptureDevice() -> AVCaptureDevice? {
