@@ -23,7 +23,7 @@ Pod::Spec.new do |s|
   s.license      = { :type => 'MIT', :file => 'license.md'}
   s.authors      = { 'JD Castro' => 'jd@imfreemobile.com' }
   s.platform     = :ios, '10.0'
-  s.source       = { :git => 'https://github.com/imfree-jdcastro/Evrythng-iOS-SDK.git', :tag => '0.0.138' }
+  s.source       = { :git => 'https://github.com/imfree-jdcastro/Evrythng-iOS-SDK.git', :tag => '0.0.139' }
   s.source_files = 'Evrythng-iOS/EvrythngiOS.h', 'Evrythng-iOS/**/*.{h,m,swift}'
   s.exclude_files = 'Classes/Exclude'
   #s.resources    = 'Evrythng-iOS/*.xib'
@@ -37,20 +37,24 @@ Pod::Spec.new do |s|
   s.ios.vendored_frameworks = 'EvrythngiOS.framework'
 
   s.pod_target_xcconfig = { 'SWIFT_VERSION' => '3' }
-  s.dependency 'Alamofire', '~> 4.4'
-  s.dependency 'AlamofireObjectMapper', '~> 4.1'
-  s.dependency 'SwiftyJSON', '~> 3.1'
-  s.dependency 'Moya', '~> 8.0.3'
-  s.dependency 'MoyaSugar', '~> 0.4'
-  s.dependency 'Moya-SwiftyJSONMapper', '~> 2.2'
-  s.dependency 'KRProgressHUD'
 
   #s.ios.vendored_frameworks = ['EvrythngiOS.framework']
   s.default_subspecs = 'All'
 
   s.subspec 'All' do |all|
-    #all.dependency 'EvrythngiOS/Scan'
+    all.dependency 'EvrythngiOS/Core'
+    all.dependency 'EvrythngiOS/Scan'
     all.dependency 'EvrythngiOS/Crashlytics'
+  end
+
+  s.subspec 'Core' do |core|
+      core.dependency 'Alamofire', '~> 4.4'
+      core.dependency 'AlamofireObjectMapper', '~> 4.1'
+      core.dependency 'SwiftyJSON', '~> 3.1'
+      core.dependency 'Moya', '~> 8.0.3'
+      core.dependency 'MoyaSugar', '~> 0.4'
+      core.dependency 'Moya-SwiftyJSONMapper', '~> 2.2'
+      core.dependency 'KRProgressHUD'
   end
 
   s.subspec 'Crashlytics' do |crashlytics|
@@ -62,13 +66,13 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'Scan' do |scan|
-    scan.vendored_frameworks = ['GoogleInterchangeUtilities.framework', 
-                                   'BarcodeDetector.framework', 
-                                   'GoogleMobileVision.framework',
-                                   'GoogleNetworkingUtilities.framework',
-                                   'GoogleSymbolUtilities.framework',
-                                   'GoogleUtilities.framework'
-                                 ]
+    # scan.vendored_frameworks = ['GoogleInterchangeUtilities.framework', 
+    #                                'BarcodeDetector.framework', 
+    #                                'GoogleMobileVision.framework',
+    #                                'GoogleNetworkingUtilities.framework',
+    #                                'GoogleSymbolUtilities.framework',
+    #                                'GoogleUtilities.framework'
+    #                              ]
 
     #scan.source_files = ['Pods/GoogleMobileVision/Detector/Frameworks/frameworks/GoogleMobileVision.framework/Headers/*.h']
     #scan.source_files = ['EvrythngiOSFrameworks/GoogleMobileVision.framework/Headers/*.h']
@@ -76,7 +80,10 @@ Pod::Spec.new do |s|
     #                            'EvrythngiOSFrameworks/GoogleMobileVision.framework/Headers/GMVDetectorConstants.h', 
     #                            'EvrythngiOSFrameworks/GoogleMobileVision.framework/Headers/GMVFeature.h', 
     #                            'EvrythngiOSFrameworks/GoogleMobileVision.framework/Headers/GMVUtility.h']
-    #scan.dependency 'GoogleMobileVision/BarcodeDetector'
-
+    scan.dependency 'GoogleMobileVision/BarcodeDetector'
+    scan.pod_target_xcconfig = {
+        'FRAMEWORK_SEARCH_PATHS' => '$(inherited) $(PODS_ROOT)/GoogleMobileVision',
+        'OTHER_LDFLAGS'          => '$(inherited) -undefined dynamic_lookup'
+      }
   end
 end
