@@ -173,13 +173,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				08611CB11EE63857007D44E7 /* GoogleInterchangeUtilities.framework in Frameworks */,
+				08611C8C1EE5959D007D44E7 /* UIKit.framework in Frameworks */,
 				08611CB21EE63857007D44E7 /* GoogleMobileVision.framework in Frameworks */,
+				08611CB11EE63857007D44E7 /* GoogleInterchangeUtilities.framework in Frameworks */,
 				08611CB31EE63857007D44E7 /* GoogleNetworkingUtilities.framework in Frameworks */,
 				08611CB41EE63857007D44E7 /* GoogleSymbolUtilities.framework in Frameworks */,
 				08611CB51EE63857007D44E7 /* GoogleUtilities.framework in Frameworks */,
 				08611C8E1EE598DB007D44E7 /* BarcodeDetector.framework in Frameworks */,
-				08611C8C1EE5959D007D44E7 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

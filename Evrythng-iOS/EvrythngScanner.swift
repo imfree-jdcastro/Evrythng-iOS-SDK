@@ -34,7 +34,9 @@ public class EvrythngScanner {
     
     required public init(presentedBy presentingVC: UIViewController?) {
         self.presentingVC = presentingVC
-        self.barcodeScannerVC = EvrythngScannerVC(nibName: "EvrythngScannerVC", bundle: Bundle(identifier: "com.imfreemobile.EvrythngiOS"))
+        //self.barcodeScannerVC = EvrythngScannerVC(nibName: "EvrythngScannerVC", bundle: Bundle(identifier: "com.imfreemobile.EvrythngiOS"))
+        let bundle = Bundle(for: EvrythngScannerVC.self)
+        self.barcodeScannerVC = EvrythngScannerVC(nibName: "EvrythngScannerVC", bundle: bundle)
     }
     
     convenience public init(presentedBy presentingVC: UIViewController?, withResultDelegate delegate: EvrythngScannerResultDelegate?) {
