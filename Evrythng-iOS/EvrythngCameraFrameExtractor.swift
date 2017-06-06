@@ -241,12 +241,19 @@ extension EvrythngCameraFrameExtractor: AVCaptureVideoDataOutputSampleBufferDele
                         self!.delegate?.captured(image: uiImage, asCIImage: ciImage, of: barcodeRawValue, of: barcodeFeature)
                     }
                 }
-                
+                return
             } else {
                 print("Unable to extract features from image")
             }
         } else {
             print("BarcodeDetector not initialized")
+            
+            DispatchQueue.main.sync { [weak self] in
+                //print("Is Running: \(self.captureSession.isRunning)")
+                if let running = self?.captureSession.isRunning, running == true {
+                    self!.delegate?.captured(image: uiImage, asCIImage: ciImage, of: "", of: nil)
+                }
+            }
         }
     }
 }
