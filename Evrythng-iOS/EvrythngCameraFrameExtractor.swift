@@ -220,29 +220,33 @@ extension EvrythngCameraFrameExtractor: AVCaptureVideoDataOutputSampleBufferDele
         //let orientation: GMVImageOrientation = GMVUtility.imageOrientation(from: deviceOrientation, with: devicePosition, defaultDeviceOrientation: self.lastKnownDeviceOrientation)
         //let options = [GMVDetectorImageOrientation : orientation]
         
-        if let barcodeFeatures:[GMVBarcodeFeature] = self.barcodeDetector.features(in: uiImage, options: nil) as? [GMVBarcodeFeature] {
-            
-            let barcodeFeature = barcodeFeatures.last
-            var barcodeRawValue = ""
-            
-            if (barcodeFeature != nil) {
-                let barcodeFormat = barcodeFeature!.format as GMVDetectorBarcodeFormat
-                barcodeRawValue = (barcodeFeature!.rawValue ?? "")!
+        if let barcodeDetector = self.barcodeDetector {
+            if let barcodeFeatures:[GMVBarcodeFeature] = barcodeDetector.features(in: uiImage, options: nil) as? [GMVBarcodeFeature] {
                 
-                print("Detected \(barcodeFeatures.count) barcode(s) with Value: \(barcodeRawValue) Orientation: \(deviceOrientation.rawValue) Format: \(barcodeFormat)")
-            } else {
-                print ("No Detected Barcodes")
-            }
-            
-            DispatchQueue.main.sync { [weak self] in
-                //print("Is Running: \(self.captureSession.isRunning)")
-                if let running = self?.captureSession.isRunning, running == true {
-                    self!.delegate?.captured(image: uiImage, asCIImage: ciImage, of: barcodeRawValue, of: barcodeFeature)
+                let barcodeFeature = barcodeFeatures.last
+                var barcodeRawValue = ""
+                
+                if (barcodeFeature != nil) {
+                    let barcodeFormat = barcodeFeature!.format as GMVDetectorBarcodeFormat
+                    barcodeRawValue = (barcodeFeature!.rawValue ?? "")!
+                    
+                    print("Detected \(barcodeFeatures.count) barcode(s) with Value: \(barcodeRawValue) Orientation: \(deviceOrientation.rawValue) Format: \(barcodeFormat)")
+                } else {
+                    print ("No Detected Barcodes")
                 }
+                
+                DispatchQueue.main.sync { [weak self] in
+                    //print("Is Running: \(self.captureSession.isRunning)")
+                    if let running = self?.captureSession.isRunning, running == true {
+                        self!.delegate?.captured(image: uiImage, asCIImage: ciImage, of: barcodeRawValue, of: barcodeFeature)
+                    }
+                }
+                
+            } else {
+                print("Unable to extract features from image")
             }
-
         } else {
-            print("Unable to extract features from image")
+            print("BarcodeDetector not initialized")
         }
     }
 }
