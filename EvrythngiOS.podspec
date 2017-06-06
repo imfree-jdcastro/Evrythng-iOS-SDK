@@ -23,13 +23,8 @@ Pod::Spec.new do |s|
   s.license      = { :type => 'MIT', :file => 'license.md'}
   s.authors      = { 'JD Castro' => 'jd@imfreemobile.com' }
   s.platform     = :ios, '10.0'
-  s.source       = { :git => 'https://github.com/imfree-jdcastro/Evrythng-iOS-SDK.git', :tag => '0.0.139' }
-  s.source_files = 'Evrythng-iOS/EvrythngiOS.h', 'Evrythng-iOS/**/*.{h,m,swift}'
-  s.exclude_files = 'Classes/Exclude'
+  s.source       = { :git => 'https://github.com/imfree-jdcastro/Evrythng-iOS-SDK.git', :tag => '0.0.140' }
   #s.resources    = 'Evrythng-iOS/*.xib'
-  s.resource_bundles = {
-     'Evrythng-iOS' => ['*.xib']
-  }
 
   s.ios.deployment_target = '10.0'
   s.ios.framework = 'UIKit'
@@ -44,10 +39,15 @@ Pod::Spec.new do |s|
   s.subspec 'All' do |all|
     all.dependency 'EvrythngiOS/Core'
     all.dependency 'EvrythngiOS/Scan'
-    all.dependency 'EvrythngiOS/Crashlytics'
+    #all.dependency 'EvrythngiOS/Crashlytics'
   end
 
   s.subspec 'Core' do |core|
+      core.source_files = 'Evrythng-iOS/EvrythngiOS.h', 'Evrythng-iOS/**/*.{h,m,swift}'
+      core.exclude_files = 'Classes/Exclude'
+      core.resource_bundles = {
+         'Evrythng-iOS' => ['*.xib']
+      }
       core.dependency 'Alamofire', '~> 4.4'
       core.dependency 'AlamofireObjectMapper', '~> 4.1'
       core.dependency 'SwiftyJSON', '~> 3.1'
