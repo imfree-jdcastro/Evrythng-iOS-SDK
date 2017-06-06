@@ -23,7 +23,7 @@ Pod::Spec.new do |s|
   s.license      = { :type => 'MIT', :file => 'license.md'}
   s.authors      = { 'JD Castro' => 'jd@imfreemobile.com' }
   s.platform     = :ios, '10.0'
-  s.source       = { :git => 'https://github.com/imfree-jdcastro/Evrythng-iOS-SDK.git', :tag => '0.0.142' }
+  s.source       = { :git => 'https://github.com/imfree-jdcastro/Evrythng-iOS-SDK.git', :tag => '0.0.143' }
   #s.resources    = 'Evrythng-iOS/*.xib'
 
   s.ios.deployment_target = '10.0'
@@ -31,30 +31,27 @@ Pod::Spec.new do |s|
   s.requires_arc = true
   s.ios.vendored_frameworks = 'EvrythngiOS.framework'
 
+  s.source_files = 'Evrythng-iOS/EvrythngiOS.h', 'Evrythng-iOS/**/*.{h,m,swift}'
+  s.exclude_files = 'Classes/Exclude'
+  s.resource_bundles = {
+     'Evrythng-iOS' => ['*.xib']
+  }
+  s.dependency 'Alamofire', '~> 4.4'
+  s.dependency 'AlamofireObjectMapper', '~> 4.1'
+  s.dependency 'SwiftyJSON', '~> 3.1'
+  s.dependency 'Moya', '~> 8.0.3'
+  s.dependency 'MoyaSugar', '~> 0.4'
+  s.dependency 'Moya-SwiftyJSONMapper', '~> 2.2'
+  s.dependency 'KRProgressHUD'
+
   s.pod_target_xcconfig = { 'SWIFT_VERSION' => '3' }
 
   #s.ios.vendored_frameworks = ['EvrythngiOS.framework']
   s.default_subspecs = 'All'
 
   s.subspec 'All' do |all|
-    all.dependency 'EvrythngiOS/Core'
     all.dependency 'EvrythngiOS/Scan'
     #all.dependency 'EvrythngiOS/Crashlytics'
-  end
-
-  s.subspec 'Core' do |core|
-      core.source_files = 'Evrythng-iOS/EvrythngiOS.h', 'Evrythng-iOS/**/*.{h,m,swift}'
-      core.exclude_files = 'Classes/Exclude'
-      core.resource_bundles = {
-         'Evrythng-iOS' => ['*.xib']
-      }
-      core.dependency 'Alamofire', '~> 4.4'
-      core.dependency 'AlamofireObjectMapper', '~> 4.1'
-      core.dependency 'SwiftyJSON', '~> 3.1'
-      core.dependency 'Moya', '~> 8.0.3'
-      core.dependency 'MoyaSugar', '~> 0.4'
-      core.dependency 'Moya-SwiftyJSONMapper', '~> 2.2'
-      core.dependency 'KRProgressHUD'
   end
 
   s.subspec 'Crashlytics' do |crashlytics|
