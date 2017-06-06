@@ -29,7 +29,6 @@
 		085394211EE68FD000229901 /* GoogleSymbolUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08611CAF1EE63856007D44E7 /* GoogleSymbolUtilities.framework */; };
 		085394221EE68FD000229901 /* GoogleUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08611CB01EE63857007D44E7 /* GoogleUtilities.framework */; };
 		085394241EE68FD000229901 /* BarcodeDetector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 085394231EE68FD000229901 /* BarcodeDetector.framework */; };
-		08611C591EE565C8007D44E7 /* EvrythngiOSFrameworks in Resources */ = {isa = PBXBuildFile; fileRef = 08611C581EE565C8007D44E7 /* EvrythngiOSFrameworks */; };
 		08611C8C1EE5959D007D44E7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08611C8B1EE5959D007D44E7 /* UIKit.framework */; };
 		08666DA41EC93B42004B30BF /* HttpStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08666DA31EC93B42004B30BF /* HttpStatus.swift */; };
 		08666DA61EC945D9004B30BF /* DefaultAlamofireManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08666DA51EC945D9004B30BF /* DefaultAlamofireManager.swift */; };
@@ -106,7 +105,6 @@
 		084D50A61EC19BE200E5F396 /* EvrythngScannerResultDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EvrythngScannerResultDelegate.swift; sourceTree = "<group>"; };
 		084D50CA1EC1EBA900E5F396 /* JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
 		085394231EE68FD000229901 /* BarcodeDetector.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BarcodeDetector.framework; sourceTree = "<group>"; };
-		08611C581EE565C8007D44E7 /* EvrythngiOSFrameworks */ = {isa = PBXFileReference; lastKnownFileType = folder; path = EvrythngiOSFrameworks; sourceTree = SOURCE_ROOT; };
 		08611C8B1EE5959D007D44E7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		08611C8D1EE598DB007D44E7 /* BarcodeDetector.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BarcodeDetector.framework; path = Pods/GoogleMobileVision/BarcodeDetector/Frameworks/frameworks/BarcodeDetector.framework; sourceTree = "<group>"; };
 		08611CAC1EE63856007D44E7 /* GoogleInterchangeUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleInterchangeUtilities.framework; sourceTree = "<group>"; };
@@ -300,7 +298,6 @@
 		0895C0471EAF4840002E44A0 /* EvrythngiOS */ = {
 			isa = PBXGroup;
 			children = (
-				08611C581EE565C8007D44E7 /* EvrythngiOSFrameworks */,
 				080A171B1EB0828400601D6F /* Utils */,
 				080A17011EB07E0800601D6F /* Errors */,
 				080A16A41EB06B6800601D6F /* Protocols */,
@@ -531,7 +528,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				08611C591EE565C8007D44E7 /* EvrythngiOSFrameworks in Resources */,
 				08E756E91ECC0C6400B9F6AD /* EvrythngScannerVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
