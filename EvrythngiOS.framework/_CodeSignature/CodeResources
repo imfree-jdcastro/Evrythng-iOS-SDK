@@ -6,7 +6,7 @@
 	<dict>
 		<key>EvrythngScannerVC.nib</key>
 		<data>
-		xQepsb+tDA2suxiMWLPXtliTEes=
+		w+rCvptdP0/KGUZ/tvYmDZXgpAA=
 		</data>
 		<key>EvrythngiOSFrameworks/BarcodeDetector.framework/BarcodeDetector</key>
 		<data>
@@ -96,26 +96,6 @@
 		<data>
 		KjTLtmmbFan3bWLXK+g+i19DskE=
 		</data>
-		<key>Headers/GMVDetector.h</key>
-		<data>
-		W2hCCC+VnGzjacN9S/UJ1FCEohs=
-		</data>
-		<key>Headers/GMVDetectorConstants.h</key>
-		<data>
-		ePQoM5+BZT68bLMNeRmzeNSOPdg=
-		</data>
-		<key>Headers/GMVFeature.h</key>
-		<data>
-		cETsH6ieFckhwInYXfHhadBR5f4=
-		</data>
-		<key>Headers/GMVUtility.h</key>
-		<data>
-		Ju7erIU65vNXmtMgrNhZSIf9tTU=
-		</data>
-		<key>Headers/GoogleMobileVision.h</key>
-		<data>
-		5doulIQwcRohcWBQb1ccJQgX56U=
-		</data>
 		<key>Info.plist</key>
 		<data>
 		DdYKvn8HU5ZlWu5QVzleONYUUB8=
@@ -126,7 +106,7 @@
 		</data>
 		<key>Modules/EvrythngiOS.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		4x4zNJAChsvODcyVqEHBIPZGFco=
+		1Lr85e6jn0bC6AusEBeOYLXjnnY=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -143,11 +123,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			xQepsb+tDA2suxiMWLPXtliTEes=
+			w+rCvptdP0/KGUZ/tvYmDZXgpAA=
 			</data>
 			<key>hash2</key>
 			<data>
-			4jGefx4YwQoXL6HZw9h8JiXkMOkbwrvOI1ygcWEwqCU=
+			TFh3zuCuvT8uUZ4+Z4iIjzk81ifS9A+kuyWYkFqQ9Xo=
 			</data>
 		</dict>
 		<key>EvrythngiOSFrameworks/BarcodeDetector.framework/BarcodeDetector</key>
@@ -392,61 +372,6 @@
 			fjQHJuIKKfdW2eS0tM0A2QbApNE5A+gI/BsJpJFcgsI=
 			</data>
 		</dict>
-		<key>Headers/GMVDetector.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			W2hCCC+VnGzjacN9S/UJ1FCEohs=
-			</data>
-			<key>hash2</key>
-			<data>
-			2t8H6m2eMhOhMSohMBPMpYod7X2pQ81GeVEf0t0W7mc=
-			</data>
-		</dict>
-		<key>Headers/GMVDetectorConstants.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			ePQoM5+BZT68bLMNeRmzeNSOPdg=
-			</data>
-			<key>hash2</key>
-			<data>
-			r2jm2FrZignSrd3EK0el813GqMgzNU8dtHFIO8xXP+M=
-			</data>
-		</dict>
-		<key>Headers/GMVFeature.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			cETsH6ieFckhwInYXfHhadBR5f4=
-			</data>
-			<key>hash2</key>
-			<data>
-			pwIokWbxnrqHMA0nTbeiU/IKML6zNsDYmf4bHSTrx6w=
-			</data>
-		</dict>
-		<key>Headers/GMVUtility.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			Ju7erIU65vNXmtMgrNhZSIf9tTU=
-			</data>
-			<key>hash2</key>
-			<data>
-			PhX3OBOo0HfELbwEtHcjQmGq/Yt6JCjH0Mxapjo9NjI=
-			</data>
-		</dict>
-		<key>Headers/GoogleMobileVision.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			5doulIQwcRohcWBQb1ccJQgX56U=
-			</data>
-			<key>hash2</key>
-			<data>
-			bPkDuncC8FWhB9n2gzHr7eAa83/9gtxIfmygusPdHQ0=
-			</data>
-		</dict>
 		<key>Modules/EvrythngiOS.swiftmodule/x86_64.swiftdoc</key>
 		<dict>
 			<key>hash</key>
@@ -462,11 +387,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			4x4zNJAChsvODcyVqEHBIPZGFco=
+			1Lr85e6jn0bC6AusEBeOYLXjnnY=
 			</data>
 			<key>hash2</key>
 			<data>
-			wCtBY/5h3qIVlc7ejuXOFOxd9ZIIwAmyfuwtqpGGM+Q=
+			//wmtDejeW3kS366QFeJnEcTYEHuB2CYR3LHHsKTqDA=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
