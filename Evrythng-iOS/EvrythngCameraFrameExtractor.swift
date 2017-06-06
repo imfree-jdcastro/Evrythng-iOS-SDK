@@ -10,6 +10,7 @@ import UIKit
 import AVFoundation
 import GoogleMobileVision
 
+
 protocol EvrythngCameraFrameExtractorDelegate: class {
     func willStartCapture()
     func captured(image: UIImage, asCIImage ciImage: CIImage, of value: String, of feature: GMVFeature?)
@@ -98,7 +99,6 @@ internal class EvrythngCameraFrameExtractor: NSObject {
     }
     
     private func configureSession() {
-        
         self.barcodeDetector = GMVDetector(ofType: GMVDetectorTypeBarcode, options: nil)
         self.lastKnownDeviceOrientation = UIDevice.current.orientation
         

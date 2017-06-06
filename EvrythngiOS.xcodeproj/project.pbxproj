@@ -24,11 +24,6 @@
 		084D50A71EC19BE200E5F396 /* EvrythngScannerResultDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084D50A61EC19BE200E5F396 /* EvrythngScannerResultDelegate.swift */; };
 		084D50CB1EC1EBA900E5F396 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084D50CA1EC1EBA900E5F396 /* JSON.swift */; };
 		08611C591EE565C8007D44E7 /* EvrythngiOSFrameworks in Resources */ = {isa = PBXBuildFile; fileRef = 08611C581EE565C8007D44E7 /* EvrythngiOSFrameworks */; };
-		08611C6A1EE574DA007D44E7 /* GMVDetector.h in Headers */ = {isa = PBXBuildFile; fileRef = 08611C651EE574DA007D44E7 /* GMVDetector.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		08611C6B1EE574DA007D44E7 /* GMVDetectorConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 08611C661EE574DA007D44E7 /* GMVDetectorConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		08611C6C1EE574DA007D44E7 /* GMVFeature.h in Headers */ = {isa = PBXBuildFile; fileRef = 08611C671EE574DA007D44E7 /* GMVFeature.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		08611C6D1EE574DA007D44E7 /* GMVUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = 08611C681EE574DA007D44E7 /* GMVUtility.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		08611C6E1EE574DA007D44E7 /* GoogleMobileVision.h in Headers */ = {isa = PBXBuildFile; fileRef = 08611C691EE574DA007D44E7 /* GoogleMobileVision.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		08611C8C1EE5959D007D44E7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08611C8B1EE5959D007D44E7 /* UIKit.framework */; };
 		08611C8E1EE598DB007D44E7 /* BarcodeDetector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08611C8D1EE598DB007D44E7 /* BarcodeDetector.framework */; };
 		08611CB11EE63857007D44E7 /* GoogleInterchangeUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08611CAC1EE63856007D44E7 /* GoogleInterchangeUtilities.framework */; };
@@ -111,11 +106,6 @@
 		084D50A61EC19BE200E5F396 /* EvrythngScannerResultDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EvrythngScannerResultDelegate.swift; sourceTree = "<group>"; };
 		084D50CA1EC1EBA900E5F396 /* JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
 		08611C581EE565C8007D44E7 /* EvrythngiOSFrameworks */ = {isa = PBXFileReference; lastKnownFileType = folder; path = EvrythngiOSFrameworks; sourceTree = SOURCE_ROOT; };
-		08611C651EE574DA007D44E7 /* GMVDetector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GMVDetector.h; path = Pods/GoogleMobileVision/Detector/Frameworks/frameworks/GoogleMobileVision.framework/Headers/GMVDetector.h; sourceTree = "<group>"; };
-		08611C661EE574DA007D44E7 /* GMVDetectorConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GMVDetectorConstants.h; path = Pods/GoogleMobileVision/Detector/Frameworks/frameworks/GoogleMobileVision.framework/Headers/GMVDetectorConstants.h; sourceTree = "<group>"; };
-		08611C671EE574DA007D44E7 /* GMVFeature.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GMVFeature.h; path = Pods/GoogleMobileVision/Detector/Frameworks/frameworks/GoogleMobileVision.framework/Headers/GMVFeature.h; sourceTree = "<group>"; };
-		08611C681EE574DA007D44E7 /* GMVUtility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GMVUtility.h; path = Pods/GoogleMobileVision/Detector/Frameworks/frameworks/GoogleMobileVision.framework/Headers/GMVUtility.h; sourceTree = "<group>"; };
-		08611C691EE574DA007D44E7 /* GoogleMobileVision.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GoogleMobileVision.h; path = Pods/GoogleMobileVision/Detector/Frameworks/frameworks/GoogleMobileVision.framework/Headers/GoogleMobileVision.h; sourceTree = "<group>"; };
 		08611C8B1EE5959D007D44E7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		08611C8D1EE598DB007D44E7 /* BarcodeDetector.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BarcodeDetector.framework; path = Pods/GoogleMobileVision/BarcodeDetector/Frameworks/frameworks/BarcodeDetector.framework; sourceTree = "<group>"; };
 		08611C8F1EE59907007D44E7 /* GoogleMobileVision.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMobileVision.framework; path = Pods/GoogleMobileVision/Detector/Frameworks/frameworks/GoogleMobileVision.framework; sourceTree = "<group>"; };
@@ -294,11 +284,6 @@
 		0895C03B1EAF4840002E44A0 = {
 			isa = PBXGroup;
 			children = (
-				08611C651EE574DA007D44E7 /* GMVDetector.h */,
-				08611C661EE574DA007D44E7 /* GMVDetectorConstants.h */,
-				08611C671EE574DA007D44E7 /* GMVFeature.h */,
-				08611C681EE574DA007D44E7 /* GMVUtility.h */,
-				08611C691EE574DA007D44E7 /* GoogleMobileVision.h */,
 				0895C0471EAF4840002E44A0 /* EvrythngiOS */,
 				0895C0521EAF4841002E44A0 /* Evrythng-iOSTests */,
 				0895C0461EAF4840002E44A0 /* Products */,
@@ -463,11 +448,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0895C0561EAF4841002E44A0 /* EvrythngiOS.h in Headers */,
-				08611C6A1EE574DA007D44E7 /* GMVDetector.h in Headers */,
-				08611C6B1EE574DA007D44E7 /* GMVDetectorConstants.h in Headers */,
-				08611C6C1EE574DA007D44E7 /* GMVFeature.h in Headers */,
-				08611C6D1EE574DA007D44E7 /* GMVUtility.h in Headers */,
-				08611C6E1EE574DA007D44E7 /* GoogleMobileVision.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
