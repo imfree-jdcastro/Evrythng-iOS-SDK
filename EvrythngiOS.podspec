@@ -23,7 +23,7 @@ Pod::Spec.new do |s|
   s.license      = { :type => 'MIT', :file => 'license.md'}
   s.authors      = { 'JD Castro' => 'jd@imfreemobile.com' }
   s.platform     = :ios, '10.0'
-  s.source       = { :git => 'https://github.com/imfree-jdcastro/Evrythng-iOS-SDK.git', :tag => '0.0.135' }
+  s.source       = { :git => 'https://github.com/imfree-jdcastro/Evrythng-iOS-SDK.git', :tag => '0.0.137' }
   s.source_files = 'Evrythng-iOS/EvrythngiOS.h', 'Evrythng-iOS/**/*.{h,m,swift}'
   s.exclude_files = 'Classes/Exclude'
   #s.resources    = 'Evrythng-iOS/*.xib'
@@ -44,7 +44,6 @@ Pod::Spec.new do |s|
   s.dependency 'MoyaSugar', '~> 0.4'
   s.dependency 'Moya-SwiftyJSONMapper', '~> 2.2'
   s.dependency 'KRProgressHUD'
-  s.dependency 'Crashlytics'
 
   #s.ios.vendored_frameworks = ['EvrythngiOS.framework']
   s.default_subspecs = 'All'
@@ -57,7 +56,8 @@ Pod::Spec.new do |s|
   s.subspec 'Crashlytics' do |crashlytics|
       crashlytics.dependency 'Crashlytics'
       crashlytics.pod_target_xcconfig = {
-        'FRAMEWORK_SEARCH_PATHS' => '$(inherited) $(PODS_ROOT)/Crashlytics/iOS'
+        'FRAMEWORK_SEARCH_PATHS' => '$(inherited) $(PODS_ROOT)/Crashlytics/iOS',
+        'OTHER_LDFLAGS'          => '$(inherited) -undefined dynamic_lookup'
       }
   end
 
