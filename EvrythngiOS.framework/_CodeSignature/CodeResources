@@ -4,6 +4,10 @@
 <dict>
 	<key>files</key>
 	<dict>
+		<key>.DS_Store</key>
+		<data>
+		jKzXzd9xkO0i3duYvXYmDrY7uSM=
+		</data>
 		<key>EvrythngScannerVC.nib</key>
 		<data>
 		w+rCvptdP0/KGUZ/tvYmDZXgpAA=
@@ -106,7 +110,7 @@
 		</data>
 		<key>Modules/EvrythngiOS.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		1Lr85e6jn0bC6AusEBeOYLXjnnY=
+		Tsq24dOV5AVubV5TAeBxE5XK64M=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -387,11 +391,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			1Lr85e6jn0bC6AusEBeOYLXjnnY=
+			Tsq24dOV5AVubV5TAeBxE5XK64M=
 			</data>
 			<key>hash2</key>
 			<data>
-			//wmtDejeW3kS366QFeJnEcTYEHuB2CYR3LHHsKTqDA=
+			seAeRRPu5TCuPDB3TdtU6VNIkG6boVRMeEc/srm+tRU=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
