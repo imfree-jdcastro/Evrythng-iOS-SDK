@@ -23,12 +23,6 @@
 		0817DF261EC600D2000A78A7 /* EvrythngApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0817DF251EC600D2000A78A7 /* EvrythngApiManager.swift */; };
 		084D50A71EC19BE200E5F396 /* EvrythngScannerResultDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084D50A61EC19BE200E5F396 /* EvrythngScannerResultDelegate.swift */; };
 		084D50CB1EC1EBA900E5F396 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084D50CA1EC1EBA900E5F396 /* JSON.swift */; };
-		0853941E1EE6888700229901 /* GoogleMobileVision.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08611CAD1EE63856007D44E7 /* GoogleMobileVision.framework */; };
-		0853941F1EE68FD000229901 /* GoogleInterchangeUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08611CAC1EE63856007D44E7 /* GoogleInterchangeUtilities.framework */; };
-		085394201EE68FD000229901 /* GoogleNetworkingUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08611CAE1EE63856007D44E7 /* GoogleNetworkingUtilities.framework */; };
-		085394211EE68FD000229901 /* GoogleSymbolUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08611CAF1EE63856007D44E7 /* GoogleSymbolUtilities.framework */; };
-		085394221EE68FD000229901 /* GoogleUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08611CB01EE63857007D44E7 /* GoogleUtilities.framework */; };
-		085394241EE68FD000229901 /* BarcodeDetector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 085394231EE68FD000229901 /* BarcodeDetector.framework */; };
 		08611C8C1EE5959D007D44E7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08611C8B1EE5959D007D44E7 /* UIKit.framework */; };
 		08666DA41EC93B42004B30BF /* HttpStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08666DA31EC93B42004B30BF /* HttpStatus.swift */; };
 		08666DA61EC945D9004B30BF /* DefaultAlamofireManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08666DA51EC945D9004B30BF /* DefaultAlamofireManager.swift */; };
@@ -167,12 +161,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				085394241EE68FD000229901 /* BarcodeDetector.framework in Frameworks */,
-				0853941F1EE68FD000229901 /* GoogleInterchangeUtilities.framework in Frameworks */,
-				085394201EE68FD000229901 /* GoogleNetworkingUtilities.framework in Frameworks */,
-				085394211EE68FD000229901 /* GoogleSymbolUtilities.framework in Frameworks */,
-				085394221EE68FD000229901 /* GoogleUtilities.framework in Frameworks */,
-				0853941E1EE6888700229901 /* GoogleMobileVision.framework in Frameworks */,
 				08611C8C1EE5959D007D44E7 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
