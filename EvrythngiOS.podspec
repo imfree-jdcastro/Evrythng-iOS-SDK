@@ -23,7 +23,7 @@ Pod::Spec.new do |s|
   s.license      = { :type => 'MIT', :file => 'license.md'}
   s.authors      = { 'JD Castro' => 'jd@imfreemobile.com' }
   s.platform     = :ios, '10.0'
-  s.source       = { :git => 'https://github.com/imfree-jdcastro/Evrythng-iOS-SDK.git', :tag => '0.0.131' }
+  s.source       = { :git => 'https://github.com/imfree-jdcastro/Evrythng-iOS-SDK.git', :tag => '0.0.132' }
   s.source_files = 'Evrythng-iOS/EvrythngiOS.h', 'Evrythng-iOS/**/*.{h,m,swift}'
   s.exclude_files = 'Classes/Exclude'
   #s.resources    = 'Evrythng-iOS/*.xib'
@@ -53,17 +53,13 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'Scan' do |scan|
-    #scan.vendored_frameworks = ['GoogleInterchangeUtilities.framework', 
-    #                                'BarcodeDetector.framework', 
-    #                                'GoogleMobileVision.framework',
-    #                                'GoogleNetworkingUtilities.framework',
-    #                                'GoogleSymbolUtilities.framework',
-    #                                'GoogleUtilities.framework'
-    #                              ]
-
-    scan.vendored_frameworks = ['$(PODS_ROOT)/GoogleMobileVision/BarcodeDetector/Frameworks/frameworks/BarcodeDetector.framework',
-                                '$(PODS_ROOT)/GoogleMobileVision/Detector/Frameworks/frameworks/GoogleMobileVision.framework',
-                                ]
+    scan.vendored_frameworks = ['GoogleInterchangeUtilities.framework', 
+                                   'BarcodeDetector.framework', 
+                                   'GoogleMobileVision.framework',
+                                   'GoogleNetworkingUtilities.framework',
+                                   'GoogleSymbolUtilities.framework',
+                                   'GoogleUtilities.framework'
+                                 ]
 
     #scan.source_files = ['Pods/GoogleMobileVision/Detector/Frameworks/frameworks/GoogleMobileVision.framework/Headers/*.h']
     #scan.source_files = ['EvrythngiOSFrameworks/GoogleMobileVision.framework/Headers/*.h']
