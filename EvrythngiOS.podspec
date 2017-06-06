@@ -23,7 +23,7 @@ Pod::Spec.new do |s|
   s.license      = { :type => 'MIT', :file => 'license.md'}
   s.authors      = { 'JD Castro' => 'jd@imfreemobile.com' }
   s.platform     = :ios, '10.0'
-  s.source       = { :git => 'https://github.com/imfree-jdcastro/Evrythng-iOS-SDK.git', :tag => '0.0.115' }
+  s.source       = { :git => 'https://github.com/imfree-jdcastro/Evrythng-iOS-SDK.git', :tag => '0.0.116' }
   s.source_files = 'Evrythng-iOS/EvrythngiOS.h', 'Evrythng-iOS/**/*.{h,m,swift}'
   s.exclude_files = 'Classes/Exclude'
   #s.resources    = 'Evrythng-iOS/*.mp3'
@@ -41,6 +41,7 @@ Pod::Spec.new do |s|
   s.dependency 'MoyaSugar', '~> 0.4'
   s.dependency 'Moya-SwiftyJSONMapper', '~> 2.2'
   s.dependency 'KRProgressHUD'
+  s.dependency 'Firebase/Storage'
 
   s.default_subspecs = 'All'
 
