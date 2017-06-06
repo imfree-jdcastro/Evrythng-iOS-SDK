@@ -23,7 +23,7 @@ Pod::Spec.new do |s|
   s.license      = { :type => 'MIT', :file => 'license.md'}
   s.authors      = { 'JD Castro' => 'jd@imfreemobile.com' }
   s.platform     = :ios, '10.0'
-  s.source       = { :git => 'https://github.com/imfree-jdcastro/Evrythng-iOS-SDK.git', :tag => '0.0.134' }
+  s.source       = { :git => 'https://github.com/imfree-jdcastro/Evrythng-iOS-SDK.git', :tag => '0.0.135' }
   s.source_files = 'Evrythng-iOS/EvrythngiOS.h', 'Evrythng-iOS/**/*.{h,m,swift}'
   s.exclude_files = 'Classes/Exclude'
   #s.resources    = 'Evrythng-iOS/*.xib'
@@ -51,6 +51,14 @@ Pod::Spec.new do |s|
 
   s.subspec 'All' do |all|
     all.dependency 'EvrythngiOS/Scan'
+    all.dependency 'EvrythngiOS/Crashlytics'
+  end
+
+  s.subspec 'Crashlytics' do |crashlytics|
+      crashlytics.dependency 'Crashlytics'
+      crashlytics.pod_target_xcconfig = {
+        'FRAMEWORK_SEARCH_PATHS' => '$(inherited) $(PODS_ROOT)/Crashlytics/iOS'
+      }
   end
 
   s.subspec 'Scan' do |scan|
