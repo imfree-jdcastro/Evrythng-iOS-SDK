@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "EvrythngiOS2"
-  s.version      = "0.0.319"
+  s.version      = "0.0.320"
   s.summary      = "iOS variant of the Evrythng Platform SDK"
   s.description  = 'evrythng-ios-sdk is an SDK to be used when developing iOS enabled Applications using the Evrythng Platform.'
   s.homepage     = 'https://github.com/imfree-jdcastro/Evrythng-iOS-SDK'
@@ -36,17 +36,17 @@ Pod::Spec.new do |s|
 
    }
 
-  # s.vendored_frameworks = ['GoogleInterchangeUtilities.framework', 
-  #                                  'BarcodeDetector.framework', 
-  #                                  'GoogleMobileVision.framework',
-  #                                  'GoogleNetworkingUtilities.framework',
-  #                                  'GoogleSymbolUtilities.framework',
-  #                                  'GoogleUtilities.framework'
-  #                        ]
+  s.vendored_frameworks = ['GoogleInterchangeUtilities.framework', 
+                           'BarcodeDetector.framework', 
+                           'GoogleMobileVision.framework',
+                           'GoogleNetworkingUtilities.framework',
+                           'GoogleSymbolUtilities.framework',
+                           'GoogleUtilities.framework'
+                         ]
 
 
   #s.source_files = "FirebaseDatabaseUI/**/*.{h,m}"
-  s.dependency 'GoogleMobileVision/BarcodeDetector'
+  #s.dependency 'GoogleMobileVision/BarcodeDetector'
   #s.source_files = ['Pods/GoogleMobileVision/Detector/Frameworks/frameworks/GoogleMobileVision.framework/Headers/*.h']
   s.xcconfig  = {'FRAMEWORK_SEARCH_PATHS' => '"${PODS_ROOT}/GoogleMobileVision/**/Frameworks/frameworks"','HEADER_SEARCH_PATHS' => '"${PODS_ROOT}/GoogleMobileVision/Detector/Frameworks/frameworks"' }
   #s.dependency 'EvrythngiOS', '0.0.181'     
