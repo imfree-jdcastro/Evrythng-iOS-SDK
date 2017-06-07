@@ -22,6 +22,11 @@
 		0817DF221EC59A47000A78A7 /* EvrythngNetworkExecutableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0817DF211EC59A47000A78A7 /* EvrythngNetworkExecutableProtocol.swift */; };
 		0817DF241EC5A7F3000A78A7 /* EvrythngOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0817DF231EC5A7F3000A78A7 /* EvrythngOperator.swift */; };
 		0817DF261EC600D2000A78A7 /* EvrythngApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0817DF251EC600D2000A78A7 /* EvrythngApiManager.swift */; };
+		084A381C1EE8518D0056506B /* GoogleMobileVision.h in Headers */ = {isa = PBXBuildFile; fileRef = 08EF4BC11EE8478600E691A9 /* GoogleMobileVision.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		084A381D1EE8518D0056506B /* GMVDetector.h in Headers */ = {isa = PBXBuildFile; fileRef = 08EF4BB91EE8472500E691A9 /* GMVDetector.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		084A381E1EE8518D0056506B /* GMVDetectorConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 08EF4BBA1EE8472500E691A9 /* GMVDetectorConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		084A381F1EE8518D0056506B /* GMVFeature.h in Headers */ = {isa = PBXBuildFile; fileRef = 08EF4BBB1EE8472500E691A9 /* GMVFeature.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		084A38201EE8518D0056506B /* GMVUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = 08EF4BBC1EE8472500E691A9 /* GMVUtility.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		084D50A71EC19BE200E5F396 /* EvrythngScannerResultDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084D50A61EC19BE200E5F396 /* EvrythngScannerResultDelegate.swift */; };
 		084D50CB1EC1EBA900E5F396 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084D50CA1EC1EBA900E5F396 /* JSON.swift */; };
 		08611C8C1EE5959D007D44E7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08611C8B1EE5959D007D44E7 /* UIKit.framework */; };
@@ -479,6 +484,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				0895C0561EAF4841002E44A0 /* EvrythngiOS.h in Headers */,
+				084A381C1EE8518D0056506B /* GoogleMobileVision.h in Headers */,
+				084A381D1EE8518D0056506B /* GMVDetector.h in Headers */,
+				084A381E1EE8518D0056506B /* GMVDetectorConstants.h in Headers */,
+				084A381F1EE8518D0056506B /* GMVFeature.h in Headers */,
+				084A38201EE8518D0056506B /* GMVUtility.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
