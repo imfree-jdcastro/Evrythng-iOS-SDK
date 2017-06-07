@@ -49,6 +49,6 @@ Pod::Spec.new do |s|
   #s.public_header_files = "GoogleMobileVision.framework/Headers/*.{h,m}"
   s.dependency 'GoogleMobileVision/BarcodeDetector'
   #s.source_files = ['Pods/GoogleMobileVision/Detector/Frameworks/frameworks/GoogleMobileVision.framework/Headers/*.h']
-  s.xcconfig  = {'FRAMEWORK_SEARCH_PATHS' => '"${PODS_ROOT}/GoogleMobileVision/**/Frameworks/frameworks"','HEADER_SEARCH_PATHS' => '"${PODS_ROOT}/GoogleMobileVision/Detector/Frameworks/frameworks"' }
+  #s.xcconfig  = {'FRAMEWORK_SEARCH_PATHS' => '"${PODS_ROOT}/GoogleMobileVision/**/Frameworks/frameworks"','HEADER_SEARCH_PATHS' => '"${PODS_ROOT}/GoogleMobileVision/Detector/Frameworks/frameworks"' }
   #s.dependency 'EvrythngiOS', '0.0.181'     
 end
