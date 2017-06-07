@@ -16,14 +16,14 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "EvrythngiOS2"
-  s.version      = "0.0.187"
+  s.version      = "0.0.188"
   s.summary      = "iOS variant of the Evrythng Platform SDK"
   s.description  = 'evrythng-ios-sdk is an SDK to be used when developing iOS enabled Applications using the Evrythng Platform.'
   s.homepage     = 'https://github.com/imfree-jdcastro/Evrythng-iOS-SDK'
   s.license      = { :type => 'MIT', :file => 'license.md'}
   s.authors      = { 'JD Castro' => 'jd@imfreemobile.com' }
   s.platform     = :ios, '10.0'
-  s.source       = { :git => 'https://github.com/imfree-jdcastro/Evrythng-iOS-SDK.git', :tag => '0.0.187' }
+  s.source       = { :git => 'https://github.com/imfree-jdcastro/Evrythng-iOS-SDK.git', :tag => '0.0.188' }
   s.resources    = 'Evrythng-iOS/*.xib'
 
   s.module_name      = 'EvrythngiOS2'
@@ -36,7 +36,7 @@ Pod::Spec.new do |s|
   s.default_subspecs = 'All'
 
   s.subspec 'All' do |all|
-    all.dependency 'EvrythngiOS/Core'
+    all.dependency 'EvrythngiOS2/Core'
     #all.dependency 'EvrythngiOS/Scan'
     #all.dependency 'EvrythngiOS/Crashlytics'
   end
@@ -54,7 +54,7 @@ Pod::Spec.new do |s|
       core.dependency 'MoyaSugar', '~> 0.4'
       core.dependency 'Moya-SwiftyJSONMapper', '~> 2.2'
       core.dependency 'KRProgressHUD'
-      core.dependency 'EvrythngiOS', '0.0.307'
+      core.dependency 'EvrythngiOS', '0.0.308'
 
       core.user_target_xcconfig = { 'SWIFT_VERSION' => '3'}
   end

@@ -23,7 +23,7 @@ Pod::Spec.new do |s|
   s.license      = { :type => 'MIT', :file => 'license.md'}
   s.authors      = { 'JD Castro' => 'jd@imfreemobile.com' }
   s.platform     = :ios, '10.0'
-  s.source       = { :git => 'https://github.com/imfree-jdcastro/Evrythng-iOS-SDK.git', :tag => '0.0.307' }
+  s.source       = { :git => 'https://github.com/imfree-jdcastro/Evrythng-iOS-SDK.git', :tag => '0.0.308' }
   s.module_name      = 'EvrythngiOS'
 
   s.ios.deployment_target = '10.0'
