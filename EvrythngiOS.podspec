@@ -23,7 +23,7 @@ Pod::Spec.new do |s|
   s.license      = { :type => 'MIT', :file => 'license.md'}
   s.authors      = { 'JD Castro' => 'jd@imfreemobile.com' }
   s.platform     = :ios, '10.0'
-  s.source       = { :git => 'https://github.com/imfree-jdcastro/Evrythng-iOS-SDK.git', :tag => '0.0.173' }
+  s.source       = { :git => 'https://github.com/imfree-jdcastro/Evrythng-iOS-SDK.git', :tag => '0.0.174' }
   #s.resources    = 'Evrythng-iOS/*.xib'
 
   s.ios.deployment_target = '10.0'
@@ -67,13 +67,13 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'Scan' do |scan|
-    s.vendored_frameworks = [#'GoogleInterchangeUtilities.framework', 
-                                   'BarcodeDetector.framework', 
-                                   'GoogleMobileVision.framework',
-                                   #'GoogleNetworkingUtilities.framework',
-                                   #'GoogleSymbolUtilities.framework',
-                                   #'GoogleUtilities.framework'
-                                 ]
+    # s.vendored_frameworks = ['GoogleInterchangeUtilities.framework', 
+    #                                'BarcodeDetector.framework', 
+    #                                'GoogleMobileVision.framework',
+    #                                'GoogleNetworkingUtilities.framework',
+    #                                'GoogleSymbolUtilities.framework',
+    #                                'GoogleUtilities.framework'
+    #                              ]
 
     # scan.vendored_frameworks = ['Pods/GoogleInterchangeUtilities/Frameworks/frameworks/GoogleInterchangeUtilities.framework',
     #                          'Pods/GoogleMobileVision/BarcodeDetector/Frameworks/frameworks/BarcodeDetector.framework',
@@ -83,13 +83,30 @@ Pod::Spec.new do |s|
     #                          'Pods/GoogleUtilities/Frameworks/frameworks/GoogleUtilities.framework',
     #                         ]
 
+    scan.ios.vendored_frameworks = ['GoogleInterchangeUtilities.framework', 
+                                   'BarcodeDetector.framework', 
+                                   'GoogleMobileVision.framework',
+                                   'GoogleNetworkingUtilities.framework',
+                                   'GoogleSymbolUtilities.framework',
+                                   'GoogleUtilities.framework'
+                                 ]
+    scan.ios.resources = ['GoogleInterchangeUtilities.framework', 
+                                   'BarcodeDetector.framework', 
+                                   'GoogleMobileVision.framework',
+                                   'GoogleNetworkingUtilities.framework',
+                                   'GoogleSymbolUtilities.framework',
+                                   'GoogleUtilities.framework'
+                                 ]
+    #scan.ios.xcconfig = { 'LD_RUNPATH_SEARCH_PATHS' => '@loader_path/../Frameworks' }
+
     scan.pod_target_xcconfig = {
         'FRAMEWORK_SEARCH_PATHS' => '$(PODS_ROOT)/Evrythng-iOS',
         'OTHER_LDFLAGS'          => '$(inherited) -undefined dynamic_lookup'
+
     }
 
-    scan.source_files = ['EvrythngiOSFrameworks/GoogleMobileVision.framework/Headers/*.h']
-    scan.public_header_files = ['Pods/GoogleMobileVision/Detector/Frameworks/frameworks/GoogleMobileVision.framework/Headers/*.h']
-    scan.dependency 'GoogleMobileVision/BarcodeDetector'
+    # scan.source_files = ['EvrythngiOSFrameworks/GoogleMobileVision.framework/Headers/*.h']
+    # scan.public_header_files = ['Pods/GoogleMobileVision/Detector/Frameworks/frameworks/GoogleMobileVision.framework/Headers/*.h']
+    # scan.dependency 'GoogleMobileVision/BarcodeDetector'
   end
 end
