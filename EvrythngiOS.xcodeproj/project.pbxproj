@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		020E33294495E83851488C83 /* Pods_EvrythngiOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C3E498BAA008E4649917D1C /* Pods_EvrythngiOSTests.framework */; };
 		080A169A1EB04FFA00601D6F /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080A16991EB04FFA00601D6F /* Product.swift */; };
 		080A169C1EB0500C00601D6F /* Thng.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080A169B1EB0500C00601D6F /* Thng.swift */; };
 		080A16A01EB0521D00601D6F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080A169F1EB0521D00601D6F /* User.swift */; };
@@ -68,14 +69,16 @@
 		08E756E81ECC0C6400B9F6AD /* EvrythngScannerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E756E61ECC0C6400B9F6AD /* EvrythngScannerVC.swift */; };
 		08E756E91ECC0C6400B9F6AD /* EvrythngScannerVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 08E756E71ECC0C6400B9F6AD /* EvrythngScannerVC.xib */; };
 		08E756EB1ECC1E4000B9F6AD /* AbstractUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080A16A71EB071CA00601D6F /* AbstractUser.swift */; };
-		08FA488B1EE80223000F77FD /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08FA48831EE80223000F77FD /* Alamofire.framework */; };
-		08FA48911EE80223000F77FD /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08FA48891EE80223000F77FD /* Result.framework */; };
-		08FA48B81EE810F0000F77FD /* BarcodeDetector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08FA48B21EE810F0000F77FD /* BarcodeDetector.framework */; };
-		08FA48B91EE810F0000F77FD /* GoogleInterchangeUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08FA48B31EE810F0000F77FD /* GoogleInterchangeUtilities.framework */; };
-		08FA48BA1EE810F0000F77FD /* GoogleMobileVision.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08FA48B41EE810F0000F77FD /* GoogleMobileVision.framework */; };
-		08FA48BB1EE810F0000F77FD /* GoogleNetworkingUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08FA48B51EE810F0000F77FD /* GoogleNetworkingUtilities.framework */; };
-		08FA48BC1EE810F0000F77FD /* GoogleSymbolUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08FA48B61EE810F0000F77FD /* GoogleSymbolUtilities.framework */; };
-		08FA48BD1EE810F0000F77FD /* GoogleUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08FA48B71EE810F0000F77FD /* GoogleUtilities.framework */; };
+		08EF4BAA1EE8459B00E691A9 /* AlamofireObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08EF4B9F1EE8459B00E691A9 /* AlamofireObjectMapper.framework */; };
+		08EF4BAB1EE8459B00E691A9 /* KRProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08EF4BA01EE8459B00E691A9 /* KRProgressHUD.framework */; };
+		08EF4BAC1EE8459B00E691A9 /* Moya_ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08EF4BA11EE8459B00E691A9 /* Moya_ObjectMapper.framework */; };
+		08EF4BAD1EE8459B00E691A9 /* Moya_SwiftyJSONMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08EF4BA21EE8459B00E691A9 /* Moya_SwiftyJSONMapper.framework */; };
+		08EF4BAE1EE8459B00E691A9 /* Moya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08EF4BA31EE8459B00E691A9 /* Moya.framework */; };
+		08EF4BAF1EE8459B00E691A9 /* MoyaSugar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08EF4BA41EE8459B00E691A9 /* MoyaSugar.framework */; };
+		08EF4BB01EE8459B00E691A9 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08EF4BA51EE8459B00E691A9 /* ObjectMapper.framework */; };
+		08EF4BB31EE8459B00E691A9 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08EF4BA81EE8459B00E691A9 /* SwiftyJSON.framework */; };
+		08EF4BD41EE84A6A00E691A9 /* EvrythngiOS.h in Sources */ = {isa = PBXBuildFile; fileRef = 0895C0481EAF4840002E44A0 /* EvrythngiOS.h */; };
+		D30BD426850E8132F9CCC66B /* Pods_EvrythngiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BBF65DE97494A7C08921DDA /* Pods_EvrythngiOS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -165,16 +168,24 @@
 		08E756DC1ECC035F00B9F6AD /* EvrythngCameraFrameExtractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EvrythngCameraFrameExtractor.swift; sourceTree = "<group>"; };
 		08E756E61ECC0C6400B9F6AD /* EvrythngScannerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EvrythngScannerVC.swift; sourceTree = "<group>"; };
 		08E756E71ECC0C6400B9F6AD /* EvrythngScannerVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EvrythngScannerVC.xib; sourceTree = "<group>"; };
+		08EF4B9F1EE8459B00E691A9 /* AlamofireObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireObjectMapper.framework; path = "../../../../Library/Developer/Xcode/DerivedData/EvrythngiOS-eemufhqffojfgcfmpnrphhrhrrhn/Build/Products/Debug-iphonesimulator/AlamofireObjectMapper/AlamofireObjectMapper.framework"; sourceTree = "<group>"; };
+		08EF4BA01EE8459B00E691A9 /* KRProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KRProgressHUD.framework; path = "../../../../Library/Developer/Xcode/DerivedData/EvrythngiOS-eemufhqffojfgcfmpnrphhrhrrhn/Build/Products/Debug-iphonesimulator/KRProgressHUD/KRProgressHUD.framework"; sourceTree = "<group>"; };
+		08EF4BA11EE8459B00E691A9 /* Moya_ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Moya_ObjectMapper.framework; path = "../../../../Library/Developer/Xcode/DerivedData/EvrythngiOS-eemufhqffojfgcfmpnrphhrhrrhn/Build/Products/Debug-iphonesimulator/Moya-ObjectMapper/Moya_ObjectMapper.framework"; sourceTree = "<group>"; };
+		08EF4BA21EE8459B00E691A9 /* Moya_SwiftyJSONMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Moya_SwiftyJSONMapper.framework; path = "../../../../Library/Developer/Xcode/DerivedData/EvrythngiOS-eemufhqffojfgcfmpnrphhrhrrhn/Build/Products/Debug-iphonesimulator/Moya-SwiftyJSONMapper/Moya_SwiftyJSONMapper.framework"; sourceTree = "<group>"; };
+		08EF4BA31EE8459B00E691A9 /* Moya.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Moya.framework; path = "../../../../Library/Developer/Xcode/DerivedData/EvrythngiOS-eemufhqffojfgcfmpnrphhrhrrhn/Build/Products/Debug-iphonesimulator/Moya/Moya.framework"; sourceTree = "<group>"; };
+		08EF4BA41EE8459B00E691A9 /* MoyaSugar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MoyaSugar.framework; path = "../../../../Library/Developer/Xcode/DerivedData/EvrythngiOS-eemufhqffojfgcfmpnrphhrhrrhn/Build/Products/Debug-iphonesimulator/MoyaSugar/MoyaSugar.framework"; sourceTree = "<group>"; };
+		08EF4BA51EE8459B00E691A9 /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = "../../../../Library/Developer/Xcode/DerivedData/EvrythngiOS-eemufhqffojfgcfmpnrphhrhrrhn/Build/Products/Debug-iphonesimulator/ObjectMapper/ObjectMapper.framework"; sourceTree = "<group>"; };
+		08EF4BA81EE8459B00E691A9 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "../../../../Library/Developer/Xcode/DerivedData/EvrythngiOS-eemufhqffojfgcfmpnrphhrhrrhn/Build/Products/Debug-iphonesimulator/SwiftyJSON/SwiftyJSON.framework"; sourceTree = "<group>"; };
+		08EF4BB91EE8472500E691A9 /* GMVDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMVDetector.h; sourceTree = SOURCE_ROOT; };
+		08EF4BBA1EE8472500E691A9 /* GMVDetectorConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMVDetectorConstants.h; sourceTree = SOURCE_ROOT; };
+		08EF4BBB1EE8472500E691A9 /* GMVFeature.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMVFeature.h; sourceTree = SOURCE_ROOT; };
+		08EF4BBC1EE8472500E691A9 /* GMVUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMVUtility.h; sourceTree = SOURCE_ROOT; };
+		08EF4BC11EE8478600E691A9 /* GoogleMobileVision.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoogleMobileVision.h; sourceTree = SOURCE_ROOT; };
+		08EF4BD51EE84B7D00E691A9 /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
 		08FA48711EE7F53C000F77FD /* Pods_EvrythngiOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_EvrythngiOS.framework; path = "../../../../Library/Developer/Xcode/DerivedData/EvrythngiOS-eemufhqffojfgcfmpnrphhrhrrhn/Build/Products/Debug-iphonesimulator/Pods_EvrythngiOS.framework"; sourceTree = "<group>"; };
-		08FA48831EE80223000F77FD /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../../../Library/Developer/Xcode/DerivedData/EvrythngiOS-eemufhqffojfgcfmpnrphhrhrrhn/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
-		08FA48891EE80223000F77FD /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = "../../../../Library/Developer/Xcode/DerivedData/EvrythngiOS-eemufhqffojfgcfmpnrphhrhrrhn/Build/Products/Debug-iphonesimulator/Result/Result.framework"; sourceTree = "<group>"; };
-		08FA48B21EE810F0000F77FD /* BarcodeDetector.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BarcodeDetector.framework; sourceTree = "<group>"; };
-		08FA48B31EE810F0000F77FD /* GoogleInterchangeUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleInterchangeUtilities.framework; sourceTree = "<group>"; };
-		08FA48B41EE810F0000F77FD /* GoogleMobileVision.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileVision.framework; sourceTree = "<group>"; };
-		08FA48B51EE810F0000F77FD /* GoogleNetworkingUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleNetworkingUtilities.framework; sourceTree = "<group>"; };
-		08FA48B61EE810F0000F77FD /* GoogleSymbolUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleSymbolUtilities.framework; sourceTree = "<group>"; };
-		08FA48B71EE810F0000F77FD /* GoogleUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleUtilities.framework; sourceTree = "<group>"; };
+		3C3E498BAA008E4649917D1C /* Pods_EvrythngiOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EvrythngiOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		607F0C9F1BDDC055FDAC1E72 /* Pods-EvrythngiOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EvrythngiOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-EvrythngiOSTests/Pods-EvrythngiOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		7BBF65DE97494A7C08921DDA /* Pods_EvrythngiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EvrythngiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		99399EDC19D9357149326BA2 /* Pods-EvrythngiOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EvrythngiOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EvrythngiOS/Pods-EvrythngiOS.debug.xcconfig"; sourceTree = "<group>"; };
 		99CDC2DE66DB5348F22A0739 /* Pods-EvrythngiOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EvrythngiOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-EvrythngiOS/Pods-EvrythngiOS.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -184,15 +195,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				08FA48B81EE810F0000F77FD /* BarcodeDetector.framework in Frameworks */,
-				08FA48B91EE810F0000F77FD /* GoogleInterchangeUtilities.framework in Frameworks */,
-				08FA48BA1EE810F0000F77FD /* GoogleMobileVision.framework in Frameworks */,
-				08FA48BB1EE810F0000F77FD /* GoogleNetworkingUtilities.framework in Frameworks */,
-				08FA48BC1EE810F0000F77FD /* GoogleSymbolUtilities.framework in Frameworks */,
-				08FA48BD1EE810F0000F77FD /* GoogleUtilities.framework in Frameworks */,
-				08FA488B1EE80223000F77FD /* Alamofire.framework in Frameworks */,
-				08FA48911EE80223000F77FD /* Result.framework in Frameworks */,
+				08EF4BAA1EE8459B00E691A9 /* AlamofireObjectMapper.framework in Frameworks */,
+				08EF4BAB1EE8459B00E691A9 /* KRProgressHUD.framework in Frameworks */,
+				08EF4BAC1EE8459B00E691A9 /* Moya_ObjectMapper.framework in Frameworks */,
+				08EF4BAD1EE8459B00E691A9 /* Moya_SwiftyJSONMapper.framework in Frameworks */,
+				08EF4BAE1EE8459B00E691A9 /* Moya.framework in Frameworks */,
+				08EF4BAF1EE8459B00E691A9 /* MoyaSugar.framework in Frameworks */,
+				08EF4BB01EE8459B00E691A9 /* ObjectMapper.framework in Frameworks */,
+				08EF4BB31EE8459B00E691A9 /* SwiftyJSON.framework in Frameworks */,
 				08611C8C1EE5959D007D44E7 /* UIKit.framework in Frameworks */,
+				D30BD426850E8132F9CCC66B /* Pods_EvrythngiOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,6 +213,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0895C04F1EAF4841002E44A0 /* EvrythngiOS.framework in Frameworks */,
+				020E33294495E83851488C83 /* Pods_EvrythngiOSTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,6 +330,11 @@
 		0895C0471EAF4840002E44A0 /* EvrythngiOS */ = {
 			isa = PBXGroup;
 			children = (
+				08EF4BC11EE8478600E691A9 /* GoogleMobileVision.h */,
+				08EF4BB91EE8472500E691A9 /* GMVDetector.h */,
+				08EF4BBA1EE8472500E691A9 /* GMVDetectorConstants.h */,
+				08EF4BBB1EE8472500E691A9 /* GMVFeature.h */,
+				08EF4BBC1EE8472500E691A9 /* GMVUtility.h */,
 				080A171B1EB0828400601D6F /* Utils */,
 				080A17011EB07E0800601D6F /* Errors */,
 				080A16A41EB06B6800601D6F /* Protocols */,
@@ -327,6 +345,7 @@
 				0895C0491EAF4840002E44A0 /* Info.plist */,
 				0895C0621EAF496C002E44A0 /* Evrythng.swift */,
 				0895C0641EAF4B69002E44A0 /* Constants.swift */,
+				08EF4BD51EE84B7D00E691A9 /* module.modulemap */,
 			);
 			name = EvrythngiOS;
 			path = "Evrythng-iOS";
@@ -436,16 +455,18 @@
 		DD61D093FAB5CEBC3A5E54FA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				08FA48B21EE810F0000F77FD /* BarcodeDetector.framework */,
-				08FA48B31EE810F0000F77FD /* GoogleInterchangeUtilities.framework */,
-				08FA48B41EE810F0000F77FD /* GoogleMobileVision.framework */,
-				08FA48B51EE810F0000F77FD /* GoogleNetworkingUtilities.framework */,
-				08FA48B61EE810F0000F77FD /* GoogleSymbolUtilities.framework */,
-				08FA48B71EE810F0000F77FD /* GoogleUtilities.framework */,
-				08FA48831EE80223000F77FD /* Alamofire.framework */,
-				08FA48891EE80223000F77FD /* Result.framework */,
+				08EF4B9F1EE8459B00E691A9 /* AlamofireObjectMapper.framework */,
+				08EF4BA01EE8459B00E691A9 /* KRProgressHUD.framework */,
+				08EF4BA11EE8459B00E691A9 /* Moya_ObjectMapper.framework */,
+				08EF4BA21EE8459B00E691A9 /* Moya_SwiftyJSONMapper.framework */,
+				08EF4BA31EE8459B00E691A9 /* Moya.framework */,
+				08EF4BA41EE8459B00E691A9 /* MoyaSugar.framework */,
+				08EF4BA51EE8459B00E691A9 /* ObjectMapper.framework */,
+				08EF4BA81EE8459B00E691A9 /* SwiftyJSON.framework */,
 				08FA48711EE7F53C000F77FD /* Pods_EvrythngiOS.framework */,
 				08611C8B1EE5959D007D44E7 /* UIKit.framework */,
+				7BBF65DE97494A7C08921DDA /* Pods_EvrythngiOS.framework */,
+				3C3E498BAA008E4649917D1C /* Pods_EvrythngiOSTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -646,6 +667,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08EF4BD41EE84A6A00E691A9 /* EvrythngiOS.h in Sources */,
 				08B4B40B1EE7161400DF4040 /* EvrythngScannerVC.xib in Sources */,
 				08C81DED1ED91B2F00D23DA2 /* EvrythngNetworkTargetType.swift in Sources */,
 				08E756EB1ECC1E4000B9F6AD /* AbstractUser.swift in Sources */,
@@ -880,11 +902,14 @@
 					"$(PROJECT_DIR)/build/Debug-iphoneos/ObjectMapper",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/SwiftyJSON",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
+					"$(PROJECT_DIR)/build/Release-iphoneos/Alamofire",
+					"$(PROJECT_DIR)/build/Release-iphoneos/Result",
 				);
 				INFOPLIST_FILE = "Evrythng-iOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_PRIVATE_FILE = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.imfreemobile.EvrythngiOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -946,11 +971,14 @@
 					"$(PROJECT_DIR)/build/Debug-iphoneos/ObjectMapper",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/SwiftyJSON",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
+					"$(PROJECT_DIR)/build/Release-iphoneos/Alamofire",
+					"$(PROJECT_DIR)/build/Release-iphoneos/Result",
 				);
 				INFOPLIST_FILE = "Evrythng-iOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_PRIVATE_FILE = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.imfreemobile.EvrythngiOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;

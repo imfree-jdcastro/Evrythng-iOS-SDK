@@ -1,0 +1,11 @@
+framework module EvrythngiOS {
+    umbrella header "EvrythngiOS.h"
+    header "GoogleMobileVision.h"
+    header "GMVDetector.h"
+    header "GMVDetectorConstants.h"
+    header "GMVFeature.h"
+    header "GMVUtility.h"
+    
+    export *
+    module * { export * }
+}
