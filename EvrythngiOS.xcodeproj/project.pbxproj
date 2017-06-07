@@ -83,7 +83,6 @@
 		08EF4BB01EE8459B00E691A9 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08EF4BA51EE8459B00E691A9 /* ObjectMapper.framework */; };
 		08EF4BB31EE8459B00E691A9 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08EF4BA81EE8459B00E691A9 /* SwiftyJSON.framework */; };
 		08EF4BD41EE84A6A00E691A9 /* EvrythngiOS.h in Sources */ = {isa = PBXBuildFile; fileRef = 0895C0481EAF4840002E44A0 /* EvrythngiOS.h */; };
-		D30BD426850E8132F9CCC66B /* Pods_EvrythngiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BBF65DE97494A7C08921DDA /* Pods_EvrythngiOS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -209,7 +208,6 @@
 				08EF4BB01EE8459B00E691A9 /* ObjectMapper.framework in Frameworks */,
 				08EF4BB31EE8459B00E691A9 /* SwiftyJSON.framework in Frameworks */,
 				08611C8C1EE5959D007D44E7 /* UIKit.framework in Frameworks */,
-				D30BD426850E8132F9CCC66B /* Pods_EvrythngiOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
