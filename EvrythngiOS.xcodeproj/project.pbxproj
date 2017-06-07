@@ -27,6 +27,12 @@
 		084A381E1EE8518D0056506B /* GMVDetectorConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 08EF4BBA1EE8472500E691A9 /* GMVDetectorConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		084A381F1EE8518D0056506B /* GMVFeature.h in Headers */ = {isa = PBXBuildFile; fileRef = 08EF4BBB1EE8472500E691A9 /* GMVFeature.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		084A38201EE8518D0056506B /* GMVUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = 08EF4BBC1EE8472500E691A9 /* GMVUtility.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		084A38481EE861B80056506B /* BarcodeDetector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 084A38401EE85F410056506B /* BarcodeDetector.framework */; };
+		084A38491EE861B80056506B /* GoogleInterchangeUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 084A38411EE85F410056506B /* GoogleInterchangeUtilities.framework */; };
+		084A384A1EE861B80056506B /* GoogleMobileVision.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 084A38421EE85F410056506B /* GoogleMobileVision.framework */; };
+		084A384B1EE861B80056506B /* GoogleNetworkingUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 084A38431EE85F410056506B /* GoogleNetworkingUtilities.framework */; };
+		084A384C1EE861B80056506B /* GoogleSymbolUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 084A38441EE85F410056506B /* GoogleSymbolUtilities.framework */; };
+		084A384D1EE861B80056506B /* GoogleUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 084A38451EE85F410056506B /* GoogleUtilities.framework */; };
 		084D50A71EC19BE200E5F396 /* EvrythngScannerResultDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084D50A61EC19BE200E5F396 /* EvrythngScannerResultDelegate.swift */; };
 		084D50CB1EC1EBA900E5F396 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084D50CA1EC1EBA900E5F396 /* JSON.swift */; };
 		08611C8C1EE5959D007D44E7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08611C8B1EE5959D007D44E7 /* UIKit.framework */; };
@@ -83,6 +89,7 @@
 		08EF4BB01EE8459B00E691A9 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08EF4BA51EE8459B00E691A9 /* ObjectMapper.framework */; };
 		08EF4BB31EE8459B00E691A9 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08EF4BA81EE8459B00E691A9 /* SwiftyJSON.framework */; };
 		08EF4BD41EE84A6A00E691A9 /* EvrythngiOS.h in Sources */ = {isa = PBXBuildFile; fileRef = 0895C0481EAF4840002E44A0 /* EvrythngiOS.h */; };
+		8F4B8BC1848DB79483CEA261 /* Pods_EvrythngiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BBF65DE97494A7C08921DDA /* Pods_EvrythngiOS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,6 +131,12 @@
 		0817DF211EC59A47000A78A7 /* EvrythngNetworkExecutableProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EvrythngNetworkExecutableProtocol.swift; sourceTree = "<group>"; };
 		0817DF231EC5A7F3000A78A7 /* EvrythngOperator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EvrythngOperator.swift; sourceTree = "<group>"; };
 		0817DF251EC600D2000A78A7 /* EvrythngApiManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EvrythngApiManager.swift; sourceTree = "<group>"; };
+		084A38401EE85F410056506B /* BarcodeDetector.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BarcodeDetector.framework; path = Frameworks/BarcodeDetector.framework; sourceTree = "<group>"; };
+		084A38411EE85F410056506B /* GoogleInterchangeUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleInterchangeUtilities.framework; path = Frameworks/GoogleInterchangeUtilities.framework; sourceTree = "<group>"; };
+		084A38421EE85F410056506B /* GoogleMobileVision.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMobileVision.framework; path = Frameworks/GoogleMobileVision.framework; sourceTree = "<group>"; };
+		084A38431EE85F410056506B /* GoogleNetworkingUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleNetworkingUtilities.framework; path = Frameworks/GoogleNetworkingUtilities.framework; sourceTree = "<group>"; };
+		084A38441EE85F410056506B /* GoogleSymbolUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleSymbolUtilities.framework; path = Frameworks/GoogleSymbolUtilities.framework; sourceTree = "<group>"; };
+		084A38451EE85F410056506B /* GoogleUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleUtilities.framework; path = Frameworks/GoogleUtilities.framework; sourceTree = "<group>"; };
 		084D50A61EC19BE200E5F396 /* EvrythngScannerResultDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EvrythngScannerResultDelegate.swift; sourceTree = "<group>"; };
 		084D50CA1EC1EBA900E5F396 /* JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
 		08611C8B1EE5959D007D44E7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -199,6 +212,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				084A38481EE861B80056506B /* BarcodeDetector.framework in Frameworks */,
+				084A38491EE861B80056506B /* GoogleInterchangeUtilities.framework in Frameworks */,
+				084A384A1EE861B80056506B /* GoogleMobileVision.framework in Frameworks */,
+				084A384B1EE861B80056506B /* GoogleNetworkingUtilities.framework in Frameworks */,
+				084A384C1EE861B80056506B /* GoogleSymbolUtilities.framework in Frameworks */,
+				084A384D1EE861B80056506B /* GoogleUtilities.framework in Frameworks */,
 				08EF4BAA1EE8459B00E691A9 /* AlamofireObjectMapper.framework in Frameworks */,
 				08EF4BAB1EE8459B00E691A9 /* KRProgressHUD.framework in Frameworks */,
 				08EF4BAC1EE8459B00E691A9 /* Moya_ObjectMapper.framework in Frameworks */,
@@ -208,6 +227,7 @@
 				08EF4BB01EE8459B00E691A9 /* ObjectMapper.framework in Frameworks */,
 				08EF4BB31EE8459B00E691A9 /* SwiftyJSON.framework in Frameworks */,
 				08611C8C1EE5959D007D44E7 /* UIKit.framework in Frameworks */,
+				8F4B8BC1848DB79483CEA261 /* Pods_EvrythngiOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -458,6 +478,12 @@
 		DD61D093FAB5CEBC3A5E54FA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				084A38401EE85F410056506B /* BarcodeDetector.framework */,
+				084A38411EE85F410056506B /* GoogleInterchangeUtilities.framework */,
+				084A38421EE85F410056506B /* GoogleMobileVision.framework */,
+				084A38431EE85F410056506B /* GoogleNetworkingUtilities.framework */,
+				084A38441EE85F410056506B /* GoogleSymbolUtilities.framework */,
+				084A38451EE85F410056506B /* GoogleUtilities.framework */,
 				08EF4B9F1EE8459B00E691A9 /* AlamofireObjectMapper.framework */,
 				08EF4BA01EE8459B00E691A9 /* KRProgressHUD.framework */,
 				08EF4BA11EE8459B00E691A9 /* Moya_ObjectMapper.framework */,
@@ -900,7 +926,7 @@
 					"$(PROJECT_DIR)/Pods/GoogleSymbolUtilities/Frameworks/frameworks",
 					"$(PROJECT_DIR)/Pods/GoogleUtilities/Frameworks/frameworks",
 					"$(PROJECT_DIR)/Pods/GoogleInterchangeUtilities/Frameworks/frameworks",
-					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/**",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/Moya",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/MoyaSugar",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/AlamofireObjectMapper",
@@ -912,12 +938,37 @@
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
 					"$(PROJECT_DIR)/build/Release-iphoneos/Alamofire",
 					"$(PROJECT_DIR)/build/Release-iphoneos/Result",
+					"$(PROJECT_DIR)/Frameworks",
 				);
 				INFOPLIST_FILE = "Evrythng-iOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "$(PROJECT_DIR)/Evrythng-iOS/module.modulemap";
 				MODULEMAP_PRIVATE_FILE = "";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"Alamofire\"",
+					"-framework",
+					"\"AlamofireObjectMapper\"",
+					"-framework",
+					"\"KRProgressHUD\"",
+					"-framework",
+					"\"Moya\"",
+					"-framework",
+					"\"MoyaSugar\"",
+					"-framework",
+					"\"Moya_ObjectMapper\"",
+					"-framework",
+					"\"Moya_SwiftyJSONMapper\"",
+					"-framework",
+					"\"ObjectMapper\"",
+					"-framework",
+					"\"Result\"",
+					"-framework",
+					"\"SwiftyJSON\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.imfreemobile.EvrythngiOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -981,12 +1032,37 @@
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
 					"$(PROJECT_DIR)/build/Release-iphoneos/Alamofire",
 					"$(PROJECT_DIR)/build/Release-iphoneos/Result",
+					"$(PROJECT_DIR)/Frameworks",
 				);
 				INFOPLIST_FILE = "Evrythng-iOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "$(PROJECT_DIR)/Evrythng-iOS/module.modulemap";
 				MODULEMAP_PRIVATE_FILE = "";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"Alamofire\"",
+					"-framework",
+					"\"AlamofireObjectMapper\"",
+					"-framework",
+					"\"KRProgressHUD\"",
+					"-framework",
+					"\"Moya\"",
+					"-framework",
+					"\"MoyaSugar\"",
+					"-framework",
+					"\"Moya_ObjectMapper\"",
+					"-framework",
+					"\"Moya_SwiftyJSONMapper\"",
+					"-framework",
+					"\"ObjectMapper\"",
+					"-framework",
+					"\"Result\"",
+					"-framework",
+					"\"SwiftyJSON\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.imfreemobile.EvrythngiOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
