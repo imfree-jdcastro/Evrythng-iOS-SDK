@@ -23,7 +23,7 @@ Pod::Spec.new do |s|
   s.license      = { :type => 'MIT', :file => 'license.md'}
   s.authors      = { 'JD Castro' => 'jd@imfreemobile.com' }
   s.platform     = :ios, '10.0'
-  s.source       = { :git => 'https://github.com/imfree-jdcastro/Evrythng-iOS-SDK.git', :tag => '0.0.168' }
+  s.source       = { :git => 'https://github.com/imfree-jdcastro/Evrythng-iOS-SDK.git', :tag => '0.0.169' }
   #s.resources    = 'Evrythng-iOS/*.xib'
 
   s.ios.deployment_target = '10.0'
@@ -33,7 +33,7 @@ Pod::Spec.new do |s|
 
   s.source_files = 'Evrythng-iOS/EvrythngiOS.h', 'Evrythng-iOS/**/*.{h,m,swift}'
   s.exclude_files = 'Classes/Exclude'
-  s.resource_bundles = {
+  s.ios.resource_bundles = {
      'Evrythng-iOS' => ['Evrythng-iOS/*.xib']
   }
   s.dependency 'Alamofire', '~> 4.4'
@@ -67,13 +67,13 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'Scan' do |scan|
-    s.vendored_frameworks = ['GoogleInterchangeUtilities.framework', 
-                                   'BarcodeDetector.framework', 
-                                   'GoogleMobileVision.framework',
-                                   'GoogleNetworkingUtilities.framework',
-                                   'GoogleSymbolUtilities.framework',
-                                   'GoogleUtilities.framework'
-                                 ]
+    # s.vendored_frameworks = ['GoogleInterchangeUtilities.framework', 
+    #                                'BarcodeDetector.framework', 
+    #                                'GoogleMobileVision.framework',
+    #                                'GoogleNetworkingUtilities.framework',
+    #                                'GoogleSymbolUtilities.framework',
+    #                                'GoogleUtilities.framework'
+    #                              ]
 
     #scan.source_files = ['Pods/GoogleMobileVision/Detector/Frameworks/frameworks/GoogleMobileVision.framework/Headers/*.h']
     #scan.source_files = ['EvrythngiOSFrameworks/GoogleMobileVision.framework/Headers/*.h']
@@ -81,6 +81,6 @@ Pod::Spec.new do |s|
     #                            'EvrythngiOSFrameworks/GoogleMobileVision.framework/Headers/GMVDetectorConstants.h', 
     #                            'EvrythngiOSFrameworks/GoogleMobileVision.framework/Headers/GMVFeature.h', 
     #                            'EvrythngiOSFrameworks/GoogleMobileVision.framework/Headers/GMVUtility.h']
-    # scan.dependency 'GoogleMobileVision/BarcodeDetector'
+    scan.dependency 'GoogleMobileVision/BarcodeDetector'
   end
 end
