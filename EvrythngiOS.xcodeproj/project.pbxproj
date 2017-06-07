@@ -70,7 +70,6 @@
 		08E756EB1ECC1E4000B9F6AD /* AbstractUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080A16A71EB071CA00601D6F /* AbstractUser.swift */; };
 		08FA488B1EE80223000F77FD /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08FA48831EE80223000F77FD /* Alamofire.framework */; };
 		08FA48911EE80223000F77FD /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08FA48891EE80223000F77FD /* Result.framework */; };
-		08FA48991EE80B64000F77FD /* Pods_EvrythngiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08FA48711EE7F53C000F77FD /* Pods_EvrythngiOS.framework */; };
 		08FA48A31EE80B64000F77FD /* AlamofireObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08FA489A1EE80B64000F77FD /* AlamofireObjectMapper.framework */; };
 		08FA48A41EE80B64000F77FD /* KRProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08FA489B1EE80B64000F77FD /* KRProgressHUD.framework */; };
 		08FA48A51EE80B64000F77FD /* Moya_ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08FA489C1EE80B64000F77FD /* Moya_ObjectMapper.framework */; };
@@ -203,7 +202,6 @@
 				08FA48A91EE80B64000F77FD /* ObjectMapper.framework in Frameworks */,
 				08FA48AA1EE80B64000F77FD /* Pods_EvrythngiOSTests.framework in Frameworks */,
 				08FA48AB1EE80B64000F77FD /* SwiftyJSON.framework in Frameworks */,
-				08FA48991EE80B64000F77FD /* Pods_EvrythngiOS.framework in Frameworks */,
 				08FA488B1EE80223000F77FD /* Alamofire.framework in Frameworks */,
 				08FA48911EE80223000F77FD /* Result.framework in Frameworks */,
 				08611C8C1EE5959D007D44E7 /* UIKit.framework in Frameworks */,
