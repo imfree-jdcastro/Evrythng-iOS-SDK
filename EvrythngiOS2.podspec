@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
   #  summary should be tweet-length, and the description more in depth.
   #
 
-  s.name         = "EvrythngiOS"
+  s.name         = "EvrythngiOS2"
   s.version      = "0.0.1"
   s.summary      = "iOS variant of the Evrythng Platform SDK"
   s.description  = 'evrythng-ios-sdk is an SDK to be used when developing iOS enabled Applications using the Evrythng Platform.'
@@ -43,5 +43,5 @@ Pod::Spec.new do |s|
                                    'GoogleSymbolUtilities.framework',
                                    'GoogleUtilities.framework'
                           ]
-  s.dependency 'EvrythngiOS', '0.0.177'     
+  s.dependency 'EvrythngiOS', '0.0.178'     
 end
