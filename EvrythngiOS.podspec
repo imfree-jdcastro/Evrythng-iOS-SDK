@@ -84,16 +84,12 @@ Pod::Spec.new do |s|
                             ]
 
     scan.pod_target_xcconfig = {
-        'FRAMEWORK_SEARCH_PATHS' => '$(inherited) $(PODS_ROOT)/Evrythng-iOS',
+        'FRAMEWORK_SEARCH_PATHS' => '$(PODS_ROOT)/Evrythng-iOS',
         'OTHER_LDFLAGS'          => '$(inherited) -undefined dynamic_lookup'
     }
-
-    #scan.source_files = ['Pods/GoogleMobileVision/Detector/Frameworks/frameworks/GoogleMobileVision.framework/Headers/*.h']
-    #scan.source_files = ['EvrythngiOSFrameworks/GoogleMobileVision.framework/Headers/*.h']
-    #scan.public_header_files = ['EvrythngiOSFrameworks/GoogleMobileVision.framework/Headers/GMVDetector.h', 
-    #                            'EvrythngiOSFrameworks/GoogleMobileVision.framework/Headers/GMVDetectorConstants.h', 
-    #                            'EvrythngiOSFrameworks/GoogleMobileVision.framework/Headers/GMVFeature.h', 
-    #                            'EvrythngiOSFrameworks/GoogleMobileVision.framework/Headers/GMVUtility.h']
+    
+    scan.source_files = ['EvrythngiOSFrameworks/GoogleMobileVision.framework/Headers/*.h']
+    scan.public_header_files = ['Pods/GoogleMobileVision/Detector/Frameworks/frameworks/GoogleMobileVision.framework/Headers/*.h']
     scan.dependency 'GoogleMobileVision/BarcodeDetector'
   end
 end
