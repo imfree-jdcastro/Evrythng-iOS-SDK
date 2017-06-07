@@ -16,16 +16,17 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "EvrythngiOS"
-  s.version      = "0.0.185"
+  s.version      = "0.0.186"
   s.summary      = "iOS variant of the Evrythng Platform SDK"
   s.description  = 'evrythng-ios-sdk is an SDK to be used when developing iOS enabled Applications using the Evrythng Platform.'
   s.homepage     = 'https://github.com/imfree-jdcastro/Evrythng-iOS-SDK'
   s.license      = { :type => 'MIT', :file => 'license.md'}
   s.authors      = { 'JD Castro' => 'jd@imfreemobile.com' }
   s.platform     = :ios, '10.0'
-  s.source       = { :git => 'https://github.com/imfree-jdcastro/Evrythng-iOS-SDK.git', :tag => '0.0.185' }
+  s.source       = { :git => 'https://github.com/imfree-jdcastro/Evrythng-iOS-SDK.git', :tag => '0.0.186' }
   s.resources    = 'Evrythng-iOS/*.xib'
 
+  s.module_name      = 'EvrythngiOS'
   s.ios.deployment_target = '10.0'
   s.ios.framework = 'UIKit'
   s.requires_arc = true
@@ -53,7 +54,7 @@ Pod::Spec.new do |s|
       core.dependency 'MoyaSugar', '~> 0.4'
       core.dependency 'Moya-SwiftyJSONMapper', '~> 2.2'
       core.dependency 'KRProgressHUD'
-      core.dependency 'EvrythngiOS2', '0.0.305'
+      core.dependency 'EvrythngiOS2', '0.0.306'
 
       core.user_target_xcconfig = { 'SWIFT_VERSION' => '3',
                                 #'FRAMEWORK_SEARCH_PATHS' => '$(inherited) $(PODS_ROOT)/GoogleMobileVision/Detector/Frameworks',
