@@ -43,5 +43,5 @@ Pod::Spec.new do |s|
                                    'GoogleSymbolUtilities.framework',
                                    'GoogleUtilities.framework'
                           ]
-  s.dependency 'EvrythngiOS', '0.0.180'     
+  s.dependency 'EvrythngiOS', '0.0.181'     
 end
