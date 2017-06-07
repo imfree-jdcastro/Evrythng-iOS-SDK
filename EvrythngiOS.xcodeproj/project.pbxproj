@@ -70,7 +70,16 @@
 		08E756EB1ECC1E4000B9F6AD /* AbstractUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080A16A71EB071CA00601D6F /* AbstractUser.swift */; };
 		08FA488B1EE80223000F77FD /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08FA48831EE80223000F77FD /* Alamofire.framework */; };
 		08FA48911EE80223000F77FD /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08FA48891EE80223000F77FD /* Result.framework */; };
-		A0730396787E03A08F9F1F9C /* Pods_EvrythngiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E155481BA748E7B73459F4DF /* Pods_EvrythngiOS.framework */; };
+		08FA48991EE80B64000F77FD /* Pods_EvrythngiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08FA48711EE7F53C000F77FD /* Pods_EvrythngiOS.framework */; };
+		08FA48A31EE80B64000F77FD /* AlamofireObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08FA489A1EE80B64000F77FD /* AlamofireObjectMapper.framework */; };
+		08FA48A41EE80B64000F77FD /* KRProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08FA489B1EE80B64000F77FD /* KRProgressHUD.framework */; };
+		08FA48A51EE80B64000F77FD /* Moya_ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08FA489C1EE80B64000F77FD /* Moya_ObjectMapper.framework */; };
+		08FA48A61EE80B64000F77FD /* Moya_SwiftyJSONMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08FA489D1EE80B64000F77FD /* Moya_SwiftyJSONMapper.framework */; };
+		08FA48A71EE80B64000F77FD /* Moya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08FA489E1EE80B64000F77FD /* Moya.framework */; };
+		08FA48A81EE80B64000F77FD /* MoyaSugar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08FA489F1EE80B64000F77FD /* MoyaSugar.framework */; };
+		08FA48A91EE80B64000F77FD /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08FA48A01EE80B64000F77FD /* ObjectMapper.framework */; };
+		08FA48AA1EE80B64000F77FD /* Pods_EvrythngiOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08FA48A11EE80B64000F77FD /* Pods_EvrythngiOSTests.framework */; };
+		08FA48AB1EE80B64000F77FD /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08FA48A21EE80B64000F77FD /* SwiftyJSON.framework */; };
 		C0C514D54611409A1C6E993E /* Pods_EvrythngiOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A7C49A0421669A1263BBD94 /* Pods_EvrythngiOSTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -164,6 +173,15 @@
 		08FA48711EE7F53C000F77FD /* Pods_EvrythngiOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_EvrythngiOS.framework; path = "../../../../Library/Developer/Xcode/DerivedData/EvrythngiOS-eemufhqffojfgcfmpnrphhrhrrhn/Build/Products/Debug-iphonesimulator/Pods_EvrythngiOS.framework"; sourceTree = "<group>"; };
 		08FA48831EE80223000F77FD /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../../../Library/Developer/Xcode/DerivedData/EvrythngiOS-eemufhqffojfgcfmpnrphhrhrrhn/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
 		08FA48891EE80223000F77FD /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = "../../../../Library/Developer/Xcode/DerivedData/EvrythngiOS-eemufhqffojfgcfmpnrphhrhrrhn/Build/Products/Debug-iphonesimulator/Result/Result.framework"; sourceTree = "<group>"; };
+		08FA489A1EE80B64000F77FD /* AlamofireObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireObjectMapper.framework; path = "Pods/../build/Debug-iphoneos/AlamofireObjectMapper/AlamofireObjectMapper.framework"; sourceTree = "<group>"; };
+		08FA489B1EE80B64000F77FD /* KRProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KRProgressHUD.framework; path = "Pods/../build/Debug-iphoneos/KRProgressHUD/KRProgressHUD.framework"; sourceTree = "<group>"; };
+		08FA489C1EE80B64000F77FD /* Moya_ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Moya_ObjectMapper.framework; path = "Pods/../build/Debug-iphoneos/Moya-ObjectMapper/Moya_ObjectMapper.framework"; sourceTree = "<group>"; };
+		08FA489D1EE80B64000F77FD /* Moya_SwiftyJSONMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Moya_SwiftyJSONMapper.framework; path = "Pods/../build/Debug-iphoneos/Moya-SwiftyJSONMapper/Moya_SwiftyJSONMapper.framework"; sourceTree = "<group>"; };
+		08FA489E1EE80B64000F77FD /* Moya.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Moya.framework; path = "Pods/../build/Debug-iphoneos/Moya/Moya.framework"; sourceTree = "<group>"; };
+		08FA489F1EE80B64000F77FD /* MoyaSugar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MoyaSugar.framework; path = "Pods/../build/Debug-iphoneos/MoyaSugar/MoyaSugar.framework"; sourceTree = "<group>"; };
+		08FA48A01EE80B64000F77FD /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = "Pods/../build/Debug-iphoneos/ObjectMapper/ObjectMapper.framework"; sourceTree = "<group>"; };
+		08FA48A11EE80B64000F77FD /* Pods_EvrythngiOSTests.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_EvrythngiOSTests.framework; path = "Pods/../build/Debug-iphoneos/Pods_EvrythngiOSTests.framework"; sourceTree = "<group>"; };
+		08FA48A21EE80B64000F77FD /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "Pods/../build/Debug-iphoneos/SwiftyJSON/SwiftyJSON.framework"; sourceTree = "<group>"; };
 		0A7C49A0421669A1263BBD94 /* Pods_EvrythngiOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EvrythngiOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		607F0C9F1BDDC055FDAC1E72 /* Pods-EvrythngiOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EvrythngiOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-EvrythngiOSTests/Pods-EvrythngiOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		99399EDC19D9357149326BA2 /* Pods-EvrythngiOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EvrythngiOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EvrythngiOS/Pods-EvrythngiOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -176,10 +194,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08FA48A31EE80B64000F77FD /* AlamofireObjectMapper.framework in Frameworks */,
+				08FA48A41EE80B64000F77FD /* KRProgressHUD.framework in Frameworks */,
+				08FA48A51EE80B64000F77FD /* Moya_ObjectMapper.framework in Frameworks */,
+				08FA48A61EE80B64000F77FD /* Moya_SwiftyJSONMapper.framework in Frameworks */,
+				08FA48A71EE80B64000F77FD /* Moya.framework in Frameworks */,
+				08FA48A81EE80B64000F77FD /* MoyaSugar.framework in Frameworks */,
+				08FA48A91EE80B64000F77FD /* ObjectMapper.framework in Frameworks */,
+				08FA48AA1EE80B64000F77FD /* Pods_EvrythngiOSTests.framework in Frameworks */,
+				08FA48AB1EE80B64000F77FD /* SwiftyJSON.framework in Frameworks */,
+				08FA48991EE80B64000F77FD /* Pods_EvrythngiOS.framework in Frameworks */,
 				08FA488B1EE80223000F77FD /* Alamofire.framework in Frameworks */,
 				08FA48911EE80223000F77FD /* Result.framework in Frameworks */,
 				08611C8C1EE5959D007D44E7 /* UIKit.framework in Frameworks */,
-				A0730396787E03A08F9F1F9C /* Pods_EvrythngiOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,6 +451,15 @@
 		DD61D093FAB5CEBC3A5E54FA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				08FA489A1EE80B64000F77FD /* AlamofireObjectMapper.framework */,
+				08FA489B1EE80B64000F77FD /* KRProgressHUD.framework */,
+				08FA489C1EE80B64000F77FD /* Moya_ObjectMapper.framework */,
+				08FA489D1EE80B64000F77FD /* Moya_SwiftyJSONMapper.framework */,
+				08FA489E1EE80B64000F77FD /* Moya.framework */,
+				08FA489F1EE80B64000F77FD /* MoyaSugar.framework */,
+				08FA48A01EE80B64000F77FD /* ObjectMapper.framework */,
+				08FA48A11EE80B64000F77FD /* Pods_EvrythngiOSTests.framework */,
+				08FA48A21EE80B64000F77FD /* SwiftyJSON.framework */,
 				08FA48831EE80223000F77FD /* Alamofire.framework */,
 				08FA48891EE80223000F77FD /* Result.framework */,
 				08FA48711EE7F53C000F77FD /* Pods_EvrythngiOS.framework */,
@@ -863,6 +899,7 @@
 					"$(PROJECT_DIR)/build/Debug-iphoneos/Moya-SwiftyJSONMapper",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/ObjectMapper",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/SwiftyJSON",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = "Evrythng-iOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -928,6 +965,7 @@
 					"$(PROJECT_DIR)/build/Debug-iphoneos/Moya-SwiftyJSONMapper",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/ObjectMapper",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/SwiftyJSON",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = "Evrythng-iOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
