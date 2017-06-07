@@ -221,7 +221,8 @@ extension EvrythngCameraFrameExtractor: AVCaptureVideoDataOutputSampleBufferDele
         //let options = [GMVDetectorImageOrientation : orientation]
         
         if let barcodeDetector = self.barcodeDetector {
-            if let barcodeFeatures:[GMVBarcodeFeature] = barcodeDetector.features(in: uiImage, options: nil) as? [GMVBarcodeFeature] {
+            //if let barcodeFeatures:[GMVBarcodeFeature] = barcodeDetector.features(in: uiImage, options: nil) as? [GMVBarcodeFeature] {
+            if let barcodeFeatures = barcodeDetector.features(in: uiImage, options: nil) as [AnyObject]? {
                 
                 let barcodeFeature = barcodeFeatures.last
                 var barcodeRawValue = ""
@@ -231,14 +232,22 @@ extension EvrythngCameraFrameExtractor: AVCaptureVideoDataOutputSampleBufferDele
                     barcodeRawValue = (barcodeFeature!.rawValue ?? "")!
                     
                     print("Detected \(barcodeFeatures.count) barcode(s) with Value: \(barcodeRawValue) Orientation: \(deviceOrientation.rawValue) Format: \(barcodeFormat)")
+                    
+                    DispatchQueue.main.sync { [weak self] in
+                        //print("Is Running: \(self.captureSession.isRunning)")
+                        if let running = self?.captureSession.isRunning, running == true {
+                            self!.delegate?.captured(image: uiImage, asCIImage: ciImage, of: barcodeRawValue, of: barcodeFeature as! GMVBarcodeFeature)
+                        }
+                    }
+                    
                 } else {
                     print ("No Detected Barcodes")
-                }
-                
-                DispatchQueue.main.sync { [weak self] in
-                    //print("Is Running: \(self.captureSession.isRunning)")
-                    if let running = self?.captureSession.isRunning, running == true {
-                        self!.delegate?.captured(image: uiImage, asCIImage: ciImage, of: barcodeRawValue, of: barcodeFeature)
+                    
+                    DispatchQueue.main.sync { [weak self] in
+                        //print("Is Running: \(self.captureSession.isRunning)")
+                        if let running = self?.captureSession.isRunning, running == true {
+                            self!.delegate?.captured(image: uiImage, asCIImage: ciImage, of: barcodeRawValue, of: nil)
+                        }
                     }
                 }
                 return
