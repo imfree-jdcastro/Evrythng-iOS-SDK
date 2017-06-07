@@ -68,7 +68,7 @@
 		08E756E81ECC0C6400B9F6AD /* EvrythngScannerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E756E61ECC0C6400B9F6AD /* EvrythngScannerVC.swift */; };
 		08E756E91ECC0C6400B9F6AD /* EvrythngScannerVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 08E756E71ECC0C6400B9F6AD /* EvrythngScannerVC.xib */; };
 		08E756EB1ECC1E4000B9F6AD /* AbstractUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080A16A71EB071CA00601D6F /* AbstractUser.swift */; };
-		2EDF958919DD45995976AAF2 /* Pods_EvrythngiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E155481BA748E7B73459F4DF /* Pods_EvrythngiOS.framework */; };
+		08FA48721EE7F53C000F77FD /* Pods_EvrythngiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08FA48711EE7F53C000F77FD /* Pods_EvrythngiOS.framework */; };
 		C0C514D54611409A1C6E993E /* Pods_EvrythngiOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A7C49A0421669A1263BBD94 /* Pods_EvrythngiOSTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -165,6 +165,7 @@
 		08E756DC1ECC035F00B9F6AD /* EvrythngCameraFrameExtractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EvrythngCameraFrameExtractor.swift; sourceTree = "<group>"; };
 		08E756E61ECC0C6400B9F6AD /* EvrythngScannerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EvrythngScannerVC.swift; sourceTree = "<group>"; };
 		08E756E71ECC0C6400B9F6AD /* EvrythngScannerVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EvrythngScannerVC.xib; sourceTree = "<group>"; };
+		08FA48711EE7F53C000F77FD /* Pods_EvrythngiOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_EvrythngiOS.framework; path = "../../../../Library/Developer/Xcode/DerivedData/EvrythngiOS-eemufhqffojfgcfmpnrphhrhrrhn/Build/Products/Debug-iphonesimulator/Pods_EvrythngiOS.framework"; sourceTree = "<group>"; };
 		0A7C49A0421669A1263BBD94 /* Pods_EvrythngiOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EvrythngiOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		607F0C9F1BDDC055FDAC1E72 /* Pods-EvrythngiOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EvrythngiOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-EvrythngiOSTests/Pods-EvrythngiOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		99399EDC19D9357149326BA2 /* Pods-EvrythngiOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EvrythngiOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EvrythngiOS/Pods-EvrythngiOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -177,8 +178,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08FA48721EE7F53C000F77FD /* Pods_EvrythngiOS.framework in Frameworks */,
 				08611C8C1EE5959D007D44E7 /* UIKit.framework in Frameworks */,
-				2EDF958919DD45995976AAF2 /* Pods_EvrythngiOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,6 +424,7 @@
 		DD61D093FAB5CEBC3A5E54FA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				08FA48711EE7F53C000F77FD /* Pods_EvrythngiOS.framework */,
 				085394231EE68FD000229901 /* BarcodeDetector.framework */,
 				08611CAC1EE63856007D44E7 /* GoogleInterchangeUtilities.framework */,
 				08611CAD1EE63856007D44E7 /* GoogleMobileVision.framework */,
