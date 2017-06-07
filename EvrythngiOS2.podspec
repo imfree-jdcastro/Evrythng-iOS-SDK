@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "EvrythngiOS2"
-  s.version      = "0.0.330"
+  s.version      = "0.0.331"
   s.summary      = "iOS variant of the Evrythng Platform SDK"
   s.description  = 'evrythng-ios-sdk is an SDK to be used when developing iOS enabled Applications using the Evrythng Platform.'
   s.homepage     = 'https://github.com/imfree-jdcastro/Evrythng-iOS-SDK'
@@ -27,7 +27,13 @@ Pod::Spec.new do |s|
   s.module_name      = 'EvrythngiOS2'
 
   s.ios.deployment_target = '10.0'
-  s.ios.framework = 'UIKit'
+  s.ios.frameworks = ['GoogleInterchangeUtilities.framework', 
+                       'BarcodeDetector.framework', 
+                       'GoogleMobileVision.framework',
+                       'GoogleNetworkingUtilities.framework',
+                       'GoogleSymbolUtilities.framework',
+                       'GoogleUtilities.framework'
+                      ]
   s.requires_arc = true
 
   s.pod_target_xcconfig = { 'SWIFT_VERSION' => '3',
