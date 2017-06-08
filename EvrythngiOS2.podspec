@@ -47,13 +47,13 @@ Pod::Spec.new do |s|
   s.source_files = "*.{h,m}"
   s.public_header_files = "*.{h,m}"
   s.dependency 'GoogleMobileVision/BarcodeDetector'
-  s.weak_framework = ['GoogleInterchangeUtilities', 
-                               'BarcodeDetector', 
-                               'GoogleMobileVision',
-                               'GoogleNetworkingUtilities',
-                               'GoogleSymbolUtilities',
-                               'GoogleUtilitiesasdadasdas'
-                              ]
+  # s.weak_framework = ['GoogleInterchangeUtilities', 
+  #                              'BarcodeDetector', 
+  #                              'GoogleMobileVision',
+  #                              'GoogleNetworkingUtilities',
+  #                              'GoogleSymbolUtilities',
+  #                              'GoogleUtilitiesasdadasdas'
+  #                             ]
 
   #s.source_files = ['Pods/GoogleMobileVision/Detector/Frameworks/frameworks/GoogleMobileVision.framework/Headers/*.h']
   # s.xcconfig = {

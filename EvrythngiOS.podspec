@@ -55,14 +55,15 @@ Pod::Spec.new do |s|
       core.dependency 'Moya-SwiftyJSONMapper', '~> 2.2'
       core.dependency 'KRProgressHUD'
       #core.dependency 'EvrythngiOS2', '~> 0.0.341'
-      
-        core.ios.vendored_frameworks = ['Frameworks/GoogleInterchangeUtilities.framework', 
-                               'Frameworks/BarcodeDetector.framework', 
-                               'Frameworks/GoogleMobileVision.framework',
-                               'Frameworks/GoogleNetworkingUtilities.framework',
-                               'Frameworks/GoogleSymbolUtilities.framework',
-                               'Frameworks/GoogleUtilities.framework'
-                              ]
+      core.dependency 'Crashlytics'
+      # core.dependency 'GoogleMobileVision/BarcodeDetector'
+        # core.ios.vendored_frameworks = ['Frameworks/GoogleInterchangeUtilities.framework', 
+        #                        'Frameworks/BarcodeDetector.framework', 
+        #                        'Frameworks/GoogleMobileVision.framework',
+        #                        'Frameworks/GoogleNetworkingUtilities.framework',
+        #                        'Frameworks/GoogleSymbolUtilities.framework',
+        #                        'Frameworks/GoogleUtilities.framework'
+        #                       ]
 
       core.user_target_xcconfig = { 'SWIFT_VERSION' => '3',
                                     'FRAMEWORK_SEARCH_PATHS' => '$(PODS_ROOT)/**',
