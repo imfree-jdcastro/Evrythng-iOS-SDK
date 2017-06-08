@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "EvrythngiOS"
-  s.version      = "0.0.516"
+  s.version      = "0.0.517"
   s.summary      = "iOS variant of the Evrythng Platform SDK"
   s.description  = 'evrythng-ios-sdk is an SDK to be used when developing iOS enabled Applications using the Evrythng Platform.'
   s.homepage     = 'https://github.com/imfree-jdcastro/Evrythng-iOS-SDK'
@@ -54,14 +54,14 @@ Pod::Spec.new do |s|
       core.dependency 'MoyaSugar', '~> 0.4'
       core.dependency 'Moya-SwiftyJSONMapper', '~> 2.2'
       core.dependency 'KRProgressHUD'
-      core.dependency 'EvrythngiOS2', '~> 0.0.339'
-        # core.ios.vendored_frameworks = ['Frameworks/GoogleInterchangeUtilities.framework', 
-        #                        'Frameworks/BarcodeDetector.framework', 
-        #                        'Frameworks/GoogleMobileVision.framework',
-        #                        'Frameworks/GoogleNetworkingUtilities.framework',
-        #                        'Frameworks/GoogleSymbolUtilities.framework',
-        #                        'Frameworks/GoogleUtilities.framework'
-        #                       ]
+      #core.dependency 'EvrythngiOS2', '~> 0.0.339'
+        core.ios.vendored_frameworks = ['Frameworks/GoogleInterchangeUtilities.framework', 
+                               'Frameworks/BarcodeDetector.framework', 
+                               'Frameworks/GoogleMobileVision.framework',
+                               'Frameworks/GoogleNetworkingUtilities.framework',
+                               'Frameworks/GoogleSymbolUtilities.framework',
+                               'Frameworks/GoogleUtilities.framework'
+                              ]
 
       core.user_target_xcconfig = { 'SWIFT_VERSION' => '3',
                                     'FRAMEWORK_SEARCH_PATHS' => '$(PODS_ROOT)/**',
