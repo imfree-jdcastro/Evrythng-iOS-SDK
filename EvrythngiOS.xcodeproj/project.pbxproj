@@ -27,12 +27,12 @@
 		084A381E1EE8518D0056506B /* GMVDetectorConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 08EF4BBA1EE8472500E691A9 /* GMVDetectorConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		084A381F1EE8518D0056506B /* GMVFeature.h in Headers */ = {isa = PBXBuildFile; fileRef = 08EF4BBB1EE8472500E691A9 /* GMVFeature.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		084A38201EE8518D0056506B /* GMVUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = 08EF4BBC1EE8472500E691A9 /* GMVUtility.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		084A38481EE861B80056506B /* BarcodeDetector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 084A38401EE85F410056506B /* BarcodeDetector.framework */; };
-		084A38491EE861B80056506B /* GoogleInterchangeUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 084A38411EE85F410056506B /* GoogleInterchangeUtilities.framework */; };
-		084A384A1EE861B80056506B /* GoogleMobileVision.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 084A38421EE85F410056506B /* GoogleMobileVision.framework */; };
-		084A384B1EE861B80056506B /* GoogleNetworkingUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 084A38431EE85F410056506B /* GoogleNetworkingUtilities.framework */; };
-		084A384C1EE861B80056506B /* GoogleSymbolUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 084A38441EE85F410056506B /* GoogleSymbolUtilities.framework */; };
-		084A384D1EE861B80056506B /* GoogleUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 084A38451EE85F410056506B /* GoogleUtilities.framework */; };
+		084A385F1EE8D70F0056506B /* BarcodeDetector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 084A38401EE85F410056506B /* BarcodeDetector.framework */; };
+		084A38601EE8D70F0056506B /* GoogleInterchangeUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 084A38411EE85F410056506B /* GoogleInterchangeUtilities.framework */; };
+		084A38611EE8D70F0056506B /* GoogleMobileVision.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 084A38421EE85F410056506B /* GoogleMobileVision.framework */; };
+		084A38621EE8D70F0056506B /* GoogleNetworkingUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 084A38431EE85F410056506B /* GoogleNetworkingUtilities.framework */; };
+		084A38631EE8D70F0056506B /* GoogleSymbolUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 084A38441EE85F410056506B /* GoogleSymbolUtilities.framework */; };
+		084A38641EE8D70F0056506B /* GoogleUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 084A38451EE85F410056506B /* GoogleUtilities.framework */; };
 		084D50A71EC19BE200E5F396 /* EvrythngScannerResultDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084D50A61EC19BE200E5F396 /* EvrythngScannerResultDelegate.swift */; };
 		084D50CB1EC1EBA900E5F396 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084D50CA1EC1EBA900E5F396 /* JSON.swift */; };
 		08611C8C1EE5959D007D44E7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08611C8B1EE5959D007D44E7 /* UIKit.framework */; };
@@ -198,7 +198,7 @@
 		08EF4BBB1EE8472500E691A9 /* GMVFeature.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMVFeature.h; sourceTree = SOURCE_ROOT; };
 		08EF4BBC1EE8472500E691A9 /* GMVUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMVUtility.h; sourceTree = SOURCE_ROOT; };
 		08EF4BC11EE8478600E691A9 /* GoogleMobileVision.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoogleMobileVision.h; sourceTree = SOURCE_ROOT; };
-		08EF4BD51EE84B7D00E691A9 /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
+		08EF4BD51EE84B7D00E691A9 /* testmodule.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = testmodule.modulemap; sourceTree = "<group>"; };
 		08FA48711EE7F53C000F77FD /* Pods_EvrythngiOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_EvrythngiOS.framework; path = "../../../../Library/Developer/Xcode/DerivedData/EvrythngiOS-eemufhqffojfgcfmpnrphhrhrrhn/Build/Products/Debug-iphonesimulator/Pods_EvrythngiOS.framework"; sourceTree = "<group>"; };
 		3C3E498BAA008E4649917D1C /* Pods_EvrythngiOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EvrythngiOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		607F0C9F1BDDC055FDAC1E72 /* Pods-EvrythngiOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EvrythngiOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-EvrythngiOSTests/Pods-EvrythngiOSTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -212,12 +212,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				084A38481EE861B80056506B /* BarcodeDetector.framework in Frameworks */,
-				084A38491EE861B80056506B /* GoogleInterchangeUtilities.framework in Frameworks */,
-				084A384A1EE861B80056506B /* GoogleMobileVision.framework in Frameworks */,
-				084A384B1EE861B80056506B /* GoogleNetworkingUtilities.framework in Frameworks */,
-				084A384C1EE861B80056506B /* GoogleSymbolUtilities.framework in Frameworks */,
-				084A384D1EE861B80056506B /* GoogleUtilities.framework in Frameworks */,
+				084A385F1EE8D70F0056506B /* BarcodeDetector.framework in Frameworks */,
+				084A38601EE8D70F0056506B /* GoogleInterchangeUtilities.framework in Frameworks */,
+				084A38611EE8D70F0056506B /* GoogleMobileVision.framework in Frameworks */,
+				084A38621EE8D70F0056506B /* GoogleNetworkingUtilities.framework in Frameworks */,
+				084A38631EE8D70F0056506B /* GoogleSymbolUtilities.framework in Frameworks */,
+				084A38641EE8D70F0056506B /* GoogleUtilities.framework in Frameworks */,
 				08EF4BAA1EE8459B00E691A9 /* AlamofireObjectMapper.framework in Frameworks */,
 				08EF4BAB1EE8459B00E691A9 /* KRProgressHUD.framework in Frameworks */,
 				08EF4BAC1EE8459B00E691A9 /* Moya_ObjectMapper.framework in Frameworks */,
@@ -368,7 +368,7 @@
 				0895C0491EAF4840002E44A0 /* Info.plist */,
 				0895C0621EAF496C002E44A0 /* Evrythng.swift */,
 				0895C0641EAF4B69002E44A0 /* Constants.swift */,
-				08EF4BD51EE84B7D00E691A9 /* module.modulemap */,
+				08EF4BD51EE84B7D00E691A9 /* testmodule.modulemap */,
 			);
 			name = EvrythngiOS;
 			path = "Evrythng-iOS";
@@ -944,7 +944,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "$(PROJECT_DIR)/Evrythng-iOS/module.modulemap";
+				MODULEMAP_FILE = "";
 				MODULEMAP_PRIVATE_FILE = "";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -968,6 +968,8 @@
 					"\"Result\"",
 					"-framework",
 					"\"SwiftyJSON\"",
+					"-weak_framework",
+					"\"GoogleMobileVision\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.imfreemobile.EvrythngiOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1038,7 +1040,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "$(PROJECT_DIR)/Evrythng-iOS/module.modulemap";
+				MODULEMAP_FILE = "";
 				MODULEMAP_PRIVATE_FILE = "";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -1062,6 +1064,8 @@
 					"\"Result\"",
 					"-framework",
 					"\"SwiftyJSON\"",
+					"-weak_framework",
+					"\"GoogleMobileVision\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.imfreemobile.EvrythngiOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";

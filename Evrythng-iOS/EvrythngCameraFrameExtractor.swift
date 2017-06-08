@@ -103,7 +103,8 @@ internal class EvrythngCameraFrameExtractor: NSObject {
     }
     
     private func configureSession() -> Bool {
-        self.barcodeDetector = GMVDetector(ofType: GMVDetectorTypeBarcode, options: nil)
+        //self.barcodeDetector = GMVDetector(ofType: GMVDetectorTypeBarcode, options: [:])
+        self.barcodeDetector = GMVDetector(ofType: GMVDetectorTypeBarcode, options: [:])
         self.lastKnownDeviceOrientation = UIDevice.current.orientation
         
         guard self.permissionGranted else {
