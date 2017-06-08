@@ -27,12 +27,12 @@
 		084A381E1EE8518D0056506B /* GMVDetectorConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 08EF4BBA1EE8472500E691A9 /* GMVDetectorConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		084A381F1EE8518D0056506B /* GMVFeature.h in Headers */ = {isa = PBXBuildFile; fileRef = 08EF4BBB1EE8472500E691A9 /* GMVFeature.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		084A38201EE8518D0056506B /* GMVUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = 08EF4BBC1EE8472500E691A9 /* GMVUtility.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		084A38771EE8DC260056506B /* BarcodeDetector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 084A38401EE85F410056506B /* BarcodeDetector.framework */; };
-		084A38781EE8DC260056506B /* GoogleInterchangeUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 084A38411EE85F410056506B /* GoogleInterchangeUtilities.framework */; };
-		084A38791EE8DC260056506B /* GoogleMobileVision.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 084A38421EE85F410056506B /* GoogleMobileVision.framework */; };
-		084A387A1EE8DC260056506B /* GoogleNetworkingUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 084A38431EE85F410056506B /* GoogleNetworkingUtilities.framework */; };
-		084A387B1EE8DC260056506B /* GoogleSymbolUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 084A38441EE85F410056506B /* GoogleSymbolUtilities.framework */; };
-		084A387C1EE8DC260056506B /* GoogleUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 084A38451EE85F410056506B /* GoogleUtilities.framework */; };
+		084A387E1EE90BA70056506B /* BarcodeDetector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 084A38401EE85F410056506B /* BarcodeDetector.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		084A387F1EE90BA70056506B /* GoogleInterchangeUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 084A38411EE85F410056506B /* GoogleInterchangeUtilities.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		084A38801EE90BA70056506B /* GoogleMobileVision.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 084A38421EE85F410056506B /* GoogleMobileVision.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		084A38811EE90BA70056506B /* GoogleNetworkingUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 084A38431EE85F410056506B /* GoogleNetworkingUtilities.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		084A38821EE90BA70056506B /* GoogleSymbolUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 084A38441EE85F410056506B /* GoogleSymbolUtilities.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		084A38831EE90BA70056506B /* GoogleUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 084A38451EE85F410056506B /* GoogleUtilities.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		084D50A71EC19BE200E5F396 /* EvrythngScannerResultDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084D50A61EC19BE200E5F396 /* EvrythngScannerResultDelegate.swift */; };
 		084D50CB1EC1EBA900E5F396 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084D50CA1EC1EBA900E5F396 /* JSON.swift */; };
 		08611C8C1EE5959D007D44E7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08611C8B1EE5959D007D44E7 /* UIKit.framework */; };
@@ -212,12 +212,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				084A38771EE8DC260056506B /* BarcodeDetector.framework in Frameworks */,
-				084A38781EE8DC260056506B /* GoogleInterchangeUtilities.framework in Frameworks */,
-				084A38791EE8DC260056506B /* GoogleMobileVision.framework in Frameworks */,
-				084A387A1EE8DC260056506B /* GoogleNetworkingUtilities.framework in Frameworks */,
-				084A387B1EE8DC260056506B /* GoogleSymbolUtilities.framework in Frameworks */,
-				084A387C1EE8DC260056506B /* GoogleUtilities.framework in Frameworks */,
+				084A387E1EE90BA70056506B /* BarcodeDetector.framework in Frameworks */,
+				084A387F1EE90BA70056506B /* GoogleInterchangeUtilities.framework in Frameworks */,
+				084A38801EE90BA70056506B /* GoogleMobileVision.framework in Frameworks */,
+				084A38811EE90BA70056506B /* GoogleNetworkingUtilities.framework in Frameworks */,
+				084A38821EE90BA70056506B /* GoogleSymbolUtilities.framework in Frameworks */,
+				084A38831EE90BA70056506B /* GoogleUtilities.framework in Frameworks */,
 				08EF4BAA1EE8459B00E691A9 /* AlamofireObjectMapper.framework in Frameworks */,
 				08EF4BAB1EE8459B00E691A9 /* KRProgressHUD.framework in Frameworks */,
 				08EF4BAC1EE8459B00E691A9 /* Moya_ObjectMapper.framework in Frameworks */,
